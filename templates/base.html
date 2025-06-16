@@ -1,0 +1,359 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{description}}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:locale" content="ru_RU">
+
+    <title>{{title}}</title>
+
+
+    <!-- <link rel="apple-touch-icon" href="{%static 'img/favicon.svg'%}">
+    <link rel="icon" href="{%static 'img/favicon.png'%}" sizes="256x256" type="image/png">
+    <link rel="icon" href="{%static 'img/favicon.ico'%}" sizes="256x256" type="image/vnd.microsoft.icon">
+    <link rel="icon" href="{%static 'img/favicon.svg'%}" sizes="any" type="image/svg+xml"> -->
+
+
+    <link rel="stylesheet" href="{% static 'fonts/fonts.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap.css' %}" />
+    <script defer src="{%static 'vendor/bootstrap.bundle.min.js'%}"></script>
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/header-footer.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'css/contact-feedback.css' %}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{% static 'css/contact-feedback.css' %}" />
+    </noscript>
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="{% static 'css/modal.css' %}" />
+    </noscript>
+
+
+    {% block css %}
+    {% endblock %}
+
+</head>
+
+<body>
+    <header id="header" class="header fixed-top me-0 pe-0">
+        <nav class="navbar navbar-expand-lg custom-body-container py-0 mb-0" style="overflow: unset;">
+            <div class="container-fluid w-100 p-0 d-block">
+                <div class="header-top w-100 d-flex justify-content-between">
+                    <div class="header__logo-nav d-flex align-items-center">
+                        <div class="header__logo-nav-wrapper d-flex justify-content-between ">
+                            <a class="navbar-brand d-flex align-items-center p-0 me-0 header-logo" href="/">
+                                <img class="my-sm-1 my-0" src="{% static 'img/logo.svg' %}" alt="logo" />
+                            </a>
+                        </div>
+                        <div class="header-social d-lg-block d-none">
+                            <p>Горячая линия</p>
+                            <a href="tel:{{phone_url}}" target="_blank" class="font-16">{{phone}}</a>
+                        </div>
+                        <div class="header-top-links">
+                            <a href="/korea/" class="font-16">Авто из Кореи</a>
+                            <a href="/japan/" class="font-16">Авто из Японии</a>
+                            <a href="/china/" class="font-16">Авто из Китая</a>
+                            <a href="#" class="font-16">Отзывы</a>
+                            <a href="#" class="font-16">Документы</a>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center right-header">
+                        <a href="{{whatsapp}}" class="me-2" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"
+                                fill="none">
+                                <path
+                                    d="M16.7998 0C22.0795 0 24.7192 0.000422935 26.3594 1.64062C27.9996 3.28083 28 5.92047 28 11.2002V16.7998C28 22.0795 27.9996 24.7192 26.3594 26.3594C24.7192 27.9996 22.0795 28 16.7998 28H11.2002C5.92047 28 3.28083 27.9996 1.64062 26.3594C0.000422935 24.7192 0 22.0795 0 16.7998V11.2002C0 5.92046 0.000422935 3.28083 1.64062 1.64062C3.28083 0.000422935 5.92046 0 11.2002 0H16.7998ZM14.2344 4.66699C9.4023 4.66699 5.48455 8.58495 5.48438 13.417C5.48438 15.0585 5.94497 16.5896 6.73145 17.9023L5.5625 22.167L9.91895 21.0234C11.193 21.7478 12.6641 22.167 14.2344 22.167C19.0665 22.1669 22.9844 18.2491 22.9844 13.417C22.9842 8.58502 19.0664 4.66709 14.2344 4.66699ZM11.6533 9.3418C11.8094 9.34544 11.98 9.35634 12.1426 9.71582C12.3358 10.1432 12.7556 11.2156 12.8096 11.3242C12.8634 11.4327 12.9019 11.5602 12.8271 11.7021C12.7557 11.8479 12.7182 11.9364 12.6133 12.0654C12.5047 12.1908 12.3855 12.3466 12.2871 12.4414C12.1785 12.55 12.067 12.6692 12.1924 12.8857C12.3178 13.1023 12.7527 13.8126 13.3965 14.3857C14.2238 15.1248 14.9221 15.3522 15.1396 15.4609C15.3568 15.5695 15.4831 15.5528 15.6084 15.4072C15.7374 15.2651 16.1499 14.777 16.2959 14.5596C16.438 14.3424 16.5835 14.3798 16.7803 14.4512C16.98 14.5226 18.0447 15.0472 18.2627 15.1562C18.48 15.2649 18.623 15.319 18.6777 15.4072C18.7337 15.4991 18.7334 15.9323 18.5537 16.4375C18.3737 16.9427 17.4896 17.4313 17.0928 17.4658C16.6925 17.503 16.3183 17.6464 14.4902 16.9268C12.2853 16.0583 10.8948 13.7992 10.7861 13.6533C10.6765 13.5098 9.90336 12.4787 9.90332 11.415C9.90332 10.3473 10.4628 9.82391 10.6592 9.60645C10.859 9.38915 11.0934 9.33594 11.2393 9.33594C11.3813 9.33594 11.5273 9.33525 11.6533 9.3418Z"
+                                    fill="#2CB742" />
+                            </svg>
+                        </a>
+                        <a href="{{telegram}}" class="me-4" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M1.6402 1.6402C0 3.2804 0 5.92027 0 11.2V16.8C0 22.0797 0 24.7196 1.6402 26.3598C3.2804 28 5.92027 28 11.2 28H16.8C22.0797 28 24.7196 28 26.3598 26.3598C28 24.7196 28 22.0797 28 16.8V11.2C28 5.92027 28 3.2804 26.3598 1.6402C24.7196 0 22.0797 0 16.8 0H11.2C5.92027 0 3.2804 0 1.6402 1.6402ZM14.5007 10.3348C13.139 10.9011 10.4175 12.0734 6.33621 13.8516C5.67347 14.1151 5.3263 14.3729 5.2947 14.625C5.24129 15.0511 5.77483 15.2189 6.50139 15.4473C6.60022 15.4784 6.70262 15.5106 6.8076 15.5447C7.52241 15.7771 8.48397 16.0489 8.98384 16.0597C9.43727 16.0695 9.94335 15.8826 10.5021 15.4989C14.3154 12.9249 16.2838 11.6238 16.4074 11.5957C16.4945 11.576 16.6154 11.5511 16.6972 11.6238C16.7791 11.6966 16.771 11.8344 16.7624 11.8714C16.7095 12.0967 14.6151 14.0438 13.5313 15.0514C13.1934 15.3656 12.9538 15.5884 12.9048 15.6393C12.795 15.7533 12.6831 15.8611 12.5756 15.9647C11.9116 16.6049 11.4136 17.085 12.6032 17.8689C13.1749 18.2457 13.6324 18.5572 14.0888 18.868C14.5872 19.2075 15.0843 19.546 15.7276 19.9676C15.8914 20.0751 16.0479 20.1866 16.2004 20.2953C16.7804 20.7088 17.3015 21.0803 17.9454 21.0211C18.3195 20.9867 18.7059 20.6349 18.9021 19.5858C19.3659 17.1064 20.2776 11.7342 20.4883 9.52048C20.5067 9.32653 20.4835 9.07831 20.4648 8.96935C20.4462 8.86039 20.4072 8.70514 20.2656 8.59021C20.0979 8.4541 19.8389 8.4254 19.7231 8.42744C19.1965 8.43672 18.3886 8.71763 14.5007 10.3348Z"
+                                    fill="#2AABEE" />
+                            </svg>
+                        </a>
+                        <button class="btn gray-btn" data-bs-toggle="modal" data-bs-target="#modalFeedback">
+                            Оставить заявку
+                        </button>
+                    </div>
+                </div>
+                <div class="header-bottom d-flex">
+                    <a href="/korea/" class="font-16">Авто из Кореи</a>
+                    <a href="/japan/" class="font-16">Авто из Японии</a>
+                    <a href="/china/" class="font-16">Авто из Китая</a>
+                    <a href="#" class="font-16">Отзывы</a>
+                    <a href="#" class="font-16">Документы</a>
+                </div>
+
+
+            </div>
+            <div class="navbar-collapse collapse flex-column" id="navbarNav">
+
+            </div>
+        </nav>
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+    <section id="contact-feedback" class="position-relative">
+        <div class="contact-feedback-wrapper">
+            <div class="d-flex p-0 custom-body-container contact-feedback" style="overflow: visible;">
+                <div class="contact-feedback-left">
+                <h2 class="mb-3">Пока вы сомневаетесь — другие уже экономят:</h2>
+                <div class="contact-feedback-left-desc font-18">
+                    Сделайте первый шаг — и <span>через месяц</span> вы будете сидеть за рулем своего нового авто.
+                </div>
+                <div class="contact-feedback-left-desc items font-18">
+                    <div class="contact-feedback-left-desc-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            class="me-2">
+                            <path
+                                d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
+                                fill="#3E3EF0" />
+                            <path d="M7.75 11.9999L10.58 14.8299L16.25 9.16992" stroke="#F7F7FA" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span>Средняя экономия</span> клиентов в мае: 320 000₽
+                    </div>
+                    <div class="contact-feedback-left-desc items font-18">
+                        <div class="contact-feedback-left-desc-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" class="me-2">
+                                <path
+                                    d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
+                                    fill="#3E3EF0" />
+                                <path d="M7.75 11.9999L10.58 14.8299L16.25 9.16992" stroke="#F7F7FA" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>Специальные условия</span> по растаможке до 30 июня
+                        </div>
+                        <div class="contact-feedback-left-desc-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" class="me-2">
+                                <path
+                                    d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
+                                    fill="#3E3EF0" />
+                                <path d="M7.75 11.9999L10.58 14.8299L16.25 9.16992" stroke="#F7F7FA" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>Возврат предоплаты</span> при несоответствии авто описани
+                        </div>
+                    </div>
+                </div>
+                {%include 'home/mini-lid.html'%}
+            </div>
+            <div class="contact-feedback-right w-100">
+                <form class="d-flex justify-content-between flex-column contact-feedback-right-feedback" id="contact-feedback-form">
+                    {% csrf_token %}
+                    <h3>Оставить заявку можно тут</h3>
+                    <div class="d-flex gap-3">
+                        <div class="w-100">
+                            <p class="input-label">Ваше имя</p>
+                             {{feedback.name}}
+                        </div>
+                        <div class="w-100">
+                            <p class="input-label">Ваш номер</p>
+                            {{feedback.number}}
+                        </div>
+                    </div>
+                    <div>
+                        <p class="input-label">Уточните свой вопрос</p>
+                        {{feedback.message}}
+                    </div>
+                    <div class="form-feedback-btns">
+                        <button class="btn blue-btn w-100" type="submit">
+                            Отправить заявку
+                        </button>
+                        <div class="d-flex align-items-center form-check justify-content-center">
+                            Нажимая на кнопку, вы соглашаетесь с <a href="">Политикой конфиденциальности</a>
+                          </div>
+                        
+                       
+                    </div>
+                </form>
+            </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <div class="modal fade" id="modalFeedback" tabindex="-1" aria-labelledby="modalFeedbackLabel" aria-hidden="true" >
+        <div class="modal-dialog modal-dialog-centered modal-lg justify-content-center" style="max-width: 600px;">
+          <div class="modal-content position-relative">
+            <h2>Оставтье заявку</h2>
+            <p class="mb-4 modal-header-desc">Наши специалисты свяжуться с вами в ближайшее время</p>
+            <form action="" id="feedback-modal">
+                <div class="d-block mb-4 gap-4 d-sm-flex">
+                    {% csrf_token %}
+                    <div class="mb-4 mb-sm-0 w-100">
+                        <p class="input-label">Введите имя</p>
+                        {{feedback.name}}
+                    </div>
+                    <div class=" w-100">
+                        <p class="input-label">Телефон</p>
+                        {{feedback.number}}
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <p class="input-label">Оставьте коментарий</p>
+                    {{feedback.message}}
+                </div>
+                <div class="d-sm-flex d-block justify-content-between">
+                    <div class="d-flex align-items-center form-check mb-4 mb-sm-0">
+                        <input class="form-check-input" type="checkbox" id="check-modal" name="check" value="yes" checked="">
+                        <label class="m-0 ms-2" style="max-width: 271px; color: rgba(255, 255, 255, 1);"> С правилами и политикой конфиденциальности ознакомлен</label>
+                    </div>
+                    <button class="btn red-btn cursor-pointer" type="submit" style="max-width: 240px;">
+                        Отправить заявку
+                    </button>
+                       
+                </div>
+            </form>
+          </div>
+        </div>
+    </div>
+    <div class="modal fade" id="successFeedback" tabindex="-1" aria-labelledby="successFeedbackLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: 455px;">
+          <div class="modal-content position-relative">            
+            <h2 class="text-center">Спасибо, что выбрали нас!</h2>
+            <p class="mb-4 mt-2 modal-header-desc text-center">В ближайшее время с вами сяжуться для уточнения деталей</p>
+            <div class="d-flex gap-4 justify-content-center">
+                <a href="/catalog/china" class="btn red-btn cursor-pointer">
+                    К каталогу
+                </a>
+                <a href="/" class="btn gray-btn cursor-pointer">
+                    На главную
+                </a>
+            </div>
+           
+          </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="custom-body-container">
+            <div class="footer-top  margin-bottom-30">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-between footer-top-left header__logo-nav ">
+                        <a class="navbar-brand d-flex align-items-center p-0 me-0 header-logo" href="/">
+                            <img class="my-sm-1 my-0" src="{% static 'img/logo.svg' %}" alt="logo" />
+                        </a>
+                        <div class="header-social d-lg-block d-none">
+                            <p>Горячая линия</p>
+                            <a href="tel:{{phone_url}}" target="_blank" class="font-16">{{phone}}</a>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center right-header">
+                        <a href="{{whatsapp}}" class="me-2" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"
+                                fill="none">
+                                <path
+                                    d="M16.7998 0C22.0795 0 24.7192 0.000422935 26.3594 1.64062C27.9996 3.28083 28 5.92047 28 11.2002V16.7998C28 22.0795 27.9996 24.7192 26.3594 26.3594C24.7192 27.9996 22.0795 28 16.7998 28H11.2002C5.92047 28 3.28083 27.9996 1.64062 26.3594C0.000422935 24.7192 0 22.0795 0 16.7998V11.2002C0 5.92046 0.000422935 3.28083 1.64062 1.64062C3.28083 0.000422935 5.92046 0 11.2002 0H16.7998ZM14.2344 4.66699C9.4023 4.66699 5.48455 8.58495 5.48438 13.417C5.48438 15.0585 5.94497 16.5896 6.73145 17.9023L5.5625 22.167L9.91895 21.0234C11.193 21.7478 12.6641 22.167 14.2344 22.167C19.0665 22.1669 22.9844 18.2491 22.9844 13.417C22.9842 8.58502 19.0664 4.66709 14.2344 4.66699ZM11.6533 9.3418C11.8094 9.34544 11.98 9.35634 12.1426 9.71582C12.3358 10.1432 12.7556 11.2156 12.8096 11.3242C12.8634 11.4327 12.9019 11.5602 12.8271 11.7021C12.7557 11.8479 12.7182 11.9364 12.6133 12.0654C12.5047 12.1908 12.3855 12.3466 12.2871 12.4414C12.1785 12.55 12.067 12.6692 12.1924 12.8857C12.3178 13.1023 12.7527 13.8126 13.3965 14.3857C14.2238 15.1248 14.9221 15.3522 15.1396 15.4609C15.3568 15.5695 15.4831 15.5528 15.6084 15.4072C15.7374 15.2651 16.1499 14.777 16.2959 14.5596C16.438 14.3424 16.5835 14.3798 16.7803 14.4512C16.98 14.5226 18.0447 15.0472 18.2627 15.1562C18.48 15.2649 18.623 15.319 18.6777 15.4072C18.7337 15.4991 18.7334 15.9323 18.5537 16.4375C18.3737 16.9427 17.4896 17.4313 17.0928 17.4658C16.6925 17.503 16.3183 17.6464 14.4902 16.9268C12.2853 16.0583 10.8948 13.7992 10.7861 13.6533C10.6765 13.5098 9.90336 12.4787 9.90332 11.415C9.90332 10.3473 10.4628 9.82391 10.6592 9.60645C10.859 9.38915 11.0934 9.33594 11.2393 9.33594C11.3813 9.33594 11.5273 9.33525 11.6533 9.3418Z"
+                                    fill="#2CB742" />
+                            </svg>
+                        </a>
+                        <a href="{{telegram}}" class="me-4" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M1.6402 1.6402C0 3.2804 0 5.92027 0 11.2V16.8C0 22.0797 0 24.7196 1.6402 26.3598C3.2804 28 5.92027 28 11.2 28H16.8C22.0797 28 24.7196 28 26.3598 26.3598C28 24.7196 28 22.0797 28 16.8V11.2C28 5.92027 28 3.2804 26.3598 1.6402C24.7196 0 22.0797 0 16.8 0H11.2C5.92027 0 3.2804 0 1.6402 1.6402ZM14.5007 10.3348C13.139 10.9011 10.4175 12.0734 6.33621 13.8516C5.67347 14.1151 5.3263 14.3729 5.2947 14.625C5.24129 15.0511 5.77483 15.2189 6.50139 15.4473C6.60022 15.4784 6.70262 15.5106 6.8076 15.5447C7.52241 15.7771 8.48397 16.0489 8.98384 16.0597C9.43727 16.0695 9.94335 15.8826 10.5021 15.4989C14.3154 12.9249 16.2838 11.6238 16.4074 11.5957C16.4945 11.576 16.6154 11.5511 16.6972 11.6238C16.7791 11.6966 16.771 11.8344 16.7624 11.8714C16.7095 12.0967 14.6151 14.0438 13.5313 15.0514C13.1934 15.3656 12.9538 15.5884 12.9048 15.6393C12.795 15.7533 12.6831 15.8611 12.5756 15.9647C11.9116 16.6049 11.4136 17.085 12.6032 17.8689C13.1749 18.2457 13.6324 18.5572 14.0888 18.868C14.5872 19.2075 15.0843 19.546 15.7276 19.9676C15.8914 20.0751 16.0479 20.1866 16.2004 20.2953C16.7804 20.7088 17.3015 21.0803 17.9454 21.0211C18.3195 20.9867 18.7059 20.6349 18.9021 19.5858C19.3659 17.1064 20.2776 11.7342 20.4883 9.52048C20.5067 9.32653 20.4835 9.07831 20.4648 8.96935C20.4462 8.86039 20.4072 8.70514 20.2656 8.59021C20.0979 8.4541 19.8389 8.4254 19.7231 8.42744C19.1965 8.43672 18.3886 8.71763 14.5007 10.3348Z"
+                                    fill="#2AABEE" />
+                            </svg>
+                        </a>
+                        <button class="btn blue-btn" data-bs-toggle="modal" data-bs-target="#modalFeedback">
+                            Оставить заявку
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="footer-bottom text-center d-flex justify-content-between">
+                <div class="footer-bottom-top d-flex">
+                    <a href="/korea/" class="font-16">Авто из Кореи</a>
+                    <a href="/japan/" class="font-16">Авто из Японии</a>
+                    <a href="/china/" class="font-16">Авто из Китая</a>
+                    <a href="#" class="font-16">Отзывы</a>
+                    <a href="#" class="font-16">Документы</a>
+                </div>
+                <div class="footer-bottom-top-review-avg d-flex font-18 align-items-center gap-4">
+                    <a class="review-avg-item d-flex align-items-center" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none" class="me-2">
+                        <path d="M11.4416 3.42495L12.9083 6.35828C13.1083 6.76662 13.6416 7.15828 14.0916 7.23328L16.7499 7.67495C18.4499 7.95828 18.8499 9.19162 17.6249 10.4083L15.5583 12.475C15.2083 12.825 15.0166 13.5 15.1249 13.9833L15.7166 16.5416C16.1833 18.5666 15.1083 19.35 13.3166 18.2916L10.8249 16.8166C10.3749 16.55 9.63326 16.55 9.17492 16.8166L6.68326 18.2916C4.89992 19.35 3.81659 18.5583 4.28326 16.5416L4.87492 13.9833C4.98326 13.5 4.79159 12.825 4.44159 12.475L2.37492 10.4083C1.15826 9.19162 1.54992 7.95828 3.24992 7.67495L5.90826 7.23328C6.34992 7.15828 6.88326 6.76662 7.08326 6.35828L8.54992 3.42495C9.34992 1.83328 10.6499 1.83328 11.4416 3.42495Z" fill="#E8B425"/>
+                        </svg>
+                        <span style="font-weight: 600;" class="me-3">5.0</span>
+                        
+                        <img src="{%static 'img/icons/google.svg'%}" alt="Отзывы Google Maps" class="me-3">
+                        <p style="color: rgba(163, 163, 170, 1);">Google 
+                            <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                            <path d="M10 2.5L2 10.5" stroke="#A3A3AA" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 8.5V2.5H4" stroke="#A3A3AA" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </p>
+                    </a>
+                    <a class="review-avg-item d-flex align-items-center" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none" class="me-2">
+                        <path d="M11.4416 3.42495L12.9083 6.35828C13.1083 6.76662 13.6416 7.15828 14.0916 7.23328L16.7499 7.67495C18.4499 7.95828 18.8499 9.19162 17.6249 10.4083L15.5583 12.475C15.2083 12.825 15.0166 13.5 15.1249 13.9833L15.7166 16.5416C16.1833 18.5666 15.1083 19.35 13.3166 18.2916L10.8249 16.8166C10.3749 16.55 9.63326 16.55 9.17492 16.8166L6.68326 18.2916C4.89992 19.35 3.81659 18.5583 4.28326 16.5416L4.87492 13.9833C4.98326 13.5 4.79159 12.825 4.44159 12.475L2.37492 10.4083C1.15826 9.19162 1.54992 7.95828 3.24992 7.67495L5.90826 7.23328C6.34992 7.15828 6.88326 6.76662 7.08326 6.35828L8.54992 3.42495C9.34992 1.83328 10.6499 1.83328 11.4416 3.42495Z" fill="#E8B425"/>
+                        </svg>
+                        <span style="font-weight: 600;" class="me-3">5.0</span>
+                        
+                        <img src="{%static 'img/icons/yandex.svg'%}" alt="Отзывы на Яндекс картах" class="me-3">
+                        <p style="color: rgba(163, 163, 170, 1);">Яндекс 
+                            <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                            <path d="M10 2.5L2 10.5" stroke="#A3A3AA" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 8.5V2.5H4" stroke="#A3A3AA" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </p>
+                    </a>
+                    <a class="review-avg-item d-flex align-items-center" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none" class="me-2">
+                        <path d="M11.4416 3.42495L12.9083 6.35828C13.1083 6.76662 13.6416 7.15828 14.0916 7.23328L16.7499 7.67495C18.4499 7.95828 18.8499 9.19162 17.6249 10.4083L15.5583 12.475C15.2083 12.825 15.0166 13.5 15.1249 13.9833L15.7166 16.5416C16.1833 18.5666 15.1083 19.35 13.3166 18.2916L10.8249 16.8166C10.3749 16.55 9.63326 16.55 9.17492 16.8166L6.68326 18.2916C4.89992 19.35 3.81659 18.5583 4.28326 16.5416L4.87492 13.9833C4.98326 13.5 4.79159 12.825 4.44159 12.475L2.37492 10.4083C1.15826 9.19162 1.54992 7.95828 3.24992 7.67495L5.90826 7.23328C6.34992 7.15828 6.88326 6.76662 7.08326 6.35828L8.54992 3.42495C9.34992 1.83328 10.6499 1.83328 11.4416 3.42495Z" fill="#E8B425"/>
+                        </svg>
+                        <span style="font-weight: 600;" class="me-3">5.0</span>
+                        
+                        <img src="{%static 'img/icons/2gis.svg'%}" alt="Отзывы на 2GIS" class="me-3">
+                        <p style="color: rgba(163, 163, 170, 1);">2ГИС 
+                            <svg class="ms-1" xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+                            <path d="M10 2.5L2 10.5" stroke="#A3A3AA" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 8.5V2.5H4" stroke="#A3A3AA" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </p>
+                    </a>
+                </div>
+            </div>
+             <div class="footer-bottom-bottom d-flex justify-content-between">
+                    <div class="d-flex gap-3">
+                        <p>ООО ”IvanovDrive”</p>
+                        <p>Все права зарегистрированы.</p>
+                    </div>
+                     <div class="d-flex gap-3">
+                        <a href="#">Реквизиты</a>
+                        <a href="#">Обработка персональных данных</a>
+                        <a href="#">Политика конфиденциальности</a>
+                    </div>
+                </div>
+        </div>
+    </footer>
+
+    <script src="{%static 'vendor/jquery.js'%}"></script>
+    <script src="{%static 'vendor/Imask.js'%}"></script>
+    <script src="{%static 'js/feedback.js'%}"></script>
+    <script src="{%static 'js/base.js'%}"></script>
+    {% block script %}
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+.car-slide {
+    width: 312px;
+    height: 377px;
+    background-color: rgba(247, 247, 250, 1);
+    border-radius: 16px;
+    position: relative;
+    transition-property: height, width;
+    transition-duration: 400ms;
+    transition-timing-function: ease-in-out
+}
+
+.car-slide.swiper-slide-active {
+    transition-property: height, width, bottom, left;
+    transition-duration: 400ms;
+    transition-timing-function: ease-in-out
+}
+
+.car-slide .main_card_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    height: 232px
+}
+
+.car__title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.car__desc {
+    color: rgba(163, 163, 170, 1);
+    margin-bottom: 20px
+}
+
+.car-slide .pagination,
+.car-slide .active-car-desc,
+.car-slide.swiper-slide-active .car-desc {
+    display: none
+}
+
+.car-slide.swiper-slide-active .pagination,
+.car-slide.swiper-slide-active .active-car-desc {
+    display: block;
+    display: flex
+}
+
+.car-slide.swiper-slide-active .pagination button .boll.active {
+    background-color: rgba(251, 209, 112, 1)
+}
+
+.car-slide.swiper-slide-active {
+    width: 760px;
+    height: 377px !important;
+    max-height: unset;
+    display: flex;
+    height: 100%;
+}
+
+.car-slide.swiper-slide-active .car__title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+.car-slide.swiper-slide-active .active-car-desc {
+    padding: 20px;
+}
+
+.car-slide.swiper-slide-active .main_card_img {
+    max-width: 424px;
+    width: 424px;
+    height: 100%;
+}
+
+.car-slide .general-btn {
+    padding: 12px 20px;
+    max-height: 37px;
+    font-size: 18px
+}
+
+.car-slide.swiper-slide-active .car__desc {
+    font-size: 14px;
+    margin-bottom: 0
+}
+
+.car-slide.swiper-slide-active .car__price {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.car__price {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.car-card-bottom-btn {
+    font-family: 'Stolzl Regular';
+    color: rgba(251, 209, 112, 1);
+    text-decoration: underline;
+    font-size: 10px;
+    padding: 0;
+    margin-bottom: 30px
+}
+
+.car-slide.swiper-slide-active .pagination {
+    bottom: 30px;
+    left: 101px
+}
+
+.car-slide.swiper-slide-active .pagination .boll {
+    width: 52px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 1)
+}
+
+.car-slide.swiper-slide-active .pagination .boll.active {
+    background-color: rgba(251, 209, 112, 1)
+}
+
+.car-desc {
+    line-height: 100%;
+    padding: 20px;
+    padding-top: 16px;
+}
+
+.bottom-car a img {
+    width: 25px;
+    height: 25px
+}
+
+.car__price span {
+    font-family: sans-serif
+}
+
+.car-card-year {
+    position: absolute;
+    top: 16px;
+    z-index: 1;
+    color: rgba(247, 247, 250, 1);
+    padding: 4px 14px;
+    border-radius: 16px;
+    backdrop-filter: blur(32px);
+    background: rgba(235, 235, 240, 0.12);
+    left: 16px;
+}
+
+.car-card-engine{
+    position: absolute;
+    top: 16px;
+    z-index: 1;
+    right: 16px;
+}
+
+.mini-catlog-swiper-1,
+.mini-catlog-swiper-2{
+    margin-bottom: 120px;
+}

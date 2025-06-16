@@ -1,0 +1,17 @@
+#mini-catalog{
+    background-color: rgba(233, 233, 240, 1);;
+}
+
+#mini-catalog .swiper {
+    width: 8000px;
+    transform: translate(-50.1%, 0);
+    height: 387px;
+    position: relative;
+    transition-property: margin-left, margin-top, height;
+    transition-duration: 400ms;
+    transition-timing-function: ease-in-out;
+}
+
+#mini-catalog .swiper  {
+    margin-left: 180px;
+}

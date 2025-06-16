@@ -1,0 +1,1 @@
+String.prototype.replaceAt=function(t,e){return this.substring(0,t)+e+this.substring(t+e.length)},document.querySelectorAll(".gallery__Image").forEach(function(t){var e=new Image;e.onload=()=>{1===e.width&&1===e.height?t.remove():t.classList.add("CORRECT")},e.src=t.src});

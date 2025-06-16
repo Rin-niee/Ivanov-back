@@ -1,0 +1,62 @@
+header .header-top {
+    padding: 20px 0 20px 0;
+}
+
+header {
+    background-color: rgba(247, 247, 250, 1);
+}
+
+
+.header-social p {
+    font-weight: 500;
+    color: rgba(163, 163, 170, 1);
+}
+
+.header__logo-nav {
+    gap: 52px;
+}
+
+.header-bottom {
+    gap: 24px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(227, 227, 230, 1);
+}
+
+footer {
+    background-color: rgba(233, 233, 240, 1);
+}
+
+.footer-top {
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(205, 205, 210, 1);
+}
+
+.footer-bottom-top {
+    gap: 24px;
+}
+
+.footer-bottom-bottom {
+    margin-top: 52px;
+    color: rgba(163, 163, 170, 1);
+}
+
+.footer-bottom-bottom a {
+    color: rgba(163, 163, 170, 1);
+}
+
+header .header-top-links{
+    gap: 24px;
+}
+
+header.sticky .header-bottom,
+header.sticky .header-social{
+    display: none !important;
+}
+
+.header-top-links{
+    display: none;
+}
+
+header.sticky .header-top-links{
+    display: flex !important;
+}

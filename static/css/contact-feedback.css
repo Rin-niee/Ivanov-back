@@ -1,0 +1,83 @@
+.input-label {
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(163, 163, 170, 1);
+    margin-bottom: 10px
+}
+
+.form-control {
+    background-color: rgba(234, 234, 244, 1);
+    border-radius: 10px;
+    border: none;
+    padding: 14px 24px;
+    margin-bottom: 12px;
+}
+
+.contact-feedback-right-feedback .form-control::placeholder {
+    color: rgba(163, 163, 170, 1);
+}
+
+.contact-feedback-wrapper {
+        background: linear-gradient(to right, rgba(247, 247, 250, 1) 50%, rgba(234, 234, 244, 1) 40%);
+}
+
+.contact-feedback{
+    gap: 24px;
+}
+
+#contact-feedback {
+    padding: 100px 0;
+}
+
+.contact-feedback-left {
+    width: 648px;
+    flex-shrink: 0;
+}
+
+
+.contact-feedback-left-desc {
+    color: rgba(37, 37, 51, 1);
+    max-width: 421px;
+    margin-bottom: 32px;
+}
+
+.contact-feedback-left-desc span {
+    color: rgba(62, 62, 240, 1);
+}
+
+.contact-feedback-left-desc-item {
+    margin-bottom: 16.5px;
+}
+
+.contact-feedback-left-desc.items {
+    max-width: unset;
+    margin-bottom: 52px;
+}
+
+.contact-feedback-right-feedback {
+    padding: 32px;
+    background-color: rgba(234, 234, 244, 1);
+    border-radius: 20px;
+}
+
+.contact-feedback-right-feedback .form-control {
+    background-color: rgba(247, 247, 250, 1);
+}
+
+#subjects_form {
+    max-height: 180px;
+}
+
+.form-check {
+    color: rgba(121, 121, 131, 1);
+    margin-top: 10px;
+
+}
+
+.form-check a {
+    color: rgba(62, 62, 240, 1);
+}
+
+.contact-feedback-right h3 {
+    margin-bottom: 24px;
+}

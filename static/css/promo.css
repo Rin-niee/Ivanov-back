@@ -1,0 +1,70 @@
+.promo-desc {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    color: rgba(37, 37, 51, 1);
+    margin-bottom: 52px;
+    margin-top: 10px;
+}
+
+.promo-text {
+    max-width: 760px;
+}
+
+.promo-avg-stars {
+    color: rgba(37, 37, 51, 1);
+    font-weight: 600;
+}
+
+.promo-text .blue-btn {
+    width: 324px;
+    font-size: 20px;
+}
+
+
+.promo-adv-item {
+    padding: 20px 32px;
+    background-color: rgba(234, 234, 244, 1);
+    border-radius: 16px;
+    line-height: 100%;
+}
+
+.promo-adv-item-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.promo-adv-item.active {
+    background-color: rgba(62, 62, 240, 1);
+    color: rgba(247, 247, 250, 1);
+}
+
+.promo-car {
+    position: absolute;
+    bottom: 0;
+    right: -150%;
+}
+
+.promo-back {
+    position: absolute;
+    bottom: 0;
+    right: -150%;
+    width: 115%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(234, 234, 244, 1);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.promo-text-wrp::after {
+    content: "";
+    position: absolute;
+    top: 160px;
+    background-color: rgba(234, 234, 244, 1);
+    right: -30%;
+    width: 60vw;
+    z-index: -1;
+    height: 61.5%
+}

@@ -1,0 +1,54 @@
+#reviews {
+    overflow: visible;
+}
+
+.reviews-header-text {
+    color: rgba(121, 121, 131, 1);
+    max-width: 243px;
+    margin-left: 25px;
+}
+
+.main-review-img {
+    object-fit: cover;
+    border-radius: 20px;
+    max-height: 280px;
+    height: 100%;
+    width: 100%;
+}
+
+.reviews-swiper-slide {
+    max-width: 424px;
+    background-color: rgba(247, 247, 250, 1);
+    border-radius: 20px;
+    box-shadow: 0px 8px 60px 0px rgba(12, 12, 65, 0.06);
+}
+
+.reviews-swiper {
+    overflow: visible;
+}
+
+.reviews-content {
+    padding: 20px;
+}
+
+.review-header .review-name {
+    font-size: 20px;
+}
+
+
+.review-header {
+    margin-bottom: 16px;
+}
+
+.reviews-text {
+    color: rgba(79, 79, 91, 1);
+    margin-bottom: 24px;
+}
+
+.reviews-bottom p {
+    color: rgba(121, 121, 131, 1);
+}
+
+.reviews-bottom .read-more {
+    color: rgba(232, 139, 46, 1);
+}
