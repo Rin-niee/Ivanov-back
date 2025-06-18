@@ -46,6 +46,7 @@
             display: flex;
             align-items: center;
             column-gap: 24px;
+            padding-left: 0px;
 
             @include desktop{
                 padding-left: 16px; 

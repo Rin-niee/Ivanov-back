@@ -150,36 +150,36 @@ svg * {
   }
 }
 @font-face {
-  font-family: "Mulish";
-  src: url('{% static "scss/fonts/Mulish-Regular.woff2" %}') format("woff2");
+  font-family: "Open Sans";
+  src: url("../fonts/Mulish-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Mulish";
-  src: url('{% static "scss/fonts/Mulish-Medium.woff2" %}') format("woff2");
+  src: url("../fonts/Mulish-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Mulish";
-  src: url('{% static "scss/fonts/Mulish-SemiBold.woff2" %}') format("woff2");
+  src: url("../fonts/Mulish-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "WixMadeforDisplay";
-  src: url('{% static "scss/fonts/WixMadeforDisplay-Bold.woff2" %}') format("woff2");  
+  src: url("WixMadeforDisplay-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "BebasNeue";
-  src: url('{% static "scss/fonts/BebasNeueBold.woff2" %}') format("woff2");  
+  src: url("BebasNeueBold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -648,6 +648,7 @@ a {
   align-items: center;
   -moz-column-gap: 24px;
        column-gap: 24px;
+  padding-left: 0px;
 }
 @media (max-width: 1401px) {
   .hero-header__menu-list {
@@ -2983,6 +2984,9 @@ a {
     margin-bottom: 12px !important;
   }
 }
+.schema__steps {
+  margin-bottom: 100px;
+}
 .schema__step {
   display: flex;
   flex-direction: column;
@@ -3953,6 +3957,7 @@ a {
   width: auto;
   flex-shrink: 0;
   scroll-snap-align: start;
+  border-radius: var(--border-radius);
 }
 .card__active {
   display: flex;
@@ -3996,6 +4001,7 @@ a {
   width: 293px;
   height: 132px;
   margin-bottom: 60px;
+  padding-left: 0px;
 }
 .card__active-name {
   font-family: var(--font-family-small-text);
@@ -4028,7 +4034,7 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 16px;
   margin-top: 16px;
   width: 293px;

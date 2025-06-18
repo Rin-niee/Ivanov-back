@@ -51,7 +51,7 @@
 <body>
     <header id="header" class="header hide">
         <div class="header__inner container">
-            <a href="#" class="header__logo logo">
+            <a href="#hero" class="header__logo logo">
                 <img class="logo__image" src='{% static "img/images/ivanov-drive-logo.svg" %}' alt="Ivanov drive" loading="lazy">
             </a>
             <nav class="header__menu hidden-mobile">
@@ -69,7 +69,7 @@
                         <a href="#reviews" class="header__menu-link">Отзывы</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="#dockuments" class="header__menu-link">Документы</a>
+                        <a href="#contacts" class="header__menu-link">Контакты</a>
                     </li>
                 </ul>
             </nav>
@@ -103,7 +103,7 @@
 
     {% endblock %}
     <section class="section">
-        <div id="dockuments" class="contacts container">
+        <div id="contacts" class="contacts container">
             <div class="contacts__inner ">
                 <div class="contacts__content" data-aos="fade-right">
                     <div class="contacts__text">
@@ -258,7 +258,7 @@
                 <div class="footer__body hero-header">
                     <div class="hero-header__inner footer__hero-header-inner ">
                         <div class="hero-header__left footer__hero-header__left ">
-                            <a href="#" class="hero-header__logo logo">
+                            <a href="#hero" class="hero-header__logo logo">
                             <img class="logo__image footer__logo" src='{% static "img/images/ivanov-drive-logo.svg" %}' alt="Ivanov drive" width="132" height="40" loading="lazy">
                             </a>
                             <div class="hero-header__contacts contacts__block">
@@ -300,7 +300,7 @@
                                     <a href="#reviews" class="hero-header__menu-link footer__menu-link">Отзывы</a>
                                 </li>
                                 <li class="hero-header__menu-item footer__menu-item">
-                                    <a href="#dockuments" class="hero-header__menu-link footer__menu-link">Документы</a>
+                                    <a href="#contacts" class="hero-header__menu-link footer__menu-link">Контакты</a>
                                 </li>
                             </ul>
                         </nav>
@@ -361,7 +361,7 @@
     </footer>
         <dialog class="mobile-overlay visible-mobile"  id="mobileOverlay">
         <form class="mobile-overlay__close-button-wrapper" method="dialog">
-            <a href="/" class="mobile-overlay__logo">
+            <a href="#hero" class="mobile-overlay__logo">
                 <img class="mobile-overlay__logo-image logo__image" src='{% static "img/images/ivanov-drive-logo.svg" %}' alt="Ivanov Drive" width="296" height="40" loading="lazy">
             </a>
             <button class="mobile-overlay__close-button cross-button" type="submit">
@@ -383,7 +383,7 @@
                     <a href="/" class="mobile-overlay__link">Отзывы</a>
                 </li>
                 <li class="mobile-overlay__item">
-                    <a href="/" class="mobile-overlay__link">Документы</a>
+                    <a href="/" class="mobile-overlay__link">Контакты</a>
                 </li>
             </ul>
             <div class="mobile-overlay__contact">
@@ -419,6 +419,7 @@
     <script src="{% static 'js/headerScroll.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/scroll-slider.js' %}"></script>
+    <script src="{% static 'js/counter.js' %}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
