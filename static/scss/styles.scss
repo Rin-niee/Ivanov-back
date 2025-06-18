@@ -1,0 +1,32 @@
+@import
+    'normalize', 
+    'fonts', 
+    'mixins', 
+    'media', 
+    'variables', 
+    'utils', 
+    'globals';
+
+@import 
+    'blocks/button',
+    'blocks/arrow',
+    'blocks/popular-cars',
+    'blocks/hero-header',
+    'blocks/custom-select',
+    'blocks/contacts',
+    'blocks/hero',
+    'blocks/modal-final',
+    'blocks/modal',
+    'blocks/reviews',
+    'blocks/icon',
+    'blocks/schema',
+    'blocks/card-slider',
+    'blocks/burger-button',
+    'blocks/header',
+    'blocks/card',
+    'blocks/about-us',
+    'blocks/logo',
+    'blocks/cross-button',
+    'blocks/footer',
+    'blocks/error',
+    'blocks/modal-overlay';

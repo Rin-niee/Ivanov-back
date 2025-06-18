@@ -1,0 +1,109 @@
+.hero-header{
+    padding: 0;
+    padding-top: 20px;
+    background-color: var(--color-light);
+
+    @include mobile{
+        padding-top: 0px;
+    }
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 40px;
+        padding: 0;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--color-border);
+
+         @include desktop{
+            padding-top: 16px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+
+        @include tablet{
+            padding-top: 16px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        @include mobile{
+            padding-top: 16px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-bottom: 0px;
+            border-bottom: none;
+            column-gap: 0px;
+        }
+    }
+
+    &__menu{
+        margin-right: auto;
+        font-size: 16px;
+
+        &-list{
+            display: flex;
+            align-items: center;
+            column-gap: 24px;
+
+            @include desktop{
+                padding-left: 16px; 
+            }
+
+            @include tablet{
+                padding-left: 16px; 
+            }
+        }
+
+        &-link{
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            height: 48px;
+            cursor: pointer;
+
+            @include hover{
+                color: var(--color-accent);
+            }
+        }
+    }
+
+    &__contact{
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+
+        &-social{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+    }
+
+    &__button{
+        height: 40px;
+    }
+
+    &__left{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        gap: 52px;
+
+        width: 332px;
+        height: 40px;
+
+        @include mobile{
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+}
+
+.header.hide {
+  transform: translateY(-100%);
+}
