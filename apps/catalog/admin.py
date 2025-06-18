@@ -26,3 +26,15 @@ class ColorsModelAdmin(admin.ModelAdmin):
 @admin.register(CarsJapan)
 class CarsJapanAdmin(admin.ModelAdmin):
     pass
+
+@admin.register(cities)
+class CityAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(car_types)
+class CarTypeAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(car_delivery_prices)
+class CarDeliveryPriceAdmin(admin.ModelAdmin):
+    pass

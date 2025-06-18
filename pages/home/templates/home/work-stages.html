@@ -176,26 +176,32 @@
 
                         {% for city in city__list %}
                         <li><button type="button" data-name='region' data-value="{{city.grouper}}"
-                                class="dropdown-item dropdown-item--cars">{{city.grouper}}</button></li>
+                                class="dropdown-item dropdown-item--region">{{city.grouper}}</button></li>
                         {% endfor %}
                     </ul>
+                    <!-- <div class="delivery--city"></div> -->
                     <p class="input-label">Тип кузова</p>
                     <button
                         class="position-relative delivery__form-select-btn dropdown-toggle form-control d-flex justify-content-between align-items-center"
-                        type="button" data-bs-toggle="dropdown" aria-expanded="false" data-price="{{car.price}}">
+                        type="button" data-bs-toggle="dropdown" aria-expanded="false" data-price="{{ car.price }}">
                         <span class="delivery__btn-text gray">Выберите тип кузова</span>
                     </button>
-                    <ul class="dropdown-menu delivery__form-select-menu delivery__form-select-menu--region">
-                        {% regroup delivery by city as city__list %}
 
-                        {% for city in city__list %}
-                        <li><button type="button" data-name='region' data-value="{{city.grouper}}"
-                                class="dropdown-item dropdown-item--cars">{{city.grouper}}</button></li>
+                    <ul class="dropdown-menu delivery__form-select-menu delivery__form-select-menu--body">
+                        {% for body in body_types %}
+                            <li>
+                                <button type="button"
+                                        data-name="car"
+                                        data-value="{{ body }}"
+                                        class="dropdown-item dropdown-item--cars">
+                                    {{ body }}
+                                </button>
+                            </li>
                         {% endfor %}
                     </ul>
                 </div>
                 <div class="delivery-bottom">
-                    <div class="delivery-bottom-btns  d-flex justify-content-between align-items-end">
+                    <div class="delivery-bottom-btns d-flex justify-content-between align-items-end">
                         <div class="flex-shrink-0">
                             <p class="input-label">Примерная стоимость:</p>
                             <div class="delivery-price">от <span class="counter" data-target="15000">0</span> ₽</div>
@@ -203,7 +209,7 @@
                         <button class="btn blue-btn me-3 modal-open" data-bs-toggle="modal" data-bs-target="#modalFeedback">Оставить заявку</button>
                     </div>
                     <div class="delivery-desc">
-                        Cроки и стоимость указаны для доставки из Владивостока до Вашего города. Время ожидания к отправке из Владивостока: от 1 до 20 дней
+                        Сроки и стоимость указаны для доставки из Владивостока до Вашего города. Время ожидания к отправке из Владивостока: от 1 до 20 дней
                     </div>
                 </div>
                 <img src="{%static 'img/auto_car_card.png'%}" alt="" class="delivery-car">
@@ -211,5 +217,6 @@
 
         </div>
     </div>
-
+<script>window.dataDelivery = {{ delivery_json|safe }};</script>
+<script src="{% static 'js/delivery.js' %}"></script>
 </section>
