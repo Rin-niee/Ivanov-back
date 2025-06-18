@@ -3384,7 +3384,7 @@ a {
   align-items: flex-start;
   gap: 12px;
   width: 568px;
-  height: 174px;
+  height: auto;
 }
 @media (max-width: 1124px) {
   .schema__form-input {
@@ -4153,7 +4153,9 @@ a {
   z-index: 10;
   opacity: 0;
   height: 26px;
-  width: 77px;
+  width: auto;
+  padding-left: 7px;
+  padding-right: 7px;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   pointer-events: none;

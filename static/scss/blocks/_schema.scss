@@ -540,7 +540,7 @@
       align-items: flex-start;
       gap: 12px;
       width: 568px;
-      height: 174px;
+      height: auto;
 
       @include tablet{
         gap: 10px;
