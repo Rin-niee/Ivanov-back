@@ -115,3 +115,31 @@ class CarsJapan(AbstractCars):
         verbose_name = "Автомобили"
         verbose_name_plural = "Автомобили Япония"
 
+
+class cities(models.Model): 
+    city_name = models.CharField(verbose_name="Название города", max_length=255)
+    distance_from_vladivostok = models.IntegerField(verbose_name="Расстояние от Владивостока, км")
+    delivery_time_days  = models.IntegerField(verbose_name="Время в пути, ДО, в сутках")
+
+class car_types(models.Model):
+    BODY_TYPE_CHOICES = [
+        ('sedan', 'Седан'),
+        ('crossover', 'Кроссовер'),
+        ('jeep', 'Джип'),
+        ('minibus', 'Микроавтобус'),
+        ('truck', 'Грузовик'),
+    ]
+
+    car_types_name  =  models.CharField(max_length=100)
+    body_type = models.CharField(
+        max_length=20,
+        choices=BODY_TYPE_CHOICES,
+        default='sedan'
+    )
+
+class car_delivery_prices (models.Model):
+    city_id  = models.ForeignKey(cities, verbose_name="Город", on_delete=models.SET_NULL, null=True)
+    car_type_id = models.ForeignKey(car_types, verbose_name="Город", on_delete=models.SET_NULL, null=True)
+    price = models.IntegerField(verbose_name="Цена")
+
+
