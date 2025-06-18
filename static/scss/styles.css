@@ -2895,6 +2895,9 @@ a {
     height: 72px;
   }
 }
+.schema__steps {
+  margin-bottom: 100px;
+}
 .schema__title {
   width: 338px;
   height: 48px;
@@ -2983,9 +2986,6 @@ a {
     margin-right: 0px !important;
     margin-bottom: 12px !important;
   }
-}
-.schema__steps {
-  margin-bottom: 100px;
 }
 .schema__step {
   display: flex;

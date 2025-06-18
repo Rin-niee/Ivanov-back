@@ -1,0 +1,31 @@
+body {
+    @include fluid-text(18,16);
+    
+    font-family: var(--font-family-small-text);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.28;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    margin-top: 0px;
+    overflow-x: hidden;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+h1,
+h3,
+p{
+    margin-top: 0px;
+    margin-bottom: 0px;   
+} 
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

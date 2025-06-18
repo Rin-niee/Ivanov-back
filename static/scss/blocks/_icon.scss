@@ -1,0 +1,21 @@
+.icon{
+    &__wp{
+        width: 28px;
+        height: 28px;
+        color: var(--color-type-green);
+        margin-top: 5px;
+        @include hover{
+            color: var(--color-type-green-alt);
+        }
+    }
+
+    &__tg{
+        width: 28px;
+        height: 28px;
+        margin-top: 5px;
+        color: var(--color-type-blue);
+        @include hover{
+            color: var(--color-type-blue-alt);
+        }
+    }
+}

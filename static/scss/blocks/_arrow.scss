@@ -1,0 +1,31 @@
+.arrow {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+
+  &-left,
+  &-right {
+    width: 36px;
+    height: 28px;
+    background-color: var(--color-light);
+    border-radius: 6px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+
+    &:not(.is-disabled):hover {
+      background-color: var(--color-accent);
+
+      .arrow__svg path {
+        stroke: var(--color-light);
+      }
+    }
+  }
+
+  &__svg{
+    color: var(--color-accent);
+  }
+}
