@@ -135,8 +135,9 @@
                         <p class="contacts__form-description-mobile">Оставьте свою заявку и наш менеджер свяжется с вами для уточнения деталей.</p>
                     </div>
                     <div class="contacts__form-input">
-                        <form action="" class="contacts__login contactForm" >
+                        <form action="" class="contacts__login contactForm" id="contact-feedback-form">
                             <div class="contacts__fields">
+                                {% csrf_token %}
                                 <div class="contacts__field">
                                     <label class="contacts__label" for="name">Ваше имя</label>
                                     <input class="contacts__field-input"
@@ -146,17 +147,19 @@
                                     placeholder="Введите имя"
                                     required
                                     />
+                                    <!-- {{feedback.name}} -->
                                 </div>
                                 <div class="contacts__field">
-                                    <label class="contacts__label" for="phone">Ваш номер</label>
+                                    <label class="contacts__label" for="number">Ваш номер</label>
                                     <input class="contacts__field-input"
                                     type="tel"
-                                    id="phone"
-                                    name="phone"
+                                    id="number"
+                                    name="number"
                                     placeholder="+7 (___) ___-__-__"
                                     pattern="^\+7\s?\(?\d{3}\)?\s?\d{3}-?\d{2}-?\d{2}$"
                                     required
                                     />
+                                    <!-- {{feedback.number}} -->
                                 </div>
                             </div>
                             <div class="contacts__field-textarea">
@@ -166,6 +169,7 @@
                                 name="message"
                                 placeholder="Введите текст сообщения, укажите страну, марку и год машины."
                                 ></textarea>
+                                <!-- {{feedback.message}} -->
                             </div>
                             <div class="contacts__button">
                                 <button type="submit" class="contacts__button-button button">Оставить заявку</button>
@@ -208,8 +212,9 @@
                 <p class=" modal__description-mobile">Оставьте свою заявку и наш менеджер свяжется с вами для уточнения деталей.</p>
             </div>
             <div class="contacts__form-input modal__form-input">
-                <form action="" class="contacts__login contactForm modal__login">
+                <form action="" class="contacts__login contactForm modal__login" id="feedback-modal">
                     <div class="contacts__fields modal__fields">
+                        {% csrf_token %}
                         <div class="contacts__field modal__field">
                             <label class="contacts__label" for="name">Ваше имя</label>
                             <input class="contacts__field-input modal__field-input"
@@ -219,17 +224,21 @@
                             placeholder="Введите имя"
                             required
                             />
+
+                            <!-- <p class="contacts__field-input modal__field-input">{{feedback.name}}</p> -->
+                            
                         </div>
                         <div class="contacts__field modal__field">
-                            <label class="contacts__label" for="phone">Ваш номер</label>
+                            <label class="contacts__label" for="number">Ваш номер</label>
                             <input class="contacts__field-input modal__field-input"
                             type="tel"
-                            id="phone"
-                            name="phone"
+                            id="number"
+                            name="number"
                             placeholder="+7 (___) ___-__-__"
                             pattern="^\+7\s?\(?\d{3}\)?\s?\d{3}-?\d{2}-?\d{2}$"
                             required
                             />
+                            
                         </div>
                     </div>
                     <div class="contacts__field-textarea modal__field-textarea ">
@@ -239,6 +248,7 @@
                         name="message"
                         placeholder="Введите текст сообщения, укажите страну, марку и год машины."
                         ></textarea>
+
                     </div>
                     <div class="contacts__button modal__button">
                         <div class="contacts__button-submit modal__button-submit">
