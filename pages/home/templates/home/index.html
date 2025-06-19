@@ -143,7 +143,9 @@
                             <ul class="splide__list card-slider__list">
                                 {%for car in cars_japan%}
                                 <li class="splide__slide card-slider__slide" data-aos="fade-down" data-aos-delay="100">
+
                                     <div class="card">
+                                        <a href="/japan/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}" class="card_1 position-relative d-block">
                                         <div class="card__active">
                                             <div class="card__image">
                                                 <div class="card__image-metric">
@@ -196,7 +198,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>  
+                                    </div>
+                                    </a> 
                                 </li>
                                 {%endfor%}
                                 {%for car in cars_japan%}
@@ -479,6 +482,7 @@
                                 {%for car in cars_china%}
                                 <li class="splide__slide card-slider__slide" data-aos="fade-down" data-aos-delay="100">
                                     <div class="card">
+                                        <a href="/japan/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}" class="card_1 position-relative d-block">
                                         <div class="card__active">
                                             <div class="card__image">
                                                 <div class="card__image-metric">
@@ -530,7 +534,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div></a>
                                     </div>  
                                 </li>
                                 {%endfor%}
@@ -814,6 +818,7 @@
                                 {%for car in cars_korea%}
                                 <li class="splide__slide card-slider__slide" data-aos="fade-down" data-aos-delay="100">
                                     <div class="card">
+                                        <a href="/japan/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}" class="card_1 position-relative d-block">
                                         <div class="card__active">
                                             <div class="card__image">
                                                 <div class="card__image-metric">
@@ -865,7 +870,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div></a>
                                     </div>  
                                 </li>
                                 {%endfor%}
