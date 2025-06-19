@@ -9,6 +9,10 @@ from pages.home.forms import FeedbackForm
 from apps.feedback.models import FeedBack
 from apps.content.models import PromoText
 from apps.catalog.models import *
+from django.shortcuts import render
+
+def custom_404(request, exception):
+    return render(request, '404error.html', status=404)
 
 class HomeView(TemplateView):
     """View для отображения главной страницы"""
