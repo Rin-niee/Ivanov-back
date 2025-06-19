@@ -1,9 +1,10 @@
+import json
 from typing import Any
 
 
 from django.shortcuts import render
 from django.views.generic import TemplateView, DetailView
-from apps.catalog.models import CarsJapan
+from apps.catalog.models import *
 
 class AbstractCar(DetailView):
     """View для отображения карточки авто"""
@@ -18,7 +19,17 @@ class AbstractCar(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        delivery_list = []
+        prices = car_delivery_prices.objects.select_related("city_id", "car_type_id")
 
+        for price_obj in prices:
+            delivery_list.append({
+                "city": price_obj.city_id.city_name,
+                "body_type": price_obj.car_type_id.car_types_name,
+                "price": price_obj.price,
+                "distance": price_obj.city_id.distance_from_vladivostok,
+                "duration": price_obj.city_id.delivery_time_days
+            })
        
         context["title"] = ''
         context["country"] = self.country
@@ -29,6 +40,13 @@ class AbstractCar(DetailView):
 
         context["engine_volume"] = int(context["car"].engine_volume) / 1000
         context["description"] = ''
+        context["cities"] = sorted(set(item["city"] for item in delivery_list))
+        context["delivery"] = delivery_list
+        # Типы кузовов (уникальные)
+        body_types = sorted(set(item["body_type"] for item in delivery_list))
+        context["body_types"] = body_types
+        # JSON-версия для фронта
+        context["delivery_json"] = json.dumps(delivery_list, ensure_ascii=False)
 
         return context
     
