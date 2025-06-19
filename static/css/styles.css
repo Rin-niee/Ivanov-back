@@ -1392,6 +1392,11 @@ a {
   line-height: 23px;
   color: var(--color-dark);
 }
+@media (max-width: 1124px) {
+  .contacts__field-input {
+    width: 270px;
+  }
+}
 @media (max-width: 629px) {
   .contacts__field-input {
     padding: 12px 16px;
@@ -1400,11 +1405,7 @@ a {
     border-radius: 10px;
   }
 }
-@media (max-width: 1124px) {
-  .contacts__field-input {
-    width: 270px;
-  }
-}
+
 .contacts__field-textarea {
   display: flex;
   flex-direction: column;
@@ -1424,11 +1425,6 @@ a {
   }
 }
 
-@media (max-width: 629px) {
-  .contacts__field-textarea {
-    width: 553px;
-  }
-}
 .contacts__textarea {
   display: flex;
   flex-direction: row;
@@ -1447,6 +1443,11 @@ a {
   line-height: 23px;
   color: var(--color-dark);
 }
+@media (max-width: 1124px) {
+  .contacts__textarea {
+    width: 553px;
+  }
+}
 @media (max-width: 629px) {
   .contacts__textarea {
     padding: 12px 16px;
@@ -1455,11 +1456,7 @@ a {
     border-radius: 10px;
   }
 }
-@media (max-width: 1124px) {
-  .contacts__textarea {
-    width: 553px;
-  }
-}
+
 .contacts__button {
   display: flex;
   flex-direction: column;
@@ -1467,6 +1464,12 @@ a {
   gap: 10px;
   width: 616px;
   height: 85px;
+}
+@media (max-width: 1124px) {
+  .contacts__button {
+    align-items: center;
+    width: auto;
+  }
 }
 @media (max-width: 629px) {
   .contacts__button {
@@ -1479,16 +1482,16 @@ a {
   }
 }
 
-@media (max-width: 1124px) {
-  .contacts__button {
-    align-items: center;
-    width: auto;
-  }
-}
+
 .contacts__button-button {
   width: 616px;
   height: 58px;
   border-radius: var(--border-radius-medium);
+}
+@media (max-width: 1124px) {
+  .contacts__button-button {
+    width: 550px;
+  }
 }
 @media (max-width: 629px) {
   .contacts__button-button {
@@ -1503,11 +1506,7 @@ a {
     border-radius: 12px;
   }
 }
-@media (max-width: 1124px) {
-  .contacts__button-button {
-    width: 550px;
-  }
-}
+
 .contacts__icon {
   display: none;
 }
