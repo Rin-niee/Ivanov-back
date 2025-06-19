@@ -1,6 +1,5 @@
 #work-stages {
     background-color: rgba(233, 233, 240, 1);
-    padding-top: 80px;
 }
 
 .work-stages-header-left p {
@@ -68,8 +67,6 @@
 @media (max-width: 629px) {
   .delivery-block {
         padding: 20px;
-        margin-left: 16px;
-        margin-right: 16px;
     }
 }
 

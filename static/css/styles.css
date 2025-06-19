@@ -436,7 +436,7 @@ a {
 }
 @media (max-width: 1124px) {
   .popular-cars__title-china {
-    width: 433px;
+    width: 435px;
     height: 40px;
     font-weight: 700;
     font-size: 28px;
@@ -877,10 +877,17 @@ a {
   .contacts__inner {
     gap: 20px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
     padding: 40px 16px 40px 16px;
+    justify-content: flex-start !important;
+  }
+}
+
+@media (max-width: 1401px) {
+  .contacts__inner {
+    height: 1200px;
+    justify-content: center;
   }
 }
 .contacts__content {
@@ -893,7 +900,7 @@ a {
 }
 @media (max-width: 629px) {
   .contacts__content {
-    gap: 647px;
+    gap: 52px;
     width: 343px;
     height: auto;
   }
@@ -1048,7 +1055,7 @@ a {
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  width: 592px;
+  width: 100%;
   height: 48px;
 }
 .contacts__info-footer {
@@ -1085,6 +1092,7 @@ a {
     height: 52px;
   }
 }
+
 .contacts__addres-city {
   width: 397px;
   height: 24px;
@@ -1195,14 +1203,22 @@ a {
 @media (max-width: 629px) {
   .contacts__form {
     left: 0px;
-    top: 332px;
+    top: 550px !important;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px 16px;
     gap: 28px;
     width: 110%;
-    height: 583px;
+    height: 600px;
+  }
+}
+@media (max-width: 1401px) {
+  .contacts__form {
+    left: 0px;
+    top: 650px;
+    bottom: 0px;
+    margin: 0 auto;
   }
 }
 .contacts__form-title {
@@ -1526,6 +1542,7 @@ a {
     margin: 0;
   }
 }
+
 .hero__body {
   position: relative;
   display: flex;
@@ -1546,6 +1563,14 @@ a {
   .hero__body {
     gap: 0;
     height: auto;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+@media (max-width: 629px) {
+  .hero__main {
+    width: 100%;
   }
 }
 .hero__text {
@@ -2840,6 +2865,18 @@ a {
 .schema {
   background-color: var(--color-grey-addition);
   overflow: hidden !important;
+  padding-top: 80px;
+}
+
+@media (max-width: 1401px) {
+  .schema {
+    padding: 40px 16px 0px 16px;
+  }
+}
+@media (max-width: 629px) {
+  .schema {
+    padding: 20px 16px 0px 16px;
+  }
 }
 .schema__inner {
   padding: 0;
@@ -2968,19 +3005,7 @@ a {
   background: var(--color-light);
   border-radius: var(--border-radius);
 }
-@media (max-width: 1124px) {
-  .schema__slide {
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 20px;
-    width: 50% !important;
-    height: auto !important;
-    margin-right: 0px !important;
-    margin-bottom: 12px !important;
-  }
-}
+
 @media (max-width: 629px) {
   .schema__slide {
     flex-direction: column;
@@ -3014,11 +3039,7 @@ a {
   background: var(--color-grey-addition);
   border-radius: 8px;
 }
-@media (max-width: 1124px) {
-  .schema__step {
-    display: none;
-  }
-}
+
 @media (max-width: 629px) {
   .schema__step {
     display: none;
@@ -3074,19 +3095,7 @@ a {
   width: 431px;
   height: 236px;
 }
-@media (max-width: 1124px) {
-  .schema__body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-    gap: 20px;
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-  }
-}
+
 @media (max-width: 629px) {
   .schema__body {
     display: flex;
@@ -3411,7 +3420,7 @@ a {
 @media (max-width: 629px) {
   .schema__form-input {
     gap: 10px;
-    width: 303px;
+    width: auto;
     height: auto;
   }
 }
@@ -3574,26 +3583,23 @@ a {
   width: 1377px;
   height: 547px;
   bottom: 0px;
-  right: -705px;
+  right: -1440px;
 }
 @media (max-width: 1401px) {
   .schema__image-car {
     height: auto;
     width: 1300px;
-    left: -360px;
     right: 0px;
   }
 }
 @media (max-width: 1124px) {
   .schema__image-car {
-    height: 272px;
     width: auto;
-    left: -180px;
+    left: 650px;
   }
 }
 @media (max-width: 629px) {
   .schema__image-car {
-    height: 272px;
     width: auto;
     left: -180px;
     top: -270px !important;
@@ -3602,12 +3608,7 @@ a {
 .schema__track {
   width: 150%;
 }
-@media (max-width: 1124px) {
-  .schema__track {
-    width: 100%;
-    flex-direction: column !important;
-  }
-}
+
 @media (max-width: 629px) {
   .schema__track {
     width: 100%;
@@ -3617,13 +3618,7 @@ a {
 .schema__list {
   width: 150%;
 }
-@media (max-width: 1124px) {
-  .schema__list {
-    width: 100%;
-    align-items: center;
-    flex-direction: column !important;
-  }
-}
+
 @media (max-width: 629px) {
   .schema__list {
     width: 100%;
@@ -3666,19 +3661,20 @@ a {
   z-index: 10;
   top: 40px;
   bottom: 0px;
-  right: 0px;
+  right: -1440px;
 }
 @media (max-width: 1124px) {
   .schema__image-car {
-    width: 900px;
+    width: 1500px;
     top: 0px;
-    left: 0;
+    left: 750px;
     bottom: 330px;
   }
 }
 @media (max-width: 629px) {
   .schema__image-car {
     width: 580px;
+    left: 0px;
     top: -270px !important;
   }
 }
@@ -5491,6 +5487,25 @@ a {
   font-family: var(--font-family-base);
   font-weight: 400;
 }
+
+.row{
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-bottom: 80px;
+}
+
+@media (max-width: 629px) {
+  .row{
+    margin-bottom: 0px;
+  }
+}
+@media (max-width: 629px) {
+  .car__title{
+    position: relative;
+    bottom: 320px;
+  }
+}
+
 .mobile-overlay__arrow-button {
   margin-right: 16px;
 }/*# sourceMappingURL=styles.css.map */

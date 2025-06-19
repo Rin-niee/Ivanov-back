@@ -541,8 +541,12 @@ a {
 @media (max-width : 716px) {
     .card__main {
         margin-bottom: 25px;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-top: 74px;
     }
 }
+
 
 @media (max-width : 726px) {
     .modal-gallery-info {
