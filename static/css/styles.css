@@ -1294,6 +1294,11 @@ a {
     align-items: center;
   }
 }
+@media (max-width: 1124px) {
+  .contacts__form-input {
+    width: auto;
+  }
+}
 .contacts__login {
   display: flex;
   flex-direction: column;
@@ -1305,6 +1310,16 @@ a {
   .contacts__login {
     align-items: center;
     width: 327px;
+  }
+}
+@media (max-width: 1124px) {
+  .contacts__login {
+    margin-left: 70px;
+  }
+}
+@media (max-width: 629px) {
+  .contacts__login {
+    margin-left: 0px;
   }
 }
 .contacts__field-input:invalid, .contacts__textarea:invalid, .contacts__field-input:focus, .contacts__textarea:focus {
@@ -1334,7 +1349,7 @@ a {
   flex-direction: row;
   align-items: flex-start;
   gap: 16px;
-  width: 616px;
+  width: auto;
   height: 81px;
 }
 @media (max-width: 629px) {
@@ -1352,6 +1367,13 @@ a {
   gap: 10px;
   width: 300px;
   height: 81px;
+}
+
+@media (max-width: 1124px) {
+  .contacts__field {
+    gap: 10px;
+    width: 270px;
+  }
 }
 .contacts__field-input {
   display: flex;
@@ -1378,6 +1400,11 @@ a {
     border-radius: 10px;
   }
 }
+@media (max-width: 1124px) {
+  .contacts__field-input {
+    width: 270px;
+  }
+}
 .contacts__field-textarea {
   display: flex;
   flex-direction: column;
@@ -1394,6 +1421,12 @@ a {
     gap: 6px;
     width: 327px;
     height: 184px;
+  }
+}
+
+@media (max-width: 629px) {
+  .contacts__field-textarea {
+    width: 553px;
   }
 }
 .contacts__textarea {
@@ -1422,6 +1455,11 @@ a {
     border-radius: 10px;
   }
 }
+@media (max-width: 1124px) {
+  .contacts__textarea {
+    width: 553px;
+  }
+}
 .contacts__button {
   display: flex;
   flex-direction: column;
@@ -1440,6 +1478,13 @@ a {
     height: 86px;
   }
 }
+
+@media (max-width: 1124px) {
+  .contacts__button {
+    align-items: center;
+    width: auto;
+  }
+}
 .contacts__button-button {
   width: 616px;
   height: 58px;
@@ -1456,6 +1501,11 @@ a {
     width: 243px;
     height: 46px;
     border-radius: 12px;
+  }
+}
+@media (max-width: 1124px) {
+  .contacts__button-button {
+    width: 550px;
   }
 }
 .contacts__icon {
@@ -1490,6 +1540,13 @@ a {
     color: #797983;
   }
 }
+
+@media (max-width: 1124px) {
+  .contacts__politic {
+    width: auto;
+  }
+}
+
 
 .contacts__field-input:focus,
 .contacts__textarea:focus {
@@ -2079,6 +2136,17 @@ a {
   background: var(--color-grey-addition);
   border-radius: 32px;
 }
+@media (max-width: 1124px) {
+  .modal-final__content {
+    padding: 20px 16px;
+    gap: 8px;
+    width: 500px;
+    height: 215px;
+    left: calc(40% - 171.5px);
+    top: calc(50% - 107.5px + 0.5px);
+    border-radius: 16px;
+  }
+}
 @media (max-width: 629px) {
   .modal-final__content {
     padding: 20px 16px;
@@ -2101,6 +2169,16 @@ a {
   order: 0;
   flex-grow: 0;
   z-index: 0;
+}
+
+@media (max-width: 1124px) {
+  .modal-final__icon {
+    width: 250px;
+    height: 250px;
+    left: 270px;
+    top: 80px;
+    bottom: 0px;
+  }
 }
 @media (max-width: 629px) {
   .modal-final__icon {
@@ -2133,6 +2211,11 @@ a {
     padding: 0px;
   }
 }
+@media (max-width: 1124px) {
+  .modal-final__button {
+    width: 200px;
+  }
+}
 .modal-final__title {
   width: 489px;
   height: 48px;
@@ -2144,6 +2227,15 @@ a {
   text-transform: uppercase;
   color: var(--color-dark);
 }
+@media (max-width: 1124px) {
+  .modal-final__title {
+    width: auto;
+    height: 25px;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 25px;
+  }
+}
 @media (max-width: 629px) {
   .modal-final__title {
     width: 311px;
@@ -2153,6 +2245,7 @@ a {
     line-height: 25px;
   }
 }
+
 .modal-final__text {
   width: 448px;
   height: 96px;
@@ -2163,6 +2256,16 @@ a {
   line-height: 120%;
   color: var(--color-dark-description);
   margin-bottom: 20px;
+}
+@media (max-width: 1124px) {
+  .modal-final__text {
+    width: 311px;
+    height: 72px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 12px;
+  }
 }
 @media (max-width: 629px) {
   .modal-final__text {
@@ -2176,13 +2279,20 @@ a {
 }
 .modal-final__close {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 16px !important;
+  right: 16px !important;
   font-size: 24px;
   background: none;
   border: none;
   cursor: pointer;
   color: var(--color-grey-close);
+}
+@media (max-width: 1124px) {
+  .modal-final__close {
+    left:450px !important;
+    top:0px !important;
+    margin-top: 0px !important;
+  }
 }
 @media (max-width: 629px) {
   .modal-final__close {
@@ -2190,6 +2300,7 @@ a {
     margin-right: 0px !important;
     margin-bottom: 20px;
     margin-left: 10px;
+    left:300px !important;
   }
 }
 @media (max-width: 629px) {
@@ -2241,6 +2352,15 @@ a {
     border-radius: 16px;
   }
 }
+
+@media (max-width: 1124px) {
+  .modal__content {
+    padding: 0px;
+    width: 550px;
+    left: calc(68% - 354px) ;
+    
+  }
+}
 .modal__close {
   position: absolute;
   top: 8px;
@@ -2257,6 +2377,21 @@ a {
   color: var(--color-grey-close);
   font-size: 32px;
 }
+
+@media (max-width: 1124px) {
+  .modal__close {
+    right: 0px;
+    left: 570px;
+  }
+}
+@media (max-width: 629px) {
+  .modal__close {
+    left:300px;
+    margin-top: 0px;
+    top:0px;
+  }
+}
+
 .modal__form {
   display: flex;
   flex-direction: column;
@@ -2271,6 +2406,15 @@ a {
   top: calc(50% - 320px);
   background: var(--color-grey-addition);
   border-radius: 32px;
+}
+@media (max-width: 1124px) {
+  .modal__form {
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    justify-content: center;
+    left: calc(51% - 354px);
+  }
 }
 @media (max-width: 629px) {
   .modal__form {
@@ -2289,6 +2433,7 @@ a {
     border-radius: 16px;
   }
 }
+
 .modal__form-text {
   display: flex;
   flex-direction: column;
@@ -2309,9 +2454,16 @@ a {
     height: 69px;
   }
 }
+@media (max-width: 1124px) {
+  .modal__form-text {
+    align-items: center;
+    height: 69px;
+  }
+}
 @media (max-width: 629px) {
   .modal__form-input {
     height: auto;
+    justify-content: center;
   }
 }
 .modal__description {
@@ -2326,6 +2478,11 @@ a {
   color: var(--color-dark-description);
 }
 @media (max-width: 629px) {
+  .modal__description {
+    display: none;
+  }
+}
+@media (max-width: 1124px) {
   .modal__description {
     display: none;
   }
@@ -2436,6 +2593,11 @@ a {
     line-height: 25px;
     text-align: center;
     text-transform: uppercase;
+  }
+}
+@media (max-width: 1124px) {
+  .modal__title {
+    width: auto;
   }
 }
 
