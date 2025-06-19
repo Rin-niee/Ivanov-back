@@ -1,7 +1,7 @@
 {% load static %}
 
-<section id="work-stages">
-    <div class="custom-body-container p-0">
+<section id="work-stages" class=" section schema">
+    <div class="custom-body-container p-0 schema__inner container">
         <div class="schema__steps slider-section slider--wide">
             <div class="schema__header">
                 <div class="schema__text">
@@ -160,40 +160,40 @@
             </div>
         </div>
         <div class="delivery-block-wrapper">
-            <div class="delivery-block position-relative">
+            <div class="delivery-block position-relative ">
                 <h2>Стоимость доставки</h2>
                 <p class="header-desc mt-3">Подготовим машину к отгрузке и отправке в ваш город автовозом. Минимальный
                     срок доставки 2-4 недели.</p>
-                <div class="delivery-form">
+                <div class="delivery-form schema__form-input">
                     <p class="input-label">Ваш город</p>
                     <button
-                        class="position-relative delivery__form-select-btn dropdown-toggle form-control d-flex justify-content-between align-items-center"
+                        class="position-relative delivery__form-select-btn dropdown-toggle form-control d-flex justify-content-between align-items-center custom-select__header"
                         type="button" data-bs-toggle="dropdown" aria-expanded="false" data-price="{{car.price}}">
                         <span class="delivery__btn-text">Москва</span>
                     </button>
-                    <ul class="dropdown-menu delivery__form-select-menu delivery__form-select-menu--region">
+                    <ul class="dropdown-menu delivery__form-select-menu delivery__form-select-menu--region custom-select__body">
                         {% regroup delivery by city as city__list %}
 
                         {% for city in city__list %}
-                        <li><button type="button" data-name='region' data-value="{{city.grouper}}"
-                                class="dropdown-item dropdown-item--region">{{city.grouper}}</button></li>
+                        <li class="custom-select__option"><button type="button" data-name='region' data-value="{{city.grouper}}"
+                                class="dropdown-item dropdown-item--region custom-select__option">{{city.grouper}}</button></li>
                         {% endfor %}
                     </ul>
                     <!-- <div class="delivery--city"></div> -->
                     <p class="input-label">Тип кузова</p>
                     <button
-                        class="position-relative delivery__form-select-btn dropdown-toggle form-control d-flex justify-content-between align-items-center"
+                        class="position-relative delivery__form-select-btn dropdown-toggle form-control d-flex justify-content-between align-items-center custom-select__header"
                         type="button" data-bs-toggle="dropdown" aria-expanded="false" data-price="{{ car.price }}">
                         <span class="delivery__btn-text gray">Выберите тип кузова</span>
                     </button>
 
-                    <ul class="dropdown-menu delivery__form-select-menu delivery__form-select-menu--body">
+                    <ul class="dropdown-menu delivery__form-select-menu delivery__form-select-menu--body custom-select__body">
                         {% for body in body_types %}
-                            <li>
+                            <li class="custom-select__option">
                                 <button type="button"
                                         data-name="car"
                                         data-value="{{ body }}"
-                                        class="dropdown-item dropdown-item--cars">
+                                        class="dropdown-item dropdown-item--cars custom-select__option" >
                                     {{ body }}
                                 </button>
                             </li>
@@ -213,7 +213,7 @@
                         Сроки и стоимость указаны для доставки из Владивостока до Вашего города. Время ожидания к отправке из Владивостока: от 1 до 20 дней
                     </div>
                 </div>
-                <img src="{%static 'img/auto_car_card.png'%}" alt="" class="delivery-car">
+                <img src="{%static 'img/auto_car_card.png'%}" alt="" class="delivery-car schema__image-car ">
             </div>
 
         </div>

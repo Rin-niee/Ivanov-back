@@ -219,6 +219,10 @@ svg * {
   --transition-duration: 0.2s;
 }
 
+.section{
+  overflow: hidden;
+}
+
 .container {
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
   margin-inline: auto;
@@ -260,7 +264,8 @@ body {
   color: var(--color-dark);
   background-color: var(--color-light);
   margin-top: 0px;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+
 }
 
 a,
@@ -357,6 +362,7 @@ a {
 .popular-cars {
   padding-top: 100px;
   background-color: var(--color-grey-addition);
+  overflow-x: hidden !important;
 }
 @media (max-width: 1401px) {
   .popular-cars {
@@ -1192,10 +1198,10 @@ a {
     top: 332px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 20px 16px;
     gap: 28px;
-    width: 250%;
+    width: 110%;
     height: 583px;
   }
 }
@@ -1491,6 +1497,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  overflow-x: hidden !important;
 }
 @media (max-width: 1401px) {
   .hero {
@@ -2409,6 +2416,7 @@ a {
 
 .reviews {
   position: relative;
+  overflow: hidden;
 }
 .reviews__inner {
   display: flex;
@@ -2545,10 +2553,11 @@ a {
 .reviews__rating {
   display: flex;
   flex-direction: row;
-  width: 1320px;
+  width: auto;
   height: 28px;
   justify-content: space-between;
   margin-bottom: 24px;
+  gap:712px;
 }
 .reviews__arrow-right, .reviews__arrow-left {
   background: var(--color-grey-addition);
@@ -2830,6 +2839,7 @@ a {
 
 .schema {
   background-color: var(--color-grey-addition);
+  overflow: hidden !important;
 }
 .schema__inner {
   padding: 0;
@@ -2986,6 +2996,11 @@ a {
 }
 .schema__steps {
   margin-bottom: 100px;
+}
+@media (max-width: 629px){
+  .schema__steps {
+    margin-bottom: 300px;
+  }
 }
 .schema__step {
   display: flex;
@@ -3384,7 +3399,7 @@ a {
   align-items: flex-start;
   gap: 12px;
   width: 568px;
-  height: 174px;
+  height: auto;
 }
 @media (max-width: 1124px) {
   .schema__form-input {
@@ -3397,7 +3412,7 @@ a {
   .schema__form-input {
     gap: 10px;
     width: 303px;
-    height: 146px;
+    height: auto;
   }
 }
 .schema__form-price {
@@ -3581,6 +3596,7 @@ a {
     height: 272px;
     width: auto;
     left: -180px;
+    top: -270px !important;
   }
 }
 .schema__track {
@@ -3649,7 +3665,6 @@ a {
   right: 0px;
   z-index: 10;
   top: 40px;
-  left: -623px;
   bottom: 0px;
   right: 0px;
 }
@@ -3664,8 +3679,7 @@ a {
 @media (max-width: 629px) {
   .schema__image-car {
     width: 580px;
-    top: -270px;
-    left: -170px;
+    top: -270px !important;
   }
 }
 
@@ -3839,7 +3853,7 @@ a {
 }
 
 .header {
-  padding-top: 24px;
+  padding-top: 20px;
   position: fixed;
   top: 0;
   left: 0;
@@ -3877,7 +3891,7 @@ a {
   -moz-column-gap: 40px;
        column-gap: 40px;
   padding: 0;
-  padding-bottom: 16px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--color-border);
 }
 @media (max-width: 629px) {
@@ -4153,7 +4167,9 @@ a {
   z-index: 10;
   opacity: 0;
   height: 26px;
-  width: 77px;
+  width: auto;
+  padding-left: 7px;
+  padding-right: 7px;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   pointer-events: none;
@@ -4382,7 +4398,9 @@ a {
     display: none;
   }
 }
-
+.about-us{
+  overflow-x: hidden !important;
+}
 .about-us__inner {
   display: flex;
   flex-direction: column;
@@ -4391,6 +4409,7 @@ a {
   padding-bottom: 100px;
   gap: 52px;
   width: 1320px;
+  
 }
 @media (max-width: 1401px) {
   .about-us__inner {
@@ -4735,10 +4754,10 @@ a {
 }
 @media (max-width: 629px) {
   .about-us__contact {
-    width: 132px;
+    width: 100px;
     height: 76px;
-    top: 194px;
-    left: 0px;
+    top: 200px;
+    left: -16px;
     padding: 16px;
   }
 }
@@ -4859,6 +4878,13 @@ a {
   height: 44px !important;
 }
 @media (max-width: 629px) {
+  .about-us__icon {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+@media (max-width: 629px) {
   .about-us__content {
     width: 375px;
   }
@@ -4870,7 +4896,7 @@ a {
 }
 @media (max-width: 1401px) {
   .about-us__content {
-    width: 500px;
+    width: auto;
   }
 }
 
@@ -5456,6 +5482,7 @@ a {
   line-height: 20px;
   color: #252533;
 }
+
 .mobile-overlay__button {
   width: 328px;
   height: 46px;
