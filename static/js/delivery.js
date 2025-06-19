@@ -28,32 +28,21 @@ function formatNumberWithSpaces(x) {
 
 function handleDeliveryChange() {
     if (!mainRegion || !mainCar) return;
-
     const item = dataDelivery.find(el => el.city === mainRegion && el.body_type === mainCar);
-
     if (item) {
         const deliveryPrice = Number(item.price);
         const deliveryText = document.querySelector('.delivery-price');
-
-        // Удаляем старый counter
         deliveryText.innerHTML = 'от <span class="counter">0</span> ₽';
 
         const newCounter = deliveryText.querySelector('.counter');
         newCounter.setAttribute('data-target', deliveryPrice);
-
-        // ⚠️ Ждём, чтобы DOM отрисовался
         setTimeout(() => {
-            // Новый Odometer
             const od = new Odometer({
                 el: newCounter,
                 value: 0,
                 format: '( ddd)',
             });
-
-            // 👇 Принудительно отрисовываем
             od.render();
-
-            // 👇 И только потом обновляем значение — теперь анимация точно будет
             setTimeout(() => {
                 od.update(deliveryPrice);
             }, 10);
