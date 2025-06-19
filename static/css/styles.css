@@ -2223,10 +2223,10 @@ a {
   gap: 32px;
   isolation: isolate;
   position: absolute;
-  width: 708px;
+  width: 708px ;
   height: 640px;
-  left: calc(50% - 354px);
-  top: calc(50% - 320px);
+  left: calc(50% - 354px) ;
+  top: calc(50% - 320px) ;
   background: var(--color-grey-addition);
   border-radius: 32px;
 }
@@ -2234,10 +2234,10 @@ a {
   .modal__content {
     padding: 0px;
     gap: 28px;
-    width: 343px;
-    height: 583px;
-    left: 16px;
-    top: calc(50% - 291.5px + 0.5px);
+    width: 343px !important;
+    height: 583px !important;
+    left: 16px !important;
+    top: calc(50% - 291.5px + 0.5px) !important;
     border-radius: 16px;
   }
 }
@@ -4393,9 +4393,6 @@ a {
   .card .card__passive-outline {
     display: none;
   }
-}
-.about-us{
-  overflow-x: hidden !important;
 }
 .about-us__inner {
   display: flex;
