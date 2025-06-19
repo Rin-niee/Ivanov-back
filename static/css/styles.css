@@ -219,6 +219,10 @@ svg * {
   --transition-duration: 0.2s;
 }
 
+.section{
+  overflow: hidden;
+}
+
 .container {
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
   margin-inline: auto;
@@ -860,9 +864,6 @@ a {
   border-color: var(--color-accent);
 }
 
-.contacts {
-  overflow: hidden;
-}
 .contacts__inner {
   position: relative;
   display: flex;
@@ -1197,10 +1198,10 @@ a {
     top: 332px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 20px 16px;
     gap: 28px;
-    width: 250%;
+    width: 110%;
     height: 583px;
   }
 }
@@ -3411,7 +3412,7 @@ a {
   .schema__form-input {
     gap: 10px;
     width: 303px;
-    height: 146px;
+    height: auto;
   }
 }
 .schema__form-price {
@@ -3595,6 +3596,7 @@ a {
     height: 272px;
     width: auto;
     left: -180px;
+    top: -270px !important;
   }
 }
 .schema__track {
@@ -3677,7 +3679,7 @@ a {
 @media (max-width: 629px) {
   .schema__image-car {
     width: 580px;
-    top: -270px;
+    top: -270px !important;
   }
 }
 
@@ -4752,10 +4754,10 @@ a {
 }
 @media (max-width: 629px) {
   .about-us__contact {
-    width: 132px;
+    width: 100px;
     height: 76px;
-    top: 194px;
-    left: 0px;
+    top: 200px;
+    left: -16px;
     padding: 16px;
   }
 }
@@ -4875,6 +4877,13 @@ a {
   width: 44px !important;
   height: 44px !important;
 }
+@media (max-width: 629px) {
+  .about-us__icon {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
 @media (max-width: 629px) {
   .about-us__content {
     width: 375px;
@@ -5473,6 +5482,7 @@ a {
   line-height: 20px;
   color: #252533;
 }
+
 .mobile-overlay__button {
   width: 328px;
   height: 46px;

@@ -65,7 +65,13 @@
     border-top-right-radius: 20px;
     max-width: 648px;
 }
-
+@media (max-width: 629px) {
+  .delivery-block {
+        padding: 20px;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
 
 .delivery-block .header-desc,
 .delivery-form {
@@ -80,7 +86,16 @@
     gap: 44px;
     margin-bottom: 24px;
 }
-
+@media (max-width: 629px) {
+  .delivery-bottom-btns {
+        flex-direction: column;
+        margin-right: 0px;
+        gap: 12px;
+        align-items: flex-start !important;
+        margin-top: 20px;
+        margin-bottom: 16px;
+    }
+}
 .delivery-price {
     color: rgba(37, 37, 51, 1);
     font-size: 32px;
