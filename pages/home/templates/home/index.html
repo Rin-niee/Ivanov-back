@@ -142,65 +142,66 @@
                         <div class="splide__track card-slider__track">
                             <ul class="splide__list card-slider__list">
                                 {%for car in cars_japan%}
-                                <li class="splide__slide card-slider__slide" data-aos="fade-down" data-aos-delay="100">
-
-                                    <div class="card">
-                                        <a href="/japan/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}" class="card_1 position-relative d-block">
-                                        <div class="card__active">
-                                            <div class="card__image">
-                                                <div class="card__image-metric">
-                                                    <div class="card__year">
-                                                        <p class="card__image-text">{{car.year}}</p>
+                                    <li class="splide__slide card-slider__slide" data-aos="fade-down" data-aos-delay="100">
+                                        <div class="card">
+                                            <div class="card__active">
+                                                <div class="card__image">
+                                                    <div class="card__image-metric">
+                                                        <div class="card__year">
+                                                            <p class="card__image-text">{{car.year}}</p>
+                                                        </div>
+                                                        {% if car.engine == 'Гибрид' %}
+                                                            <div class="card__type">
+                                                                <img src='{% static "img/images/flash.svg" %}'  alt="" class="card__type-image">
+                                                                <span class="card__tooltip">Гибрид</span>
+                                                            </div>
+                                                        {% else %}
+                                                        <!-- Бензин-->
+                                                        
+                                                            <div class="card__type">
+                                                                <img src='{% static "img/images/electro.svg" %}'  alt="" class="card__type-image">
+                                                                <span class="card__tooltip">Бензин</span>
+                                                            </div>
+                                                        {% endif %}
                                                     </div>
-                                                    {% if car.engine|default:''|lower == "гибрид" %}
-                                                        <div class="card__type">
-                                                            <img src='{% static "img/images/flash.svg" %}'  alt="" class="card__type-image">
-                                                            <span class="card__tooltip">Гибрид</span>
-                                                        </div>
-                                                    {% elif car.engine|default:''|lower == "бензин" %}
-                                                    <!-- Бензин-->
-                                                     
-                                                        <div class="card__type">
-                                                            <img src='{% static "img/images/electro.svg" %}'  alt="" class="card__type-image">
-                                                            <span class="card__tooltip">Бензин</span>
-                                                        </div>
-                                                    {% endif %}
+                                                    <a href="/japan/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}">
+                                                        <img class="card__active-image" src="/static/img/temp/1.jpg" alt="{{car.brand}} {{car.model}} {{car.year}}"/>
+                                                    </a>
                                                 </div>
-                                                <img class="card__active-image" src="/static/img/temp/1.jpg" alt="{{car.brand}} {{car.model}} {{car.year}}"/>
-                                            </div>
-                                            <div class="card__active-info">
-                                                <h2 class="card__active-title">{{car.brand}} {{car.model}}</h2>
-                                                <p class="card__passive-description">{{car.mileage|intcomma }} км · {{car.drive.name}} · {{car.engine.name}}</p>
-                                                <ul class="card__active-characteristics">
-                                                    <li class="card__active-meaning"><strong class="card__active-name">Пробег:</strong> {{car.mileage|intcomma }} км</li>
-                                                    <li class="card__active-meaning"><strong class="card__active-name">Руль:</strong> {{car.rubber| slice:':-5'}}</li>
-                                                    <li class="card__active-meaning"><strong class="card__active-name">Двигатель:</strong> {{car.engine_volume}} c.c.</li>
-                                                    <li class="card__active-meaning"><strong class="card__active-name">Привод:</strong>{{car.drive.name}}</li>
-                                                </ul>
-                                                <div class="card__active-footer">
-                                                    <span class="card__active-price">{{car.finish|intcomma }} ₽</span>
-                                                    <button class="card__passive-outline">Подробнее</button>
-                                                    <div class="card__active-contact">
-                                                        <button class="modal-open card__active-button button">Заказать</button>
-                                                        <div class="header__contact-social  card__contact-social">
-                                                            <a href="{{whatsapp}}" class="header__social-link" target="_blank">
-                                                                <svg class="header__icon icon__wp" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path  d="M19.2002 0C25.234 2.17584e-10 28.2505 0.00050349 30.125 1.875C31.9995 3.7495 32 6.76596 32 12.7998V19.2002C32 25.234 31.9995 28.2505 30.125 30.125C28.2505 31.9995 25.234 32 19.2002 32H12.7998C6.76596 32 3.7495 31.9995 1.875 30.125C0.000503491 28.2505 2.17596e-10 25.234 0 19.2002V12.7998C2.16946e-10 6.76596 0.00050346 3.7495 1.875 1.875C3.7495 0.00050354 6.76596 2.18662e-10 12.7998 0H19.2002ZM16.2676 5.33496C10.7451 5.33496 6.26758 9.81246 6.26758 15.335C6.26763 17.2109 6.79457 18.9598 7.69336 20.46L6.35645 25.335L11.3359 24.0273C12.792 24.8551 14.4731 25.335 16.2676 25.335C21.7898 25.3347 26.2674 20.8572 26.2676 15.335C26.2676 9.81261 21.7899 5.3352 16.2676 5.33496ZM13.3184 10.6768C13.4966 10.6809 13.6903 10.6941 13.876 11.1045C14.0968 11.5928 14.578 12.8182 14.6396 12.9424C14.7012 13.0665 14.7449 13.2127 14.6592 13.375C14.5775 13.5416 14.535 13.6426 14.415 13.79C14.2909 13.9334 14.1545 14.1114 14.042 14.2197C13.9179 14.3439 13.7903 14.4801 13.9336 14.7275C14.077 14.9752 14.5749 15.7865 15.3105 16.4414C16.2563 17.2862 17.0544 17.5458 17.3027 17.6699C17.5509 17.794 17.6946 17.775 17.8379 17.6084C17.9855 17.4458 18.4574 16.8879 18.624 16.6396C18.7865 16.3917 18.9528 16.435 19.1777 16.5166C19.4073 16.5989 20.6239 17.1982 20.8721 17.3223C21.1201 17.4463 21.2832 17.5076 21.3457 17.6084C21.4098 17.7129 21.4098 18.2091 21.2041 18.7871C20.9982 19.3644 19.9877 19.9224 19.5342 19.9619C19.0767 20.0044 18.6495 20.1671 16.5605 19.3447C14.0405 18.3522 12.4513 15.7712 12.3271 15.6045C12.2029 15.4419 11.3174 14.2625 11.3174 13.0459C11.3175 11.8257 11.9573 11.228 12.1816 10.9795C12.41 10.7312 12.6781 10.6699 12.8447 10.6699C13.0071 10.6699 13.1743 10.6693 13.3184 10.6768Z" fill="#2CB742"/>
-                                                                </svg>
-                                                            </a>
-                                                            <a href="{{telegram}}" class="header__social-link" target="_blank">
-                                                                <svg class=" header__icon icon__tg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.87452 1.87452C0 3.74903 0 6.76602 0 12.8V19.2C0 25.234 0 28.251 1.87452 30.1255C3.74903 32 6.76602 32 12.8 32H19.2C25.234 32 28.251 32 30.1255 30.1255C32 28.251 32 25.234 32 19.2V12.8C32 6.76602 32 3.74903 30.1255 1.87452C28.251 0 25.234 0 19.2 0H12.8C6.76602 0 3.74903 0 1.87452 1.87452ZM16.5722 11.8112C15.016 12.4585 11.9057 13.7982 7.24138 15.8304C6.48397 16.1316 6.0872 16.4262 6.05108 16.7143C5.99004 17.2013 6.59981 17.393 7.43016 17.6541C7.54311 17.6896 7.66013 17.7264 7.78011 17.7654C8.59704 18.031 9.69596 18.3416 10.2672 18.354C10.7855 18.3652 11.3638 18.1515 12.0024 17.713C16.3604 14.7713 18.61 13.2843 18.7513 13.2523C18.8509 13.2297 18.989 13.2012 19.0825 13.2844C19.1761 13.3675 19.1669 13.525 19.157 13.5673C19.0966 13.8248 16.703 16.0501 15.4643 17.2017C15.0782 17.5606 14.8043 17.8153 14.7483 17.8734C14.6229 18.0037 14.495 18.127 14.3722 18.2454C13.6132 18.977 13.0441 19.5257 14.4037 20.4217C15.057 20.8522 15.5799 21.2083 16.1015 21.5635C16.6711 21.9514 17.2392 22.3383 17.9743 22.8202C18.1616 22.9429 18.3405 23.0704 18.5147 23.1946C19.1776 23.6672 19.7732 24.0918 20.509 24.0241C20.9365 23.9848 21.3781 23.5827 21.6024 22.3837C22.1325 19.5501 23.1744 13.4105 23.4152 10.8806C23.4362 10.6589 23.4097 10.3752 23.3884 10.2507C23.3671 10.1262 23.3225 9.94873 23.1607 9.81738C22.969 9.66183 22.673 9.62903 22.5407 9.63136C21.9389 9.64196 21.0156 9.96301 16.5722 11.8112Z" fill="#2AABEE"/>
-                                                                </svg>
-                                                            </a>
+                                                <div class="card__active-info">
+                                                    <h2 class="card__active-title">{{car.brand}} {{car.model}}</h2>
+                                                    <p class="card__passive-description">{{car.mileage|intcomma }} км · {{car.drive.name}} · {{car.engine.name}}</p>
+                                                    <ul class="card__active-characteristics">
+                                                        <li class="card__active-meaning"><strong class="card__active-name">Пробег:</strong> {{car.mileage|intcomma }} км</li>
+                                                        <li class="card__active-meaning"><strong class="card__active-name">Руль:</strong> {{car.rubber| slice:':-5'}}</li>
+                                                        <li class="card__active-meaning"><strong class="card__active-name">Двигатель:</strong> {{car.engine_volume}} c.c.</li>
+                                                        <li class="card__active-meaning"><strong class="card__active-name">Привод:</strong>{{car.drive.name}}</li>
+                                                    </ul>
+                                                    <div class="card__active-footer">
+                                                        <span class="card__active-price">{{car.finish|intcomma }} ₽</span>
+                                                        <a href="/japan/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}">
+                                                            <button class="card__passive-outline">Подробнее</button>
+                                                        </a>
+                                                        <div class="card__active-contact">
+                                                            <button class="modal-open card__active-button button">Заказать</button>
+                                                            <div class="header__contact-social  card__contact-social">
+                                                                <a href="{{whatsapp}}" class="header__social-link" target="_blank">
+                                                                    <svg class="header__icon icon__wp" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path  d="M19.2002 0C25.234 2.17584e-10 28.2505 0.00050349 30.125 1.875C31.9995 3.7495 32 6.76596 32 12.7998V19.2002C32 25.234 31.9995 28.2505 30.125 30.125C28.2505 31.9995 25.234 32 19.2002 32H12.7998C6.76596 32 3.7495 31.9995 1.875 30.125C0.000503491 28.2505 2.17596e-10 25.234 0 19.2002V12.7998C2.16946e-10 6.76596 0.00050346 3.7495 1.875 1.875C3.7495 0.00050354 6.76596 2.18662e-10 12.7998 0H19.2002ZM16.2676 5.33496C10.7451 5.33496 6.26758 9.81246 6.26758 15.335C6.26763 17.2109 6.79457 18.9598 7.69336 20.46L6.35645 25.335L11.3359 24.0273C12.792 24.8551 14.4731 25.335 16.2676 25.335C21.7898 25.3347 26.2674 20.8572 26.2676 15.335C26.2676 9.81261 21.7899 5.3352 16.2676 5.33496ZM13.3184 10.6768C13.4966 10.6809 13.6903 10.6941 13.876 11.1045C14.0968 11.5928 14.578 12.8182 14.6396 12.9424C14.7012 13.0665 14.7449 13.2127 14.6592 13.375C14.5775 13.5416 14.535 13.6426 14.415 13.79C14.2909 13.9334 14.1545 14.1114 14.042 14.2197C13.9179 14.3439 13.7903 14.4801 13.9336 14.7275C14.077 14.9752 14.5749 15.7865 15.3105 16.4414C16.2563 17.2862 17.0544 17.5458 17.3027 17.6699C17.5509 17.794 17.6946 17.775 17.8379 17.6084C17.9855 17.4458 18.4574 16.8879 18.624 16.6396C18.7865 16.3917 18.9528 16.435 19.1777 16.5166C19.4073 16.5989 20.6239 17.1982 20.8721 17.3223C21.1201 17.4463 21.2832 17.5076 21.3457 17.6084C21.4098 17.7129 21.4098 18.2091 21.2041 18.7871C20.9982 19.3644 19.9877 19.9224 19.5342 19.9619C19.0767 20.0044 18.6495 20.1671 16.5605 19.3447C14.0405 18.3522 12.4513 15.7712 12.3271 15.6045C12.2029 15.4419 11.3174 14.2625 11.3174 13.0459C11.3175 11.8257 11.9573 11.228 12.1816 10.9795C12.41 10.7312 12.6781 10.6699 12.8447 10.6699C13.0071 10.6699 13.1743 10.6693 13.3184 10.6768Z" fill="#2CB742"/>
+                                                                    </svg>
+                                                                </a>
+                                                                <a href="{{telegram}}" class="header__social-link" target="_blank">
+                                                                    <svg class=" header__icon icon__tg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.87452 1.87452C0 3.74903 0 6.76602 0 12.8V19.2C0 25.234 0 28.251 1.87452 30.1255C3.74903 32 6.76602 32 12.8 32H19.2C25.234 32 28.251 32 30.1255 30.1255C32 28.251 32 25.234 32 19.2V12.8C32 6.76602 32 3.74903 30.1255 1.87452C28.251 0 25.234 0 19.2 0H12.8C6.76602 0 3.74903 0 1.87452 1.87452ZM16.5722 11.8112C15.016 12.4585 11.9057 13.7982 7.24138 15.8304C6.48397 16.1316 6.0872 16.4262 6.05108 16.7143C5.99004 17.2013 6.59981 17.393 7.43016 17.6541C7.54311 17.6896 7.66013 17.7264 7.78011 17.7654C8.59704 18.031 9.69596 18.3416 10.2672 18.354C10.7855 18.3652 11.3638 18.1515 12.0024 17.713C16.3604 14.7713 18.61 13.2843 18.7513 13.2523C18.8509 13.2297 18.989 13.2012 19.0825 13.2844C19.1761 13.3675 19.1669 13.525 19.157 13.5673C19.0966 13.8248 16.703 16.0501 15.4643 17.2017C15.0782 17.5606 14.8043 17.8153 14.7483 17.8734C14.6229 18.0037 14.495 18.127 14.3722 18.2454C13.6132 18.977 13.0441 19.5257 14.4037 20.4217C15.057 20.8522 15.5799 21.2083 16.1015 21.5635C16.6711 21.9514 17.2392 22.3383 17.9743 22.8202C18.1616 22.9429 18.3405 23.0704 18.5147 23.1946C19.1776 23.6672 19.7732 24.0918 20.509 24.0241C20.9365 23.9848 21.3781 23.5827 21.6024 22.3837C22.1325 19.5501 23.1744 13.4105 23.4152 10.8806C23.4362 10.6589 23.4097 10.3752 23.3884 10.2507C23.3671 10.1262 23.3225 9.94873 23.1607 9.81738C22.969 9.66183 22.673 9.62903 22.5407 9.63136C21.9389 9.64196 21.0156 9.96301 16.5722 11.8112Z" fill="#2AABEE"/>
+                                                                    </svg>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    </a> 
-                                </li>
+                                    </li>
                                 {%endfor%}
                                 
                             </ul>
@@ -251,28 +252,35 @@
                                 {%for car in cars_china%}
                                 <li class="splide__slide card-slider__slide" data-aos="fade-down" data-aos-delay="100">
                                     <div class="card">
-                                        <a href="/japan/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}" class="card_1 position-relative d-block">
                                         <div class="card__active">
                                             <div class="card__image">
                                                 <div class="card__image-metric">
                                                     <div class="card__year">
                                                         <p class="card__image-text">{{car.year}}</p>
                                                     </div>
-                                                    {% if car.engine|default:''|lower == "гибрид" %}
+                                                    {% if car.engine == 'Гибрид' %}
                                                         <div class="card__type">
                                                             <img src='{% static "img/images/flash.svg" %}'  alt="" class="card__type-image">
                                                             <span class="card__tooltip">Гибрид</span>
                                                         </div>
-                                                    {% elif car.engine|default:''|lower == "бензин" %}
-                                                    <!-- Бензин-->
+                                                    {% elif car.engine == 'Гибрид' %}
+                                                    <!-- Электроника -->
                                                      
                                                         <div class="card__type">
                                                             <img src='{% static "img/images/electro.svg" %}'  alt="" class="card__type-image">
                                                             <span class="card__tooltip">Бензин</span>
                                                         </div>
+                                                    {% else %}
+                                                        <div class="card__type">
+                                                            <!-- <img src='{% static "img/images/electro.svg" %}'  alt="" class="card__type-image">
+                                                            <span class="card__tooltip">Бензин</span> -->
+                                                        </div>
+
                                                     {% endif %}
                                                 </div>
-                                                <img class="card__active-image" src="/static/img/temp/1.jpg" alt="{{car.brand}} {{car.model}} {{car.year}}"/>
+                                                <a href="/japan/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}">
+                                                    <img class="card__active-image" src="/static/img/temp/1.jpg" alt="{{car.brand}} {{car.model}} {{car.year}}"/>
+                                                </a>
                                             </div>
                                             <div class="card__active-info">
                                                 <h2 class="card__active-title">{{car.brand}} {{car.model}}</h2>
@@ -285,7 +293,9 @@
                                                 </ul>
                                                 <div class="card__active-footer">
                                                     <span class="card__active-price">{{car.finish|intcomma }} ₽</span>
-                                                    <button class="card__passive-outline">Подробнее</button>
+                                                    <a href="/japan/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}">
+                                                        <button class="card__passive-outline">Подробнее</button>
+                                                    </a>
                                                     <div class="card__active-contact">
                                                         <button class="modal-open card__active-button button">Заказать</button>
                                                         <div class="header__contact-social  card__contact-social">
@@ -303,7 +313,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div></a>
+                                        </div>
                                     </div>  
                                 </li>
                                 {%endfor%}
@@ -355,28 +365,35 @@
                                 {%for car in cars_korea%}
                                 <li class="splide__slide card-slider__slide" data-aos="fade-down" data-aos-delay="100">
                                     <div class="card">
-                                        <a href="/japan/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}" class="card_1 position-relative d-block">
                                         <div class="card__active">
                                             <div class="card__image">
                                                 <div class="card__image-metric">
                                                     <div class="card__year">
                                                         <p class="card__image-text">{{car.year}}</p>
                                                     </div>
-                                                    {% if car.engine|default:''|lower == "гибрид" %}
+                                                    {% if car.engine == 'Гибрид' %}
                                                         <div class="card__type">
                                                             <img src='{% static "img/images/flash.svg" %}'  alt="" class="card__type-image">
                                                             <span class="card__tooltip">Гибрид</span>
                                                         </div>
-                                                    {% elif car.engine|default:''|lower == "бензин" %}
-                                                    <!-- Бензин-->
+                                                    {% elif car.engine == 'Гибрид' %}
+                                                    <!-- Электроника -->
                                                      
                                                         <div class="card__type">
                                                             <img src='{% static "img/images/electro.svg" %}'  alt="" class="card__type-image">
                                                             <span class="card__tooltip">Бензин</span>
                                                         </div>
+                                                    {% else %}
+                                                        <div class="card__type">
+                                                            <!-- <img src='{% static "img/images/electro.svg" %}'  alt="" class="card__type-image">
+                                                            <span class="card__tooltip">Бензин</span> -->
+                                                        </div>
+
                                                     {% endif %}
                                                 </div>
-                                                <img class="card__active-image" src="/static/img/temp/1.jpg" alt="{{car.brand}} {{car.model}} {{car.year}}"/>
+                                                <a href="/japan/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}">
+                                                    <img class="card__active-image" src="/static/img/temp/1.jpg" alt="{{car.brand}} {{car.model}} {{car.year}}"/>
+                                                </a>
                                             </div>
                                             <div class="card__active-info">
                                                 <h2 class="card__active-title">{{car.brand}} {{car.model}}</h2>
@@ -389,7 +406,9 @@
                                                 </ul>
                                                 <div class="card__active-footer">
                                                     <span class="card__active-price">{{car.finish|intcomma }} ₽</span>
-                                                    <button class="card__passive-outline">Подробнее</button>
+                                                    <a href="/japan/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}">
+                                                        <button class="card__passive-outline">Подробнее</button>
+                                                    </a>
                                                     <div class="card__active-contact">
                                                         <button class="modal-open card__active-button button">Заказать</button>
                                                         <div class="header__contact-social  card__contact-social">
@@ -407,7 +426,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div></a>
+                                        </div>
                                     </div>  
                                 </li>
                                 {%endfor%}

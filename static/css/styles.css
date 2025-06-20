@@ -3963,7 +3963,16 @@ a {
   color: var(--color-dark);
 }
 .card-slider__slide:not(.is-active) .card__active-footer {
-  display: flex;
+  display: flex ;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 272px;
+  height: 40px;
+}
+.card-slider__slide:not(.is-active) .card__not-active {
+  display: flex ;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
