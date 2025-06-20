@@ -5,13 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <meta name="description" content="{{description}}"> -->
+    <meta name="description" content="{{description}}">
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{title}}">
-    <meta property="og:description" content="{{description}}">
+    <!-- <meta property="og:description" content="{{description}}"> -->
     <meta property="og:locale" content="ru_RU">
 
-    <title>{{ title|default:"Ivanov Drive" }}</title>
+  <title>{{ title|default:"Ivanov Drive" }}</title>
 
 
     <link rel="apple-touch-icon" href="{%static 'img/favicon.svg'%}">
@@ -25,7 +25,7 @@
     
 
     <link rel="stylesheet" href="{% static 'vendor/bootstrap.css' %}" />
-    <script src="{%static 'vendor/bootstrap.bundle.min.js'%}"></script>
+    <script defer src="{%static 'vendor/bootstrap.bundle.min.js'%}"></script>
 
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     <link rel="stylesheet" href="{% static 'css/header-footer.css' %}" />
@@ -415,14 +415,13 @@
             </div>
         </div>
     </dialog>
-    {% block script %}
     <script src="{%static 'vendor/jquery.js'%}"></script>
     <script src="{%static 'vendor/Imask.js'%}"></script>
     <script src="{%static 'js/feedback.js'%}"></script>
     <script src="{%static 'js/base.js'%}"></script>
 
     
-    <!-- <script src="{% static 'js/slider-cars.js' %}"></script> -->
+    <script src="{% static 'js/slider-cars.js' %}"></script>
     <script src="{% static 'js/custom-select.js' %}"></script>
     <script src="{% static 'js/contactForm.js' %}"></script>
     <script src="{% static 'js/modal.js' %}"></script>
@@ -431,16 +430,18 @@
     <script src="{% static 'js/scroll-slider.js' %}"></script>
     <script src="{% static 'js/counter.js' %}"></script>
 
-    <script src="{% static 'js/splide.min.js' %}"></script>
-    <script src="{% static 'js/aos.js' %}"></script>
-<!-- <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script> -->
+ <script src="{% static 'js/splide.min.js' %}"></script>
+<script src="{% static 'js/aos.js' %}"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>-->
+<!-- <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>  -->
     <script>
         AOS.init({
             once: true, 
             duration: 800, 
         });
     </script>
-    
+    {% block script %}
     {% endblock %}
 </body>
 
