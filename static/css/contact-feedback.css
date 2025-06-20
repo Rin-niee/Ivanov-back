@@ -12,7 +12,9 @@
     padding: 14px 24px;
     margin-bottom: 12px;
 }
-
+.form-control:focus{
+    border-color: var(--color-accent)
+}
 .contact-feedback-right-feedback .form-control::placeholder {
     color: rgba(163, 163, 170, 1);
 }
