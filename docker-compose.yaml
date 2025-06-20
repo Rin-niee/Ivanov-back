@@ -22,7 +22,13 @@ services:
       - ./media/:/app/media/ 
     networks:
       - default
-
+  collectstatic:
+    build: .
+    command: python manage.py collectstatic --noinput
+    volumes:
+      - .:/usr/src/app
+      - ./static:/usr/src/app/static
+    restart: "no"
 networks:
   default:
     name: net
