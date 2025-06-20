@@ -3,6 +3,19 @@
 {% load humanize %}
 
 {% block css %}
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Купить {{ car.brand }} {{ car.model }} из {{country_}}">
+<meta property="og:description" content="">
+<meta property="og:locale" content="ru_RU">
+
+
+<title>Купить {{ car.brand }} {{ car.model }} из {{country_}} - Ivanov Drive</title>
+
+
 <link rel="stylesheet" href="{% static 'vendor/swiper.min.css' %}" />
 <link rel="stylesheet" href="{% static 'css/gallary.css' %}">
 <link rel="stylesheet" href="{% static 'css/car-page.css' %}">
@@ -15,7 +28,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 
-<title>Ivanov Drive</title>
+
 
 
 <link rel="apple-touch-icon" href="{%static 'img/favicon.svg'%}">
