@@ -13,7 +13,7 @@ from apps.catalog.models import *
 from django.shortcuts import render
 
 
-def custom_404_view(request, exception):
+def custom_404(request, exception):
     return render(request, '404error.html', status=404)
 
 class HomeView(TemplateView):
