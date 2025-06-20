@@ -6,7 +6,8 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/usr/src/app              
-      - ./media:/usr/src/app/media  
+      - ./media:/usr/src/app/media
+      - ./static:/usr/src/app/static  
     ports:
       - "8000:8000"
     restart: always
@@ -22,13 +23,7 @@ services:
       - ./media/:/app/media/ 
     networks:
       - default
-  collectstatic:
-    build: .
-    command: python manage.py collectstatic --noinput
-    volumes:
-      - .:/usr/src/app
-      - ./static:/usr/src/app/static
-    restart: "no"
+
 networks:
   default:
     name: net

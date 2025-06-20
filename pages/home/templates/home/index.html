@@ -152,12 +152,12 @@
                                                     <div class="card__year">
                                                         <p class="card__image-text">{{car.year}}</p>
                                                     </div>
-                                                    {% if car.engine == 'Гибрид' %}
+                                                    {% if car.engine|default:''|lower == "гибрид" %}
                                                         <div class="card__type">
                                                             <img src='{% static "img/images/flash.svg" %}'  alt="" class="card__type-image">
                                                             <span class="card__tooltip">Гибрид</span>
                                                         </div>
-                                                    {% else %}
+                                                    {% elif car.engine|default:''|lower == "бензин" %}
                                                     <!-- Бензин-->
                                                      
                                                         <div class="card__type">
@@ -258,24 +258,18 @@
                                                     <div class="card__year">
                                                         <p class="card__image-text">{{car.year}}</p>
                                                     </div>
-                                                    {% if car.engine == 'Гибрид' %}
+                                                    {% if car.engine|default:''|lower == "гибрид" %}
                                                         <div class="card__type">
                                                             <img src='{% static "img/images/flash.svg" %}'  alt="" class="card__type-image">
                                                             <span class="card__tooltip">Гибрид</span>
                                                         </div>
-                                                    {% elif car.engine == 'Гибрид' %}
-                                                    <!-- Электроника -->
+                                                    {% elif car.engine|default:''|lower == "бензин" %}
+                                                    <!-- Бензин-->
                                                      
                                                         <div class="card__type">
                                                             <img src='{% static "img/images/electro.svg" %}'  alt="" class="card__type-image">
                                                             <span class="card__tooltip">Бензин</span>
                                                         </div>
-                                                    {% else %}
-                                                        <div class="card__type">
-                                                            <!-- <img src='{% static "img/images/electro.svg" %}'  alt="" class="card__type-image">
-                                                            <span class="card__tooltip">Бензин</span> -->
-                                                        </div>
-
                                                     {% endif %}
                                                 </div>
                                                 <img class="card__active-image" src="/static/img/temp/1.jpg" alt="{{car.brand}} {{car.model}} {{car.year}}"/>
@@ -368,24 +362,18 @@
                                                     <div class="card__year">
                                                         <p class="card__image-text">{{car.year}}</p>
                                                     </div>
-                                                    {% if car.engine == 'Гибрид' %}
+                                                    {% if car.engine|default:''|lower == "гибрид" %}
                                                         <div class="card__type">
                                                             <img src='{% static "img/images/flash.svg" %}'  alt="" class="card__type-image">
                                                             <span class="card__tooltip">Гибрид</span>
                                                         </div>
-                                                    {% elif car.engine == 'Гибрид' %}
-                                                    <!-- Электроника -->
+                                                    {% elif car.engine|default:''|lower == "бензин" %}
+                                                    <!-- Бензин-->
                                                      
                                                         <div class="card__type">
                                                             <img src='{% static "img/images/electro.svg" %}'  alt="" class="card__type-image">
                                                             <span class="card__tooltip">Бензин</span>
                                                         </div>
-                                                    {% else %}
-                                                        <div class="card__type">
-                                                            <!-- <img src='{% static "img/images/electro.svg" %}'  alt="" class="card__type-image">
-                                                            <span class="card__tooltip">Бензин</span> -->
-                                                        </div>
-
                                                     {% endif %}
                                                 </div>
                                                 <img class="card__active-image" src="/static/img/temp/1.jpg" alt="{{car.brand}} {{car.model}} {{car.year}}"/>
