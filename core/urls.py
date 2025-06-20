@@ -11,7 +11,7 @@ urlpatterns = [
 handler404 = 'pages.home.views.custom_404_view'
 
 
-handler404 = 'pages.home.views.custom_404'
+# handler404 = 'pages.home.views.custom_404_view'
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
