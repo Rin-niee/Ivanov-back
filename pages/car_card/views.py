@@ -44,7 +44,7 @@ class AbstractCar(DetailView):
         context["delivery"] = delivery_list
 
         context["title"] = f"Купить {context['car'].brand} {context['car'].model} из {context['country_']} - Ivanov Drive"  
-        context["description"] = f"Информация о {context['car'].brand} {context['car'].model} {context['car'].year}г: {context['car'].finish}₽"
+        context["description"] = f"Подробная информация о {context['car'].brand} {context['car'].model} ({context['car'].year} г.в.): Комплектация — максимальная. Стоимость — {context['car'].finish} ₽."
 
         # Типы кузовов (уникальные)
         body_types = sorted(set(item["body_type"] for item in delivery_list))
