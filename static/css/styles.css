@@ -5570,6 +5570,9 @@ a {
     height: 993px;
   }
 }
+.header.no-shadow {
+  box-shadow: none !important;
+}
 .error__text {
   display: flex;
   flex-direction: column;
