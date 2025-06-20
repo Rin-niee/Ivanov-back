@@ -117,7 +117,7 @@
                         </button>
                         <div class="hero-header__contacts contacts__block hidden-mobile">
                             <p class="contacts__block-title">Горячая линия</p>
-                            <p class="contacts__block-data">+7 (997) 003-41-07</p>
+                            <a href="tel:{{phone}}" class="contacts__block-data">{{phone}}</a>
                         </div>
                     </div>
                     <div class="hero-header__contact">
@@ -161,9 +161,9 @@
             <div class="error" >
                 <div class="error__inner container">
 
-                    <img src='{% static "img/images/wheel.png" %}' alt="" class="error__image">
+                    <img src='{% static "img/images/404.png" %}' alt="" class="error__image">
                     <div class="error__text">
-                        <h1 class="error__title">Страница, которую вы ищете, временно отсутствует.</h1>
+                        <p class="error__title">Страница, которую вы ищете, временно отсутствует.</p>
                         <p class="error__description">Если у вас есть вопросы или вам нужна помощь, просто дайте знать! Мы всегда рады помочь.</p>
                     </div>
                     <div class="error__button">
@@ -363,19 +363,19 @@
                         <nav class="footer__menu hero-header__menu">
                             <ul class="hero-header__menu-list footer__menu-list">
                                 <li class="hero-header__menu-item footer__menu-item">
-                                    <a href="#korea" class="hero-header__menu-link footer__menu-link">Авто из Кореи</a>
+                                    <a href="/#korea" class="hero-header__menu-link footer__menu-link">Авто из Кореи</a>
                                 </li>
                                 <li class="hero-header__menu-item footer__menu-item">
-                                    <a href="#japan" class="hero-header__menu-link footer__menu-link">Авто из Японии</a>
+                                    <a href="/#japan" class="hero-header__menu-link footer__menu-link">Авто из Японии</a>
                                 </li>
                                 <li class="hero-header__menu-item footer__menu-item">
-                                    <a href="#china" class="hero-header__menu-link footer__menu-link">Авто из Китая</a>
+                                    <a href="/#china" class="hero-header__menu-link footer__menu-link">Авто из Китая</a>
                                 </li>
                                 <li class="hero-header__menu-item footer__menu-item">
-                                    <a href="#reviews" class="hero-header__menu-link footer__menu-link">Отзывы</a>
+                                    <a href="/#reviews" class="hero-header__menu-link footer__menu-link">Отзывы</a>
                                 </li>
                                 <li class="hero-header__menu-item footer__menu-item">
-                                    <a href="#contacts" class="hero-header__menu-link footer__menu-link">Контакты</a>
+                                    <a href="/#contacts" class="hero-header__menu-link footer__menu-link">Контакты</a>
                                 </li>
                             </ul>
                         </nav>

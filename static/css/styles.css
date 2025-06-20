@@ -5564,7 +5564,6 @@ a {
   gap: 36px;
   width: 424px;
   height: 451px;
-  height: 100vh;
 }
 @media (max-width: 629px) {
   .error__inner {
@@ -5638,7 +5637,10 @@ a {
     display: none;
   }
 }
-
+.error__image{
+  width: 200px;
+  height: 207px;
+}
 @media (max-width: 629px) {
   .error__image {
     width: 174px;
