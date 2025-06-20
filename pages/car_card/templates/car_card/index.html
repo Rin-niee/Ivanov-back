@@ -67,7 +67,7 @@
                 </button>
                 <div class="hero-header__contacts contacts__block hidden-mobile">
                     <p class="contacts__block-title">Горячая линия</p>
-                    <p class="contacts__block-data">{{phone}}</p>
+                    <a href="tel:{{phone}}" class="contacts__block-data">{{phone}}</a>
                 </div>
             </div>
             <div class="hero-header__contact">
@@ -177,7 +177,7 @@
         </div>
         <div class="col-md-6 col-sm-12 ps-md-2 ps-xl-4">
             <div class="informations-right">
-                <h3 class="car__title">{{ car.brand }} {{ car.model }}</h3>
+                <h3 class="car__title">{{ car.brand }} {{ car.model }} {{car.year}} г.</h3>
                 <div class="car__price-info">
                     {{car.finish|intcomma}} <span>₽</span>
                 </div>
