@@ -48,13 +48,62 @@
 </head>
 
 <body>
+    <header id="header" class="header hide">
+        <div class="header__inner container">
+            <a href="#hero" class="header__logo logo">
+                <img href="/" class="logo__image" src='{% static "img/images/ivanov-drive-logo.svg" %}' alt="Ivanov drive" loading="lazy">
+            </a>
+            <nav class="header__menu hidden-mobile">
+                <ul class="header__menu-list">
+                    <li class="header__menu-item">
+                        <a href="#korea" class="header__menu-link">Авто из Кореи</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#japan" class="header__menu-link">Авто из Японии</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#china" class="header__menu-link">Авто из Китая</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#reviews" class="header__menu-link">Отзывы</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#contacts" class="header__menu-link">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__contact">
+                <div class="header__contact-social hidden-mobile">
+                    <a href="{{whatsapp}}" class="header__social-link" target="_blank">
+                        <svg class="icon__wp" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path  d="M19.2002 0C25.234 2.17584e-10 28.2505 0.00050349 30.125 1.875C31.9995 3.7495 32 6.76596 32 12.7998V19.2002C32 25.234 31.9995 28.2505 30.125 30.125C28.2505 31.9995 25.234 32 19.2002 32H12.7998C6.76596 32 3.7495 31.9995 1.875 30.125C0.000503491 28.2505 2.17596e-10 25.234 0 19.2002V12.7998C2.16946e-10 6.76596 0.00050346 3.7495 1.875 1.875C3.7495 0.00050354 6.76596 2.18662e-10 12.7998 0H19.2002ZM16.2676 5.33496C10.7451 5.33496 6.26758 9.81246 6.26758 15.335C6.26763 17.2109 6.79457 18.9598 7.69336 20.46L6.35645 25.335L11.3359 24.0273C12.792 24.8551 14.4731 25.335 16.2676 25.335C21.7898 25.3347 26.2674 20.8572 26.2676 15.335C26.2676 9.81261 21.7899 5.3352 16.2676 5.33496ZM13.3184 10.6768C13.4966 10.6809 13.6903 10.6941 13.876 11.1045C14.0968 11.5928 14.578 12.8182 14.6396 12.9424C14.7012 13.0665 14.7449 13.2127 14.6592 13.375C14.5775 13.5416 14.535 13.6426 14.415 13.79C14.2909 13.9334 14.1545 14.1114 14.042 14.2197C13.9179 14.3439 13.7903 14.4801 13.9336 14.7275C14.077 14.9752 14.5749 15.7865 15.3105 16.4414C16.2563 17.2862 17.0544 17.5458 17.3027 17.6699C17.5509 17.794 17.6946 17.775 17.8379 17.6084C17.9855 17.4458 18.4574 16.8879 18.624 16.6396C18.7865 16.3917 18.9528 16.435 19.1777 16.5166C19.4073 16.5989 20.6239 17.1982 20.8721 17.3223C21.1201 17.4463 21.2832 17.5076 21.3457 17.6084C21.4098 17.7129 21.4098 18.2091 21.2041 18.7871C20.9982 19.3644 19.9877 19.9224 19.5342 19.9619C19.0767 20.0044 18.6495 20.1671 16.5605 19.3447C14.0405 18.3522 12.4513 15.7712 12.3271 15.6045C12.2029 15.4419 11.3174 14.2625 11.3174 13.0459C11.3175 11.8257 11.9573 11.228 12.1816 10.9795C12.41 10.7312 12.6781 10.6699 12.8447 10.6699C13.0071 10.6699 13.1743 10.6693 13.3184 10.6768Z" fill="#2CB742"/>
+                        </svg>
+                    </a>
+                    <a href="{{telegram}}" class="header__social-link" target="_blank">
+                        <svg class="icon__tg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.87452 1.87452C0 3.74903 0 6.76602 0 12.8V19.2C0 25.234 0 28.251 1.87452 30.1255C3.74903 32 6.76602 32 12.8 32H19.2C25.234 32 28.251 32 30.1255 30.1255C32 28.251 32 25.234 32 19.2V12.8C32 6.76602 32 3.74903 30.1255 1.87452C28.251 0 25.234 0 19.2 0H12.8C6.76602 0 3.74903 0 1.87452 1.87452ZM16.5722 11.8112C15.016 12.4585 11.9057 13.7982 7.24138 15.8304C6.48397 16.1316 6.0872 16.4262 6.05108 16.7143C5.99004 17.2013 6.59981 17.393 7.43016 17.6541C7.54311 17.6896 7.66013 17.7264 7.78011 17.7654C8.59704 18.031 9.69596 18.3416 10.2672 18.354C10.7855 18.3652 11.3638 18.1515 12.0024 17.713C16.3604 14.7713 18.61 13.2843 18.7513 13.2523C18.8509 13.2297 18.989 13.2012 19.0825 13.2844C19.1761 13.3675 19.1669 13.525 19.157 13.5673C19.0966 13.8248 16.703 16.0501 15.4643 17.2017C15.0782 17.5606 14.8043 17.8153 14.7483 17.8734C14.6229 18.0037 14.495 18.127 14.3722 18.2454C13.6132 18.977 13.0441 19.5257 14.4037 20.4217C15.057 20.8522 15.5799 21.2083 16.1015 21.5635C16.6711 21.9514 17.2392 22.3383 17.9743 22.8202C18.1616 22.9429 18.3405 23.0704 18.5147 23.1946C19.1776 23.6672 19.7732 24.0918 20.509 24.0241C20.9365 23.9848 21.3781 23.5827 21.6024 22.3837C22.1325 19.5501 23.1744 13.4105 23.4152 10.8806C23.4362 10.6589 23.4097 10.3752 23.3884 10.2507C23.3671 10.1262 23.3225 9.94873 23.1607 9.81738C22.969 9.66183 22.673 9.62903 22.5407 9.63136C21.9389 9.64196 21.0156 9.96301 16.5722 11.8112Z" fill="#2AABEE"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="header__contact-button hidden-mobile">
+                    <button class="header__button button modal-open" type="button">Оставить заявку</button>
+                </div>
+            </div>
+            <button 
+                class="button__burger-menu burger-button visible-mobile"
+                type="button"
+                onclick="mobileOverlay.showModal()">
+                <span class="visually-hidden">Open navigation menu</span>
+            </button>
+        </div>
+    </header>
     <main class="content">
         <section class="section">
             <div class="hero-header container">
                 <div class="hero-header__inner">
                     <div class="hero-header__left">
-                        <a href="#" class="hero-header__logo logo">
-                        <img class="logo__image" src="./images/ivanov-drive-logo.svg" alt="Ivanov drive" width="132" height="40" loading="lazy">
+                        <a href="/" class="hero-header__logo logo">
+                        <img class="logo__image" src='{% static "img/images/ivanov-drive-logo.svg" %}' alt="Ivanov drive" width="132" height="40" loading="lazy">
                         </a>
                         <button 
                             class="button__burger-menu burger-button visible-mobile"
@@ -107,7 +156,7 @@
             </div>
             <div class="error" >
                 <div class="error__inner container">
-                    <img src="./images/error-icon.svg" alt="" class="error__image">
+                    <img src='{% static "img/images/wheel.png" %}' alt="" class="error__image">
                     <div class="error__text">
                         <h1 class="error__title">Страница, которую вы ищете, временно отсутствует.</h1>
                         <p class="error__description">Если у вас есть вопросы или вам нужна помощь, просто дайте знать! Мы всегда рады помочь.</p>
@@ -132,9 +181,9 @@
                 </div>
             </div>
         </section>
-        <section class="section">
+        <section class="section form">
             <div class="form__inner container">
-                <div class="contacts__form"> 
+                <div class="contacts__form form__form"> 
                     <div class="contacts__form-text">
                         <p class="contacts__form-title">Оставить заявку можно тут</p>
                         <p class="contacts__form-title-mobile">Оставьте заявку</p>
@@ -187,18 +236,98 @@
             </div>
         </section>
     </main>
+    <div class="modal-final" id="formModal">
+        <div class="modal-final__content">
+            <h2 class="modal-final__title">Спасибо за доверие</h2>
+            <p class="modal-final__text">Мы ценим ваш выбор и будем рады помочь. Наша команда уже приступила к работе над вашей заявкой. Мы свяжемся с вами в ближайшее время!</p>
+            <a href="{% url 'home' %}" class="modal-final__button button">Вернуться на главную</a>
+            <img  src='{% static "img/images/medal.png" %}'  alt="" class="modal-final__icon">
+            <button class="modal-final__close modal__close" aria-label="Закрыть">
+                <svg class="modal-final__close-button" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 21L7 7" stroke="#A3A3AA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 21L21 7" stroke="#A3A3AA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="modal" id="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+        <div class="modal__form"> 
+            <button class="modal__close" aria-label="Закрыть">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 21L7 7" stroke="#A3A3AA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 21L21 7" stroke="#A3A3AA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="modal__form-text contacts__form-text">
+                <p class="modal__title ">Оставьте заявку</p>
+                <p class="modal__description">Оставьте заявку и менеджер отправит Вам актуальные варианты автомобилей под Ваши требования.</p>
+                <p class=" modal__description-mobile">Оставьте свою заявку и наш менеджер свяжется с вами для уточнения деталей.</p>
+            </div>
+            <div class="contacts__form-input modal__form-input">
+                <form action="" class="contacts__login contactForm modal__login" id="feedback-modal">
+                    <div class="contacts__fields modal__fields">
+                        {% csrf_token %}
+                        <div class="contacts__field modal__field">
+                            <label class="contacts__label" for="name">Ваше имя</label>
+                            <input class="contacts__field-input modal__field-input"
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Введите имя"
+                            required
+                            />
+
+                            <!-- <p class="contacts__field-input modal__field-input">{{feedback.name}}</p> -->
+                            
+                        </div>
+                        <div class="contacts__field modal__field">
+                            <label class="contacts__label" for="number">Ваш номер</label>
+                            <input class="contacts__field-input modal__field-input"
+                            type="tel"
+                            id="number"
+                            name="number"
+                            placeholder="+7 (___) ___-__-__"
+                            pattern="^\+7\s?\(?\d{3}\)?\s?\d{3}-?\d{2}-?\d{2}$"
+                            required
+                            />
+                            
+                        </div>
+                    </div>
+                    <div class="contacts__field-textarea modal__field-textarea ">
+                        <label class="contacts__label" for="message">Уточните свой вопрос</label>
+                        <textarea class="contacts__textarea modal__textarea"
+                        id="message"
+                        name="message"
+                        placeholder="Введите текст сообщения, укажите страну, марку и год машины."
+                        ></textarea>
+
+                    </div>
+                    <div class="contacts__button modal__button">
+                        <div class="contacts__button-submit modal__button-submit">
+                            <button type="submit" class="contacts__button-button button modal__button-button">Оставить заявку</button>
+                        </div>
+                        <p class="contacts__politic">Нажимая на кнопку, вы соглашаетесь с <a href="" class="contacts__violet">Политикой конфиденциальности</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>  
+    </div>
+    </div>
     <footer class="footer" data-aos="fade-up">
         <div class="footer__inner container">
             <div class="footer__header">
                 <div class="footer__body hero-header">
                     <div class="hero-header__inner footer__hero-header-inner ">
                         <div class="hero-header__left footer__hero-header__left ">
-                            <a href="#" class="hero-header__logo logo">
-                            <img class="logo__image footer__logo" src="./images/ivanov-drive-logo.svg" alt="Ivanov drive" width="132" height="40" loading="lazy">
+                            <a href="#hero" class="hero-header__logo logo">
+                            <img class="logo__image footer__logo" src='{% static "img/images/ivanov-drive-logo.svg" %}' alt="Ivanov drive" width="132" height="40" loading="lazy">
                             </a>
                             <div class="hero-header__contacts contacts__block">
                                 <p class="contacts__block-title">Горячая линия</p>
-                                <p class="contacts__block-data">+7 (997) 003-41-07</p>
+                                <p class="contacts__block-data">{{phone}}</p>
                             </div>
                         </div>
                         <div class="hero-header__contact footer__hero-header-contact">
@@ -235,15 +364,15 @@
                                     <a href="#reviews" class="hero-header__menu-link footer__menu-link">Отзывы</a>
                                 </li>
                                 <li class="hero-header__menu-item footer__menu-item">
-                                    <a href="#dockuments" class="hero-header__menu-link footer__menu-link">Документы</a>
+                                    <a href="#contacts" class="hero-header__menu-link footer__menu-link">Контакты</a>
                                 </li>
                             </ul>
                         </nav>
                         <div class="reviews__grade">
                             <div class="reviews__grade-social footer__grade-social">
-                                <img src="./images/star-icon.svg" alt="" class="reviews__star" width="20" height="20">
+                                <img  src='{% static "img/images/star-icon.svg" %}' alt="" class="reviews__star" width="20" height="20">
                                 <p class="reviews__number">5.0</p>
-                                <img src="./images/point-google-icon.svg" alt="" class="reviews__icon" width="22" height="22">
+                                <img  src='{% static "img/images/point-google-icon.svg" %}' alt="" class="reviews__icon" width="22" height="22">
                                 <a href="" class="reviews__link" target="_blank">
                                     <p class="reviews__link-name">Google</p>
                                     <svg class="reviews__link-link" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -253,9 +382,9 @@
                                 </a>
                             </div>
                             <div class="reviews__grade-social footer__grade-social">
-                                <img src="./images/star-icon.svg" alt="" class="reviews__star" width="20" height="20">
+                                <img  src='{% static "img/images/star-icon.svg" %}'  alt="" class="reviews__star" width="20" height="20">
                                 <p class="reviews__number">5.0</p>
-                                <img src="./images/point-yandex-icon.svg" alt="" class="reviews__icon" width="22" height="22">
+                                <img  src='{% static "img/images/point-yandex-icon.svg" %}'  alt="" class="reviews__icon" width="22" height="22">
                                 <a href="" class="reviews__link" target="_blank">
                                     <p class="reviews__link-name">Яндекс</p>
                                     <svg class="reviews__link-link" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -265,9 +394,9 @@
                                 </a>
                             </div>
                             <div class="reviews__grade-social footer__grade-social">
-                                <img src="./images/star-icon.svg" alt="" class="reviews__star" width="20" height="20">
+                                <img  src='{% static "img/images/star-icon.svg" %}' alt="" class="reviews__star" width="20" height="20">
                                 <p class="reviews__number">5.0</p>
-                                <img src="./images/point-2gis-icon.svg" alt="" class="reviews__icon" width="22" height="22">
+                                <img src='{% static "img/images/point-2gis-icon.svg" %}' alt="" class="reviews__icon" width="22" height="22">
                                 <a href="" class="reviews__link" target="_blank">
                                     <p class="reviews__link-name">2ГИС</p>
                                     <svg class="reviews__link-link" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -294,6 +423,53 @@
             </div>
         </div>
     </footer>
+    <dialog class="mobile-overlay visible-mobile"  id="mobileOverlay">
+        <form class="mobile-overlay__close-button-wrapper" method="dialog">
+            <a href="#hero" class="mobile-overlay__logo">
+                <img class="mobile-overlay__logo-image logo__image" src='{% static "img/images/ivanov-drive-logo.svg" %}' alt="Ivanov Drive" width="296" height="40" loading="lazy">
+            </a>
+            <button class="mobile-overlay__close-button cross-button" type="submit">
+                <span class="visually-hidden">Close navigation menu</span>
+            </button>
+        </form>
+        <div class="mobile-overlay__body">
+            <ul class="mobile-overlay__list">
+                <li class="mobile-overlay__item">
+                    <a href="/" class="mobile-overlay__link">Авто из Кореи</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a href="/" class="mobile-overlay__link">Авто из Японии</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a href="/" class="mobile-overlay__link">Авто из Китая</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a href="/" class="mobile-overlay__link">Отзывы</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a href="/" class="mobile-overlay__link">Контакты</a>
+                </li>
+            </ul>
+            <div class="mobile-overlay__contact">
+                <div class="hero-header__contacts contacts__block mobile-overlay__contact-tel">
+                    <p class="contacts__block-title mobile-overlay__block-title">Горячая линия</p>
+                    <p class="contacts__block-data mobile-overlay__block-data">{{phone}}</p>
+                </div>
+                <div class="hero-header__contact-social mobile-overlay__contact-social">
+                    <a href="{{whatsapp}}" class="hero-header__social-link" target="_blank">
+                        <svg class=" mobile-overlay__icon-wp" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path  d="M19.2002 0C25.234 2.17584e-10 28.2505 0.00050349 30.125 1.875C31.9995 3.7495 32 6.76596 32 12.7998V19.2002C32 25.234 31.9995 28.2505 30.125 30.125C28.2505 31.9995 25.234 32 19.2002 32H12.7998C6.76596 32 3.7495 31.9995 1.875 30.125C0.000503491 28.2505 2.17596e-10 25.234 0 19.2002V12.7998C2.16946e-10 6.76596 0.00050346 3.7495 1.875 1.875C3.7495 0.00050354 6.76596 2.18662e-10 12.7998 0H19.2002ZM16.2676 5.33496C10.7451 5.33496 6.26758 9.81246 6.26758 15.335C6.26763 17.2109 6.79457 18.9598 7.69336 20.46L6.35645 25.335L11.3359 24.0273C12.792 24.8551 14.4731 25.335 16.2676 25.335C21.7898 25.3347 26.2674 20.8572 26.2676 15.335C26.2676 9.81261 21.7899 5.3352 16.2676 5.33496ZM13.3184 10.6768C13.4966 10.6809 13.6903 10.6941 13.876 11.1045C14.0968 11.5928 14.578 12.8182 14.6396 12.9424C14.7012 13.0665 14.7449 13.2127 14.6592 13.375C14.5775 13.5416 14.535 13.6426 14.415 13.79C14.2909 13.9334 14.1545 14.1114 14.042 14.2197C13.9179 14.3439 13.7903 14.4801 13.9336 14.7275C14.077 14.9752 14.5749 15.7865 15.3105 16.4414C16.2563 17.2862 17.0544 17.5458 17.3027 17.6699C17.5509 17.794 17.6946 17.775 17.8379 17.6084C17.9855 17.4458 18.4574 16.8879 18.624 16.6396C18.7865 16.3917 18.9528 16.435 19.1777 16.5166C19.4073 16.5989 20.6239 17.1982 20.8721 17.3223C21.1201 17.4463 21.2832 17.5076 21.3457 17.6084C21.4098 17.7129 21.4098 18.2091 21.2041 18.7871C20.9982 19.3644 19.9877 19.9224 19.5342 19.9619C19.0767 20.0044 18.6495 20.1671 16.5605 19.3447C14.0405 18.3522 12.4513 15.7712 12.3271 15.6045C12.2029 15.4419 11.3174 14.2625 11.3174 13.0459C11.3175 11.8257 11.9573 11.228 12.1816 10.9795C12.41 10.7312 12.6781 10.6699 12.8447 10.6699C13.0071 10.6699 13.1743 10.6693 13.3184 10.6768Z" fill="#2CB742"/>
+                        </svg>
+                    </a>
+                    <a href="/" class="hero-header__social-link" target="_blank">
+                        <svg class=" mobile-overlay__icon-tg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.87452 1.87452C0 3.74903 0 6.76602 0 12.8V19.2C0 25.234 0 28.251 1.87452 30.1255C3.74903 32 6.76602 32 12.8 32H19.2C25.234 32 28.251 32 30.1255 30.1255C32 28.251 32 25.234 32 19.2V12.8C32 6.76602 32 3.74903 30.1255 1.87452C28.251 0 25.234 0 19.2 0H12.8C6.76602 0 3.74903 0 1.87452 1.87452ZM16.5722 11.8112C15.016 12.4585 11.9057 13.7982 7.24138 15.8304C6.48397 16.1316 6.0872 16.4262 6.05108 16.7143C5.99004 17.2013 6.59981 17.393 7.43016 17.6541C7.54311 17.6896 7.66013 17.7264 7.78011 17.7654C8.59704 18.031 9.69596 18.3416 10.2672 18.354C10.7855 18.3652 11.3638 18.1515 12.0024 17.713C16.3604 14.7713 18.61 13.2843 18.7513 13.2523C18.8509 13.2297 18.989 13.2012 19.0825 13.2844C19.1761 13.3675 19.1669 13.525 19.157 13.5673C19.0966 13.8248 16.703 16.0501 15.4643 17.2017C15.0782 17.5606 14.8043 17.8153 14.7483 17.8734C14.6229 18.0037 14.495 18.127 14.3722 18.2454C13.6132 18.977 13.0441 19.5257 14.4037 20.4217C15.057 20.8522 15.5799 21.2083 16.1015 21.5635C16.6711 21.9514 17.2392 22.3383 17.9743 22.8202C18.1616 22.9429 18.3405 23.0704 18.5147 23.1946C19.1776 23.6672 19.7732 24.0918 20.509 24.0241C20.9365 23.9848 21.3781 23.5827 21.6024 22.3837C22.1325 19.5501 23.1744 13.4105 23.4152 10.8806C23.4362 10.6589 23.4097 10.3752 23.3884 10.2507C23.3671 10.1262 23.3225 9.94873 23.1607 9.81738C22.969 9.66183 22.673 9.62903 22.5407 9.63136C21.9389 9.64196 21.0156 9.96301 16.5722 11.8112Z" fill="#2AABEE"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </dialog>
 </body>
 </html>
 
