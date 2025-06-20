@@ -2,6 +2,7 @@ import json
 from typing import Any
 
 from django.http import JsonResponse
+from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.views import View
 
@@ -11,7 +12,8 @@ from apps.content.models import PromoText
 from apps.catalog.models import *
 from django.shortcuts import render
 
-def custom_404(request, exception):
+
+def custom_404_view(request, exception):
     return render(request, '404error.html', status=404)
 
 class HomeView(TemplateView):

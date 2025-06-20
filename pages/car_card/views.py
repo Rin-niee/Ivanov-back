@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, DetailView
 from apps.catalog.models import *
 
+
 class AbstractCar(DetailView):
     """View для отображения карточки авто"""
 
