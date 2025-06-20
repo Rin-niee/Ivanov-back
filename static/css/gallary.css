@@ -38,7 +38,7 @@
 }
 
 .modal-thumbnail {
-    margin-top: 20px;
+    margin-top: 80px;
     justify-content: center;
     display: flex;
     gap: 8px;
@@ -63,13 +63,13 @@
 
 .modal-gallery-btn--next {
     top: 50%;
-    right: 250px;
+    right: 20px;
     transform: translate(0, -50%);
 }
 
 .modal-gallery-btn--prev {
     top: 50%;
-    left: 250px;
+    left: 20px;
     transform: translate(0, -50%);
 }
 
@@ -107,8 +107,8 @@
     outline: none;
     background-color: rgba(247, 247, 250, 0.32);
     position: fixed;
-    top: 350px;
-    right: 250px;
+    top: 50px;
+    right: 20px;
 }
 
 .modal-gallery-btn--close:hover{
@@ -530,15 +530,9 @@ a {
     }
 }
 
-@media (max-width : 768px) {
 
 
-    .modal-gallery-main {
-        height: auto;
-    }
-}
-
-@media (max-width : 716px) {
+@media (max-width : 629px) {
     .card__main {
         margin-bottom: 25px;
         padding-left: 16px;
@@ -548,7 +542,7 @@ a {
 }
 
 
-@media (max-width : 726px) {
+@media (max-width : 629px) {
     .modal-gallery-info {
         display: block;
 
@@ -675,20 +669,15 @@ a {
     }
 
     .modal-gallery-btn--close {
-        background-color: rgb(214 0 0 / 46%);
         top: 10px;
         right: 10px;
         width: 40px;
         height: 40px;
     }
 
-    .modal-gallery-btn--close:hover {
-        background-color: rgb(214 0 0 / 46%);
-
-    }
 }
 
-@media (max-width : 443px) {
+@media (max-width : 629px) {
     .main-slides>.gallery-slide {
         max-height: 221px;
     }
@@ -715,7 +704,7 @@ a {
 }
 
 
-@media (max-width : 443px) {
+@media (max-width : 692px) {
     .modal-gallery-slider {
         height: 271px;
     }

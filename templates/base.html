@@ -5,10 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{description}}">
+    <meta name="description" content="Авто из Японии, Кореи и Китая под заказ с доставкой по всей России. Популярные модели, отзывы клиентов, схема покупки и расчет стоимости доставки — всё на Ivanov Drive.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{title}}">
-    <!-- <meta property="og:description" content="{{description}}"> -->
+
+    <meta property="og:title" content="Авто из Японии, Кореи и Китая с доставкой в город по России под заказ - Ivanov Drive">
+    <meta property="og:description" content="Авто из Японии, Кореи и Китая под заказ с доставкой по всей России. Популярные модели, отзывы клиентов, схема покупки и расчет стоимости доставки — всё на Ivanov Drive.">
     <meta property="og:locale" content="ru_RU">
 
   <title>{{ title|default:"Авто из Японии, Кореи и Китая с доставкой в город по России под заказ - Ivanov Drive" }}</title>
@@ -58,19 +60,19 @@
             <nav class="header__menu hidden-mobile">
                 <ul class="header__menu-list">
                     <li class="header__menu-item">
-                        <a href="#korea" class="header__menu-link">Авто из Кореи</a>
+                        <a href="/#korea" class="header__menu-link">Авто из Кореи</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="#japan" class="header__menu-link">Авто из Японии</a>
+                        <a href="/#japan" class="header__menu-link">Авто из Японии</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="#china" class="header__menu-link">Авто из Китая</a>
+                        <a href="/#china" class="header__menu-link">Авто из Китая</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="#reviews" class="header__menu-link">Отзывы</a>
+                        <a href="/#reviews" class="header__menu-link">Отзывы</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="#contacts" class="header__menu-link">Контакты</a>
+                        <a href="/#contacts" class="header__menu-link">Контакты</a>
                     </li>
                 </ul>
             </nav>
@@ -104,7 +106,7 @@
 
     {% endblock %}
     <section class="section">
-        <div id="contacts" class="contacts container">
+        <div id="contacts" class="contacts container" style="scroll-margin-top: 180px;">
             <div class="contacts__inner ">
                 <div class="contacts__content" data-aos="fade-right">
                     <div class="contacts__text">
@@ -274,7 +276,7 @@
                             </a>
                             <div class="hero-header__contacts contacts__block">
                                 <p class="contacts__block-title">Горячая линия</p>
-                                <p class="contacts__block-data">{{phone}}</p>
+                                <a href="tel:{{phone}}" class="contacts__block-data">{{phone}}</a>
                             </div>
                         </div>
                         <div class="hero-header__contact footer__hero-header-contact">
@@ -320,7 +322,7 @@
                                 <img  src='{% static "img/images/star-icon.svg" %}' alt="" class="reviews__star" width="20" height="20">
                                 <p class="reviews__number">5.0</p>
                                 <img  src='{% static "img/images/point-google-icon.svg" %}' alt="" class="reviews__icon" width="22" height="22">
-                                <a href="" class="reviews__link" target="_blank">
+                                <a  class="reviews__link" target="_blank">
                                     <p class="reviews__link-name">Google</p>
                                     <svg class="reviews__link-link" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10 2L2 10" stroke="#A3A3AA" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -332,7 +334,7 @@
                                 <img  src='{% static "img/images/star-icon.svg" %}'  alt="" class="reviews__star" width="20" height="20">
                                 <p class="reviews__number">5.0</p>
                                 <img  src='{% static "img/images/point-yandex-icon.svg" %}'  alt="" class="reviews__icon" width="22" height="22">
-                                <a href="" class="reviews__link" target="_blank">
+                                <a class="reviews__link" target="_blank">
                                     <p class="reviews__link-name">Яндекс</p>
                                     <svg class="reviews__link-link" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10 2L2 10" stroke="#A3A3AA" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -344,7 +346,7 @@
                                 <img  src='{% static "img/images/star-icon.svg" %}' alt="" class="reviews__star" width="20" height="20">
                                 <p class="reviews__number">5.0</p>
                                 <img src='{% static "img/images/point-2gis-icon.svg" %}' alt="" class="reviews__icon" width="22" height="22">
-                                <a href="" class="reviews__link" target="_blank">
+                                <a class="reviews__link" target="_blank">
                                     <p class="reviews__link-name">2ГИС</p>
                                     <svg class="reviews__link-link" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10 2L2 10" stroke="#A3A3AA" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -382,19 +384,19 @@
         <div class="mobile-overlay__body">
             <ul class="mobile-overlay__list">
                 <li class="mobile-overlay__item">
-                    <a href="/" class="mobile-overlay__link">Авто из Кореи</a>
+                    <a href="/#korea" class="mobile-overlay__link">Авто из Кореи</a>
                 </li>
                 <li class="mobile-overlay__item">
-                    <a href="/" class="mobile-overlay__link">Авто из Японии</a>
+                    <a href="/#japan" class="mobile-overlay__link">Авто из Японии</a>
                 </li>
                 <li class="mobile-overlay__item">
-                    <a href="/" class="mobile-overlay__link">Авто из Китая</a>
+                    <a href="/#china" class="mobile-overlay__link">Авто из Китая</a>
                 </li>
                 <li class="mobile-overlay__item">
-                    <a href="/" class="mobile-overlay__link">Отзывы</a>
+                    <a href="/#reviews" class="mobile-overlay__link">Отзывы</a>
                 </li>
                 <li class="mobile-overlay__item">
-                    <a href="/" class="mobile-overlay__link">Контакты</a>
+                    <a href="/#contacts" class="mobile-overlay__link">Контакты</a>
                 </li>
             </ul>
             <div class="mobile-overlay__contact">
