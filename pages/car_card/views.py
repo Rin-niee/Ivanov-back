@@ -31,8 +31,7 @@ class AbstractCar(DetailView):
                 "distance": price_obj.city_id.distance_from_vladivostok,
                 "duration": price_obj.city_id.delivery_time_days
             })
-       
-        context["title"] = ''
+
         context["country"] = self.country
         context["car_link"] = self.car_link
         context["country_"] = self.country_
@@ -40,9 +39,13 @@ class AbstractCar(DetailView):
         
 
         context["engine_volume"] = int(context["car"].engine_volume) / 1000
-        context["description"] = ''
+        
         context["cities"] = sorted(set(item["city"] for item in delivery_list))
         context["delivery"] = delivery_list
+
+        context["title"] = f"Купить {context['car'].brand} {context['car'].model} из {context['country_']} - Ivanov Drive"  
+        context["description"] = f"Подробная информация о {context['car'].brand} {context['car'].model} ({context['car'].year} г.в.): Комплектация — максимальная. Стоимость — {context['car'].finish} ₽."
+
         # Типы кузовов (уникальные)
         body_types = sorted(set(item["body_type"] for item in delivery_list))
         context["body_types"] = body_types

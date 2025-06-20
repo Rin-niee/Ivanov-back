@@ -215,11 +215,12 @@
                 </div>
                 <img src="{%static 'img/auto_car_card.png'%}" alt="" class="delivery-car schema__image-car ">
             </div>
-
         </div>
     </div>
 <script>window.dataDelivery = {{ delivery_json|safe }};</script>
 <script src="{% static 'js/delivery.js' %}"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css" /> -->
+ <link rel="stylesheet" href="{% static 'css/odometer-theme-default.min.css' %}" />
+<script src="{% static 'js/odometer.min.js' %}"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script> -->
 </section>

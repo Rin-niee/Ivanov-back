@@ -4,8 +4,10 @@
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 <link rel="stylesheet" href="{% static 'fonts/fonts.css' %}" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+ <link rel="stylesheet" href="{% static 'css/aos.css' %}" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" /> -->
+<link rel="stylesheet" href="{% static 'css/splide.min.css' %}" />
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"> -->
 
 <link rel="stylesheet" href="{% static 'css/car-cards.css' %}">
 <link rel="stylesheet" href="{% static 'css/mini-catalogs.css' %}">
@@ -774,7 +776,7 @@
 <script src="{% static 'js/work-stages.js' %}"></script>
 
 
-<script src="{% static 'js/slider-cars.js' %}"></script>
+<!-- <script src="{% static 'js/slider-cars.js' %}"></script> -->
 <script src="{% static 'js/custom-select.js' %}"></script>
 <script src="{% static 'js/contactForm.js' %}"></script>
 <script src="{% static 'js/modal.js' %}"></script>
@@ -783,8 +785,11 @@
 <script src="{% static 'js/scroll-slider.js' %}"></script>
 <script src="{% static 'js/counter.js' %}"></script>
 
-<script src="js/splide.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="{% static 'js/splide.min.js' %}"></script>
+<script src="{% static 'js/aos.js' %}"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>-->
+<!-- <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>  -->
 <script>
     AOS.init({
         once: true, 
