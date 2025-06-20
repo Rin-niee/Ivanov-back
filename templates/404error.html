@@ -5,12 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Покупка японских авто с доставкой по России, удобный каталог популярных авто из Японии с расчетом полной стоимости. Реальные отзывы клиентов.">
+    <meta name="description" content="Авто из Японии, Кореи и Китая под заказ с доставкой по всей России. Популярные модели, отзывы клиентов, схема покупки и расчет стоимости доставки — всё на Ivanov Drive.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Авто из Японии, Кореи и Китая с доставкой в город по России под заказ - Ivanov Drive">
-    <meta property="og:description" content="Покупка японских авто с доставкой по России, удобный каталог популярных авто из Японии с расчетом полной стоимости. Реальные отзывы клиентов.">
+    <meta property="og:description" content="Авто из Японии, Кореи и Китая под заказ с доставкой по всей России. Популярные модели, отзывы клиентов, схема покупки и расчет стоимости доставки — всё на Ivanov Drive.">
     <meta property="og:locale" content="ru_RU">
     
 
@@ -108,8 +106,6 @@
             <div class="hero-header container">
                 <div class="hero-header__inner">
                     <div class="hero-header__left">
-                        <a href="#" class="hero-header__logo logo">
-                        <img class="logo__image" src="./images/ivanov-drive-logo.svg" alt="Ivanov drive" width="132" height="40" loading="lazy">
                         <a href="/" class="hero-header__logo logo">
                         <img class="logo__image" src='{% static "img/images/ivanov-drive-logo.svg" %}' alt="Ivanov drive" width="132" height="40" loading="lazy">
                         </a>
@@ -121,7 +117,7 @@
                         </button>
                         <div class="hero-header__contacts contacts__block hidden-mobile">
                             <p class="contacts__block-title">Горячая линия</p>
-                            <p class="contacts__block-data">+7 (997) 003-41-07</p>
+                            <a href="tel:{{phone}}" class="contacts__block-data">{{phone}}</a>
                         </div>
                     </div>
                     <div class="hero-header__contact">
@@ -165,9 +161,9 @@
             <div class="error" >
                 <div class="error__inner container">
 
-                    <img src='{% static "img/images/wheel.png" %}' alt="" class="error__image">
+                    <img src='{% static "img/images/404.png" %}' alt="" class="error__image">
                     <div class="error__text">
-                        <h1 class="error__title">Страница, которую вы ищете, временно отсутствует.</h1>
+                        <p class="error__title">Страница, которую вы ищете, временно отсутствует.</p>
                         <p class="error__description">Если у вас есть вопросы или вам нужна помощь, просто дайте знать! Мы всегда рады помочь.</p>
                     </div>
                     <div class="error__button">
@@ -342,7 +338,7 @@
                             </a>
                             <div class="hero-header__contacts contacts__block">
                                 <p class="contacts__block-title">Горячая линия</p>
-                                <p class="contacts__block-data">{{phone}}</p>
+                                <a href="tel:{{phone}}" class="contacts__block-data">{{phone}}</a>
                             </div>
                         </div>
                         <div class="hero-header__contact footer__hero-header-contact">
@@ -367,19 +363,19 @@
                         <nav class="footer__menu hero-header__menu">
                             <ul class="hero-header__menu-list footer__menu-list">
                                 <li class="hero-header__menu-item footer__menu-item">
-                                    <a href="#korea" class="hero-header__menu-link footer__menu-link">Авто из Кореи</a>
+                                    <a href="/#korea" class="hero-header__menu-link footer__menu-link">Авто из Кореи</a>
                                 </li>
                                 <li class="hero-header__menu-item footer__menu-item">
-                                    <a href="#japan" class="hero-header__menu-link footer__menu-link">Авто из Японии</a>
+                                    <a href="/#japan" class="hero-header__menu-link footer__menu-link">Авто из Японии</a>
                                 </li>
                                 <li class="hero-header__menu-item footer__menu-item">
-                                    <a href="#china" class="hero-header__menu-link footer__menu-link">Авто из Китая</a>
+                                    <a href="/#china" class="hero-header__menu-link footer__menu-link">Авто из Китая</a>
                                 </li>
                                 <li class="hero-header__menu-item footer__menu-item">
-                                    <a href="#reviews" class="hero-header__menu-link footer__menu-link">Отзывы</a>
+                                    <a href="/#reviews" class="hero-header__menu-link footer__menu-link">Отзывы</a>
                                 </li>
                                 <li class="hero-header__menu-item footer__menu-item">
-                                    <a href="#contacts" class="hero-header__menu-link footer__menu-link">Контакты</a>
+                                    <a href="/#contacts" class="hero-header__menu-link footer__menu-link">Контакты</a>
                                 </li>
                             </ul>
                         </nav>
@@ -388,7 +384,7 @@
                                 <img  src='{% static "img/images/star-icon.svg" %}' alt="" class="reviews__star" width="20" height="20">
                                 <p class="reviews__number">5.0</p>
                                 <img  src='{% static "img/images/point-google-icon.svg" %}' alt="" class="reviews__icon" width="22" height="22">
-                                <a href="" class="reviews__link" target="_blank">
+                                <a class="reviews__link" target="_blank">
                                     <p class="reviews__link-name">Google</p>
                                     <svg class="reviews__link-link" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10 2L2 10" stroke="#A3A3AA" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -400,7 +396,7 @@
                                 <img  src='{% static "img/images/star-icon.svg" %}'  alt="" class="reviews__star" width="20" height="20">
                                 <p class="reviews__number">5.0</p>
                                 <img  src='{% static "img/images/point-yandex-icon.svg" %}'  alt="" class="reviews__icon" width="22" height="22">
-                                <a href="" class="reviews__link" target="_blank">
+                                <a class="reviews__link" target="_blank">
                                     <p class="reviews__link-name">Яндекс</p>
                                     <svg class="reviews__link-link" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10 2L2 10" stroke="#A3A3AA" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -413,7 +409,7 @@
                                 <img  src='{% static "img/images/star-icon.svg" %}' alt="" class="reviews__star" width="20" height="20">
                                 <p class="reviews__number">5.0</p>
                                 <img src='{% static "img/images/point-2gis-icon.svg" %}' alt="" class="reviews__icon" width="22" height="22">
-                                <a href="" class="reviews__link" target="_blank">
+                                <a  class="reviews__link" target="_blank">
                                     <p class="reviews__link-name">2ГИС</p>
                                     <svg class="reviews__link-link" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10 2L2 10" stroke="#A3A3AA" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
