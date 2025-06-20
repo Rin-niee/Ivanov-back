@@ -39,7 +39,7 @@ class HomeView(TemplateView):
         context["cars_china"] = CarsJapan.objects.all()
         context["cars_korea"] = CarsJapan.objects.all()
         context["title"] = ''
-        context["description"] = ''
+        context["description"] = 'Авто из Японии, Кореи и Китая под заказ с доставкой по всей России. Популярные модели, отзывы клиентов, схема покупки и расчет стоимости доставки — всё на Ivanov Drive.'
         context["cities"] = sorted(set(item["city"] for item in delivery_list))
         context["delivery"] = delivery_list
         # Типы кузовов (уникальные)
