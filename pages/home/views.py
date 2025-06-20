@@ -12,6 +12,7 @@ from apps.content.models import PromoText
 from apps.catalog.models import *
 from django.shortcuts import render
 
+
 def custom_404_view(request, exception):
     return render(request, '404error.html', status=404)
 

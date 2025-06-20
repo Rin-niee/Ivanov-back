@@ -97,11 +97,14 @@
             </button>
         </div>
     </header>
+
     <main class="content">
         <section class="section">
             <div class="hero-header container">
                 <div class="hero-header__inner">
                     <div class="hero-header__left">
+                        <a href="#" class="hero-header__logo logo">
+                        <img class="logo__image" src="./images/ivanov-drive-logo.svg" alt="Ivanov drive" width="132" height="40" loading="lazy">
                         <a href="/" class="hero-header__logo logo">
                         <img class="logo__image" src='{% static "img/images/ivanov-drive-logo.svg" %}' alt="Ivanov drive" width="132" height="40" loading="lazy">
                         </a>
@@ -156,6 +159,7 @@
             </div>
             <div class="error" >
                 <div class="error__inner container">
+
                     <img src='{% static "img/images/wheel.png" %}' alt="" class="error__image">
                     <div class="error__text">
                         <h1 class="error__title">Страница, которую вы ищете, временно отсутствует.</h1>
@@ -163,6 +167,9 @@
                     </div>
                     <div class="error__button">
                         <div class="error__button-content">
+<!--                             <button class="error__button-button button">Оставить заявку</button>
+                            <div class="header__contact-social error__contact-social">
+                                <a href="/" class="header__social-link" target="_blank"> -->
                             <button class="error__button-button button modal-open">Оставить заявку</button>
                             <div class="header__contact-social error__contact-social">
                                 <a href="{{whatsapp}}" class="header__social-link" target="_blank">
@@ -181,6 +188,7 @@
                 </div>
             </div>
         </section>
+
         <section class="section form">
             <div class="form__inner container">
                 <div class="contacts__form form__form"> 
@@ -227,6 +235,7 @@
                                 <!-- {{feedback.message}} -->
                             </div>
                             <div class="contacts__button">
+
                                 <button type="submit" class="contacts__button-button button modal-open">Оставить заявку</button>
                                 <p class="contacts__politic">Нажимая на кнопку, вы соглашаетесь с <a href="" class="contacts__violet">Политикой конфиденциальности</a></p>
                             </div>
@@ -322,6 +331,7 @@
                 <div class="footer__body hero-header">
                     <div class="hero-header__inner footer__hero-header-inner ">
                         <div class="hero-header__left footer__hero-header__left ">
+
                             <a href="#hero" class="hero-header__logo logo">
                             <img class="logo__image footer__logo" src='{% static "img/images/ivanov-drive-logo.svg" %}' alt="Ivanov drive" width="132" height="40" loading="lazy">
                             </a>
@@ -394,6 +404,7 @@
                                 </a>
                             </div>
                             <div class="reviews__grade-social footer__grade-social">
+
                                 <img  src='{% static "img/images/star-icon.svg" %}' alt="" class="reviews__star" width="20" height="20">
                                 <p class="reviews__number">5.0</p>
                                 <img src='{% static "img/images/point-2gis-icon.svg" %}' alt="" class="reviews__icon" width="22" height="22">

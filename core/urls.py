@@ -11,6 +11,8 @@ urlpatterns = [
 handler404 = 'pages.home.views.custom_404_view'
 
 
+handler404 = 'pages.home.views.custom_404'
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)
