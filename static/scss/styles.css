@@ -738,7 +738,7 @@ a {
   border-radius: var(--border-radius-small);
   border: 2px solid transparent;
   cursor: pointer;
-  background-image: url("/images/arrow-down.svg");
+  background-image: url("img/images/arrow-down.svg");
   background-repeat: no-repeat;
   background-position: right 16px center;
   font-family: var(--font-family-small-text);
@@ -5318,6 +5318,94 @@ a {
   gap: 12px;
   width: 100px;
   height: 44px;
+}
+
+.details {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.details__inner {
+  display: flex;
+  align-items: flex-start;
+  padding: 52px 60px;
+  gap: 44px;
+  isolation: isolate;
+  width: 1320px;
+  height: 537px;
+  background: #EAEAF4;
+  border-radius: 40px;
+}
+.details__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.details__title {
+  width: 700px;
+  height: 76px;
+  font-family: "Wix Madefor Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #252533;
+  margin-bottom: 16px;
+}
+.details__description {
+  width: 607px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  color: #252533;
+  margin-bottom: 28px;
+}
+.details__point {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+  width: 700px;
+  height: 96px;
+  margin-bottom: 44px;
+}
+.details__button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+  width: 498px;
+  height: 125px;
+}
+.details__button-text {
+  width: 451px;
+  height: 25px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  color: #252533;
+}
+.details__button-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 32px;
+  width: 498px;
+  height: 76px;
+}
+.details__image {
+  position: relative;
+}
+.details__image-photo {
+  position: absolute;
 }
 
 .mobile-overlay {
