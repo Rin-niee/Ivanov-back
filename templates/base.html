@@ -176,7 +176,7 @@
                             </div>
                             <div class="contacts__button">
                                 <button type="submit" class="contacts__button-button button">Оставить заявку</button>
-                                <p class="contacts__politic">Нажимая на кнопку, вы соглашаетесь с <a href="" class="contacts__violet">Политикой конфиденциальности</a></p>
+                                <p class="contacts__politic">Нажимая на кнопку, вы соглашаетесь с <a href="{% static 'docs/politika.pdf' %}" target="_blank" class="contacts__violet">Политикой конфиденциальности</a></p>
                             </div>
                         </form>
                     </div>
@@ -257,7 +257,7 @@
                         <div class="contacts__button-submit modal__button-submit">
                             <button type="submit" class="contacts__button-button button modal__button-button">Оставить заявку</button>
                         </div>
-                        <p class="contacts__politic">Нажимая на кнопку, вы соглашаетесь с <a href="" class="contacts__violet">Политикой конфиденциальности</a></p>
+                        <p class="contacts__politic">Нажимая на кнопку, вы соглашаетесь с <a href="{% static 'docs/politika.pdf' %}" target="_blank" class="contacts__violet">Политикой конфиденциальности</a></p>
                     </div>
                 </form>
             </div>
@@ -366,7 +366,7 @@
                 <div class="footer__info-right">
                     <a class="footer__info-text hidden-mobile" href="">Реквизиты</a>
                     <a class="footer__info-text" href="">Обработка персональных данных</a>
-                    <a class="footer__info-text" href="">Политика конфиденциальности</a>
+                    <a class="footer__info-text" href="{% static 'docs/politika.pdf' %}" target="_blank">Политика конфиденциальности</a>
                     <a href="" class=" footer__info-text footer__info-text-mobile">© 2020–2025 ИП «Иванов И.И.»</a>
                 </div>
             </div>

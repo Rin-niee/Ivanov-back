@@ -389,6 +389,7 @@ a {
     gap: 8px;
     max-width: 750px;
     min-height: 90px;
+    flex-wrap: wrap;
 }
 
 .thumbnail-slides::-webkit-scrollbar {
@@ -464,6 +465,16 @@ a {
         bottom: 13px;
     }
 }
+@media (max-width : 1401px) {
+
+    .thumbnail-slides {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+}
 
 @media (max-width : 1200px) {
 
@@ -494,6 +505,7 @@ a {
         gap: 8px;
         flex-wrap: nowrap;
         flex-direction: row;
+        overflow-x: auto;
     }
 
 }
