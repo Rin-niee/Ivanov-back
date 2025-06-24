@@ -127,8 +127,8 @@ class CarsKorea(AbstractCars):
 
 class cities(models.Model): 
     city_name = models.CharField(verbose_name="Название города", max_length=255)
-    distance_from_vladivostok = models.IntegerField(verbose_name="Расстояние от Владивостока, км")
-    delivery_time_days  = models.IntegerField(verbose_name="Время в пути, ДО, в сутках")
+    # distance_from_vladivostok = models.IntegerField(verbose_name="Расстояние от Владивостока, км")
+    # delivery_time_days  = models.IntegerField(verbose_name="Время в пути, ДО, в сутках")
     class Meta:
         verbose_name = "Город"
         verbose_name_plural = "Города"
@@ -138,11 +138,12 @@ class cities(models.Model):
 
 class car_types(models.Model):
     BODY_TYPE_CHOICES = [
+        ('key-car', 'Кей-кар'),
+        ('sedan', 'Седан'),
         ('sedan', 'Седан'),
         ('crossover', 'Кроссовер'),
         ('jeep', 'Джип'),
-        ('minibus', 'Микроавтобус'),
-        ('truck', 'Грузовик'),
+        ('minibus', 'Минивэн'),
     ]
 
     car_types_name  =  models.CharField(max_length=100)
