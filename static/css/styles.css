@@ -806,12 +806,12 @@ a {
 }
 @media (max-width: 1124px) {
   .custom-select__body {
-    width: 100%;
+    width: 88%;
   }
 }
 @media (max-width: 629px) {
   .custom-select__body {
-    width: 303px;
+    width: 90%;
   }
 }
 .custom-select__label {
@@ -4426,7 +4426,7 @@ a {
   align-items: flex-start;
   gap: 4px;
   margin: 0;
-  width: 108px;
+  width: auto;
   height: 25px;
   font-family: var(--font-family-large-text);
   font-style: normal;
