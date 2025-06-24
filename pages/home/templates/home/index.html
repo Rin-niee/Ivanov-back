@@ -22,7 +22,7 @@
     <div class="hero-header container">
         <div class="hero-header__inner">
             <div class="hero-header__left">
-                <a href="#hero" class="hero-header__logo logo">
+                <a href="/#hero" class="hero-header__logo logo">
                 <img class="logo__image" src='{% static "img/images/ivanov-drive-logo.svg" %}' alt="Ivanov drive" width="132" height="40" loading="lazy">
                 </a>
                 <button 
@@ -167,7 +167,7 @@
                                                         {% endif %}
                                                     </div>
                                                     <a href="/japan/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}">
-                                                        <img class="card__active-image" src="/static/img/temp/1.jpg" alt="{{car.brand}} {{car.model}} {{car.year}}"/>
+                                                        <img class="card__active-image" src="{{ car.photos.first.image.url }}" alt="{{car.brand}} {{car.model}} {{car.year}}"/>
                                                     </a>
                                                 </div>
                                                 <div class="card__active-info">
@@ -274,8 +274,8 @@
                                                         </div>
                                                     {% endif %}
                                                 </div>
-                                                <a href="/japan/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}">
-                                                    <img class="card__active-image" src="/static/img/temp/1.jpg" alt="{{car.brand}} {{car.model}} {{car.year}}"/>
+                                                <a href="/china/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}">
+                                                    <img class="card__active-image" src="{{ car.photos.first.image.url }}" alt="{{car.brand}} {{car.model}} {{car.year}}"/>
                                                 </a>
                                             </div>
                                             <div class="card__active-info">
@@ -289,7 +289,7 @@
                                                 </ul>
                                                 <div class="card__active-footer">
                                                     <span class="card__active-price">{{car.finish|intcomma }} ₽</span>
-                                                    <a href="/japan/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}">
+                                                    <a href="/china/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}">
                                                         <button class="card__passive-outline">Подробнее</button>
                                                     </a>
                                                     <div class="card__active-contact">
@@ -381,8 +381,8 @@
                                                         </div>
                                                     {% endif %}
                                                 </div>
-                                                <a href="/japan/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}">
-                                                    <img class="card__active-image" src="/static/img/temp/1.jpg" alt="{{car.brand}} {{car.model}} {{car.year}}"/>
+                                                <a href="/korea/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}">
+                                                    <img class="card__active-image" src="{{ car.photos.first.image.url }}" alt="{{car.brand}} {{car.model}} {{car.year}}"/>
                                                 </a>
                                             </div>
                                             <div class="card__active-info">
@@ -396,7 +396,7 @@
                                                 </ul>
                                                 <div class="card__active-footer">
                                                     <span class="card__active-price">{{car.finish|intcomma }} ₽</span>
-                                                    <a href="/japan/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}">
+                                                    <a href="/korea/{{car.brand|lower}}_{{car.model|lower}}_{{car.year}}_{{car.id}}">
                                                         <button class="card__passive-outline">Подробнее</button>
                                                     </a>
                                                     <div class="card__active-contact">

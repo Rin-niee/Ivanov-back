@@ -66,11 +66,11 @@ class CarChina(AbstractCar):
     country = 'Китай'
     car_link = 'china'
     country_ = 'Китая'
-    model = CarsJapan
+    model = CarsChina
 
 
 class CarKorea(AbstractCar):
     country = 'Корея'
     car_link = 'korea'
     country_ = 'Кореи'
-    model = CarsJapan
+    model = CarsKorea
