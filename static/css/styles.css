@@ -1417,7 +1417,7 @@ a {
     top: 550px !important;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 20px 16px;
     gap: 28px;
     width: 110%;
@@ -1665,14 +1665,14 @@ a {
   align-items: flex-start;
   gap: 16px;
   width: auto;
-  height: 81px;
+  height: auto;
 }
 @media (max-width: 1401px) {
   .contacts__fields {
     flex-direction: column;
     gap: 10px;
     width: 327px;
-    height: 146px;
+    height: auto;
   }
 }
 @media (max-width: 1124px) {
@@ -1680,7 +1680,7 @@ a {
     flex-direction: column;
     gap: 10px;
     width: 327px;
-    height: 146px;
+    height: auto;
   }
 }
 @media (max-width: 629px) {
@@ -1688,7 +1688,7 @@ a {
     flex-direction: column;
     gap: 10px;
     width: 327px;
-    height: 146px;
+    height: auto;
   }
 }
 .contacts__field {
@@ -1755,6 +1755,8 @@ a {
   gap: 10px;
   width: 616px;
   height: 170px;
+  margin-top: 16px;
+  margin-bottom: 20px;
 }
 @media (max-width: 1401px) {
   .contacts__field-textarea {
