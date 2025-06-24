@@ -386,7 +386,6 @@ a {
 .thumbnail-slides {
     margin-top: 8px;
     display: flex;
-    flex-wrap: wrap;
     gap: 8px;
     max-width: 750px;
     min-height: 90px;
@@ -479,13 +478,22 @@ a {
 
     .thumbnail-slides {
         display: flex;
-        overflow-x: auto;
-        overflow-y: hidden;
         gap: 8px;
+        flex-wrap: wrap;
     }
 
     .main-slides>.gallery-slide {
         max-height: 600px;
+    }
+
+}
+@media (max-width : 629px) {
+
+    .thumbnail-slides {
+        display: flex;
+        gap: 8px;
+        flex-wrap: nowrap;
+        flex-direction: row;
     }
 
 }
@@ -536,7 +544,6 @@ a {
     .card__main {
         margin-bottom: 25px;
         padding-left: 16px;
-        padding-right: 16px;
         margin-top: 74px;
     }
 }
@@ -562,124 +569,9 @@ a {
     }
 }
 
-@media (max-width : 576px) {
-
-    .main-slides>.gallery-slide {
-        max-height: 350px;
-    }
-
-    .thumbnail-slides {
-        margin-top: 16px;
-    }
-
-    .thumbnail-slides>.gallery-slide-thumbnail,
-    .gallery-slide-wrapper {
-        width: 74px;
-        height: 60px;
-    }
-
-    .gallery-slide-wrapper>.gallery-slide-thumbnail {
-        width: 74px;
-        height: 60px;
-    }
-
-    .card__title {
-        font-size: 24px;
-    }
-
-    .card__info-title {
-        display: none;
-    }
-
-    .card__info-count {
-        margin-top: 0;
-    }
-
-    .card__info-mobile {
-        display: block;
-        font-size: 18px;
-        font-weight: 400;
-        margin-top: 18px;
-    }
-
-    .card {
-        padding: 100px 0 24px;
-    }
-
-    .breadcrumb {
-        overflow-y: scroll;
-        flex-wrap: nowrap
-    }
-
-    .breadcrumb-item {
-        white-space: nowrap;
-    }
-
-    .recomindation {
-        margin-top: 48px;
-    }
-
-    .modal-gallery-slider {
-        height: 320px;
-    }
-
-    .modal-gallery-main {
-        height: max-content;
-        top: auto;
-        bottom: -145px;
-        margin-top: 20px;
-    }
-
-    .modal-gallery-count {
-        display: none;
-    }
-
-    .modal-gallery-info .modal-gallery-btn {
-        width: 100%;
-    }
-
-    .modal-gallery-btn {
-        margin-left: 0;
-    }
-
-
-    .modal-gallery-count--mobile {
-        display: block;
-        font-size: 20px;
-        font-weight: 700;
-        color: #fff;
-    }
-
-    .modal-gallery-btn {
-        width: 100%;
-    }
-
-    .modal-gallery-btn--control {
-        top: 27%;
-        width: 40px;
-        height: 40px;
-    }
-
-    .modal-gallery-btn--prev {
-        left: 10px;
-    }
-
-    .modal-gallery-btn--next {
-        right: 10px;
-    }
-
-    .modal-gallery-btn--close {
-        top: 10px;
-        right: 10px;
-        width: 40px;
-        height: 40px;
-    }
-
-}
-
 @media (max-width : 629px) {
     .main-slides>.gallery-slide {
-        max-height: 221px;
+        max-height: 278px;
     }
 
     .modal-gallery-main {

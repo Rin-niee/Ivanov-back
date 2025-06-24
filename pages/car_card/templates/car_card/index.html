@@ -53,11 +53,11 @@
 
 </section>
 
-<section id="car_card-page" class="first-page-block custom-body-container section" style="overflow: visible;">
+<section id="car_card-page" class="first-page-block custom-body-container section" >
     <div class="hero-header container">
         <div class="hero-header__inner">
             <div class="hero-header__left">
-                <a href="#hero" class="hero-header__logo logo">
+                <a href="/#hero" class="hero-header__logo logo">
                 <img class="logo__image" src='{% static "img/images/ivanov-drive-logo.svg" %}' alt="Ivanov drive" width="132" height="40" loading="lazy">
                 </a>
                 <button 
@@ -250,7 +250,32 @@
                         </div>
                     </div>
                 </div>
-                {%include 'home/mini-lid.html'%}
+                <div class="contacts__info car-contacts__info" data-aos="fade-right" data-aos-delay="500">
+                    <div class="contacts__info-header car-contacts__info-header">
+                        <div class="contacts__addres car-contacts__addres">
+                            <p class="contacts__addres-city car-contacts__addres-city">{{lid_info.adress}}</p>
+                            <p class="contacts__addres-time car-contacts__addres-time">Главный офис. <span class="contacts__orange">Время работы: {{lid_info.time}}</span></p>
+                        </div>
+                    </div>
+                    <div class="contacts__info-footer car-contacts__info-footer">
+                        <div class="contacts__block">
+                            <p class="contacts__block-title">Горячая линия</p>
+                            <a href="tel:{{phone}}" class="contacts__block-data">{{phone}}</a>
+                        </div>
+                        <div class="contacts__block">
+                            <p class="contacts__block-title">ИНН</p>
+                            <p class="contacts__block-data">{{lid_info.inn}}</p>
+                        </div>
+                        <div class="contacts__block">
+                            <p class="contacts__block-title">ОГРНИП</p>
+                            <p class="contacts__block-data">{{lid_info.ogrn}}</p>
+                        </div>
+                        <div class="contacts__block">
+                            <p class="contacts__block-title"></p>
+                            <p class="contacts__block-data">{{lid_info.ip}}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
