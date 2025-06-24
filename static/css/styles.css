@@ -6142,7 +6142,7 @@ a {
   .details__inner{
     padding: 20px;
     gap: 36px;
-    width: 343px;
+    width: 91%;
     height: 600px;
     border-radius: 16px;
   }
@@ -6175,7 +6175,7 @@ a {
 }
 @media (max-width: 629px) {
   .details__title {
-    width: 303px;
+    width: 70%;
     height: 120px;
     font-size: 24px;
     line-height: 30px;
