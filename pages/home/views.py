@@ -13,7 +13,7 @@ from apps.catalog.models import *
 from django.shortcuts import render
 
 
-def custom_404(request, exception):
+def custom_404_view(request, exception):
     return render(request, '404error.html', status=404)
 
 class HomeView(TemplateView):
@@ -36,8 +36,8 @@ class HomeView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["promo_text"] = PromoText.objects.first()
         context["cars_japan"] = CarsJapan.objects.all()
-        context["cars_china"] = CarsJapan.objects.all()
-        context["cars_korea"] = CarsJapan.objects.all()
+        context["cars_china"] = CarsChina.objects.all()
+        context["cars_korea"] = CarsKorea.objects.all()
         context["title"] = ''
         context["description"] = 'Авто из Японии, Кореи и Китая под заказ с доставкой по всей России. Популярные модели, отзывы клиентов, схема покупки и расчет стоимости доставки — всё на Ivanov Drive.'
         context["cities"] = sorted(set(item["city"] for item in delivery_list))
