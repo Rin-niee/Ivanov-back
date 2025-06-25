@@ -3511,7 +3511,7 @@ a {
 
 @media (max-width: 1401px) {
   .schema {
-    padding: 40px 16px 0px 16px;
+    padding: 40px 0px 0px 16px;
   }
 }
 @media (max-width: 629px) {
@@ -3722,8 +3722,15 @@ a {
 }
 @media (max-width: 629px) {
   .schema__scroll-slider {
-    width: 100%;
-    flex-direction: column !important;
+    display:none !important;
+  }
+}
+.schema__no-scroll{
+  display: none !important;
+}
+@media (max-width: 629px) {
+  .schema__no-scroll{
+    display: flex !important;
   }
 }
 .schema__body {
@@ -4308,7 +4315,7 @@ a {
   .schema__image-car {
     width: 1500px;
     top: 0px;
-    left: 750px;
+    left: 650px;
     bottom: 330px;
   }
 }
