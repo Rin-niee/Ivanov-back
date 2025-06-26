@@ -2027,6 +2027,7 @@ a {
 .contacts__textarea:focus {
   border: 2px solid var(--color-accent);
   outline: none;
+  transition: transform 0.4s ease;
 }
 
 .contacts__field-input:invalid:focus,
