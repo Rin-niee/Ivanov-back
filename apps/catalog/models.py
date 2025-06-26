@@ -159,7 +159,7 @@ class car_types(models.Model):
         verbose_name_plural = "Тип машин"
 
     def __str__(self):
-        return self.get_body_type_display()
+        return self.car_types_name
 
 class car_delivery_prices (models.Model):
     city_id  = models.ForeignKey(cities, verbose_name="Город", on_delete=models.SET_NULL, null=True)
