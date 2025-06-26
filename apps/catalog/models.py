@@ -146,11 +146,12 @@ class car_types(models.Model):
         ('minibus', 'Минивэн'),
     ]
 
-    car_types_name  =  models.CharField(max_length=100)
+    # car_types_name  =  models.CharField(max_length=100)
     body_type = models.CharField(
         max_length=20,
         choices=BODY_TYPE_CHOICES,
-        default='sedan'
+        default='sedan',
+        verbose_name="Тип кузова"
     )
 
     class Meta:
@@ -158,7 +159,7 @@ class car_types(models.Model):
         verbose_name_plural = "Тип машин"
 
     def __str__(self):
-        return self.car_types_name
+        return self.get_body_type_display()
 
 class car_delivery_prices (models.Model):
     city_id  = models.ForeignKey(cities, verbose_name="Город", on_delete=models.SET_NULL, null=True)
@@ -169,4 +170,8 @@ class car_delivery_prices (models.Model):
         verbose_name = "Цена доставки"
         verbose_name_plural = "Цены доставки"
 
+    def __str__(self):
+        city_name = self.city_id.city_name if self.city_id else "Неизвестный город"
+        car_type_name = self.car_type_id.get_body_type_display() if self.car_type_id else "Неизвестный тип кузова"
+        return f"{city_name} – {car_type_name} : {self.price}₽"
 
