@@ -1253,7 +1253,7 @@ a {
 }
 
 .contacts__addres-city {
-  width: 397px;
+  width: auto;
   height: 24px;
   font-family: var(--font-family-small-text);
   font-style: normal;
@@ -2083,7 +2083,7 @@ a {
   align-items: flex-start;
   padding: 0px;
   gap: 52px;
-  height: 444px;
+  height: auto;
   left: 0px;
 }
 @media (max-width: 1124px) {
@@ -2111,7 +2111,7 @@ a {
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
-  height: 174px;
+  height: auto;
 }
 @media (max-width: 1124px) {
   .hero__text {
@@ -2131,12 +2131,12 @@ a {
     padding: 0px;
     gap: 12px;
     width: 343px;
-    height: 119px;
+    height: auto;
   }
 }
 .hero__text-title {
   width: 760px;
-  height: 110px;
+  height: auto;
   font-family: var(--font-family-large-text);
   font-style: normal;
   font-weight: 700;
@@ -2150,13 +2150,13 @@ a {
     width: 100%;
     font-size: 40px;
     line-height: 40px;
-    height: 90px;
+    height: auto;
   }
 }
 @media (max-width: 629px) {
   .hero__text-title {
     width: 343px;
-    height: 50px;
+    height: auto;
     font-size: 20px;
     line-height: 25px;
   }
@@ -5546,7 +5546,7 @@ a {
 }
 .about-us__logo {
   width: 223px;
-  height: 101px;
+  height: 48px;
   padding: 0 32px;
 }
 @media (max-width: 1401px) {
