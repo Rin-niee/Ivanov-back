@@ -28,8 +28,6 @@ class AbstractCar(DetailView):
                 "city": price_obj.city_id.city_name,
                 "body_type": price_obj.car_type_id.car_types_name,
                 "price": price_obj.price,
-                "distance": price_obj.city_id.distance_from_vladivostok,
-                "duration": price_obj.city_id.delivery_time_days
             })
 
         context["country"] = self.country
@@ -66,11 +64,11 @@ class CarChina(AbstractCar):
     country = 'Китай'
     car_link = 'china'
     country_ = 'Китая'
-    model = CarsJapan
+    model = CarsChina
 
 
 class CarKorea(AbstractCar):
     country = 'Корея'
     car_link = 'korea'
     country_ = 'Кореи'
-    model = CarsJapan
+    model = CarsKorea

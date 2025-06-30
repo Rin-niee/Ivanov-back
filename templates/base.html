@@ -54,7 +54,7 @@
 <body>
     <header id="header" class="header hide">
         <div class="header__inner container">
-            <a href="#hero" class="header__logo logo">
+            <a href="/#hero" class="header__logo logo">
                 <img class="logo__image" src='{% static "img/images/ivanov-drive-logo.svg" %}' alt="Ivanov drive" loading="lazy">
             </a>
             <nav class="header__menu hidden-mobile">
@@ -132,13 +132,13 @@
                     {%include 'home/mini-lid.html'%}
                 </div>
                 <div class="contacts__form"> 
-                    <div class="contacts__form-text">
+                    <div class="form-contacts__form-text contacts__form-text ">
                         <p class="contacts__form-title">Оставить заявку можно тут</p>
                         <p class="contacts__form-title-mobile">Оставьте заявку</p>
                         <p class="contacts__form-description-mobile">Оставьте свою заявку и наш менеджер свяжется с вами для уточнения деталей.</p>
                     </div>
                     <div class="contacts__form-input">
-                        <form action="" class="contacts__login contactForm" id="contact-feedback-form">
+                        <form action="" class=" contactForm" id="contact-feedback-form">
                             <div class="contacts__fields">
                                 {% csrf_token %}
                                 <div class="contacts__field">
@@ -176,7 +176,7 @@
                             </div>
                             <div class="contacts__button">
                                 <button type="submit" class="contacts__button-button button">Оставить заявку</button>
-                                <p class="contacts__politic">Нажимая на кнопку, вы соглашаетесь с <a href="" class="contacts__violet">Политикой конфиденциальности</a></p>
+                                <p class="contacts__politic">Нажимая на кнопку, вы соглашаетесь с <a href="{% static 'docs/politika.pdf' %}" target="_blank" class="contacts__violet">Политикой конфиденциальности</a></p>
                             </div>
                         </form>
                     </div>
@@ -204,7 +204,7 @@
     <div class="modal__content">
         <div class="modal__form"> 
             <button class="modal__close" aria-label="Закрыть">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="modal__close-button" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21 21L7 7" stroke="#A3A3AA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M7 21L21 7" stroke="#A3A3AA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -257,7 +257,7 @@
                         <div class="contacts__button-submit modal__button-submit">
                             <button type="submit" class="contacts__button-button button modal__button-button">Оставить заявку</button>
                         </div>
-                        <p class="contacts__politic">Нажимая на кнопку, вы соглашаетесь с <a href="" class="contacts__violet">Политикой конфиденциальности</a></p>
+                        <p class="contacts__politic">Нажимая на кнопку, вы соглашаетесь с <a href="{% static 'docs/politika.pdf' %}" target="_blank" class="contacts__violet">Политикой конфиденциальности</a></p>
                     </div>
                 </form>
             </div>
@@ -271,7 +271,7 @@
                 <div class="footer__body hero-header">
                     <div class="hero-header__inner footer__hero-header-inner ">
                         <div class="hero-header__left footer__hero-header__left ">
-                            <a href="#hero" class="hero-header__logo logo">
+                            <a href="/#hero" class="hero-header__logo logo">
                             <img class="logo__image footer__logo" src='{% static "img/images/ivanov-drive-logo.svg" %}' alt="Ivanov drive" width="132" height="40" loading="lazy">
                             </a>
                             <div class="hero-header__contacts contacts__block">
@@ -366,7 +366,7 @@
                 <div class="footer__info-right">
                     <a class="footer__info-text hidden-mobile" href="">Реквизиты</a>
                     <a class="footer__info-text" href="">Обработка персональных данных</a>
-                    <a class="footer__info-text" href="">Политика конфиденциальности</a>
+                    <a class="footer__info-text" href="{% static 'docs/politika.pdf' %}" target="_blank">Политика конфиденциальности</a>
                     <a href="" class=" footer__info-text footer__info-text-mobile">© 2020–2025 ИП «Иванов И.И.»</a>
                 </div>
             </div>
@@ -434,8 +434,27 @@
     <script src="{% static 'js/scroll-slider.js' %}"></script>
     <script src="{% static 'js/counter.js' %}"></script>
 
- <script src="{% static 'js/splide.min.js' %}"></script>
-<script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/splide.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(102919416, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/102919416" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 
 <!-- <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>-->
 <!-- <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>  -->

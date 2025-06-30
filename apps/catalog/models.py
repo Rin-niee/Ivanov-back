@@ -102,7 +102,7 @@ class AbstractCars(models.Model):
     rubber = models.CharField(verbose_name="Руль", max_length=30,null=True, blank=True, choices=RUBBER_CHOICES, default='Левый руль')
     engine = models.ForeignKey(EngineTypes, verbose_name="Тип двигателя", on_delete=models.PROTECT)
     country = models.CharField(verbose_name="Страна", max_length=250, choices=COUNTRY_CHOICES)
-    photos = models.ManyToManyField(ImageModel, verbose_name='Фотографии авто', blank=True)
+    photos = models.ManyToManyField(ImageModel, verbose_name='Фотографии авто',blank=True)
 
     def __str__(self):
         return f"{self.brand} {self.model} {self.year}"
@@ -115,19 +115,35 @@ class CarsJapan(AbstractCars):
         verbose_name = "Автомобили"
         verbose_name_plural = "Автомобили Япония"
 
+class CarsChina(AbstractCars):    
+    class Meta:
+        verbose_name = "Автомобили"
+        verbose_name_plural = "Автомобили Китай"
+
+class CarsKorea(AbstractCars):    
+    class Meta:
+        verbose_name = "Автомобили"
+        verbose_name_plural = "Автомобили Корея"
 
 class cities(models.Model): 
     city_name = models.CharField(verbose_name="Название города", max_length=255)
-    distance_from_vladivostok = models.IntegerField(verbose_name="Расстояние от Владивостока, км")
-    delivery_time_days  = models.IntegerField(verbose_name="Время в пути, ДО, в сутках")
+    # distance_from_vladivostok = models.IntegerField(verbose_name="Расстояние от Владивостока, км")
+    # delivery_time_days  = models.IntegerField(verbose_name="Время в пути, ДО, в сутках")
+    class Meta:
+        verbose_name = "Город"
+        verbose_name_plural = "Города"
+
+    def __str__(self):
+        return self.city_name
 
 class car_types(models.Model):
     BODY_TYPE_CHOICES = [
+        ('key-car', 'Кей-кар'),
+        ('sedan', 'Седан'),
         ('sedan', 'Седан'),
         ('crossover', 'Кроссовер'),
         ('jeep', 'Джип'),
-        ('minibus', 'Микроавтобус'),
-        ('truck', 'Грузовик'),
+        ('minibus', 'Минивэн'),
     ]
 
     car_types_name  =  models.CharField(max_length=100)
@@ -137,9 +153,20 @@ class car_types(models.Model):
         default='sedan'
     )
 
+    class Meta:
+        verbose_name = "Тип машины"
+        verbose_name_plural = "Тип машин"
+
+    def __str__(self):
+        return self.car_types_name
+
 class car_delivery_prices (models.Model):
     city_id  = models.ForeignKey(cities, verbose_name="Город", on_delete=models.SET_NULL, null=True)
-    car_type_id = models.ForeignKey(car_types, verbose_name="Город", on_delete=models.SET_NULL, null=True)
+    car_type_id = models.ForeignKey(car_types, verbose_name="Тип_кузова", on_delete=models.SET_NULL, null=True)
     price = models.IntegerField(verbose_name="Цена")
+
+    class Meta:
+        verbose_name = "Цена доставки"
+        verbose_name_plural = "Цены доставки"
 
 

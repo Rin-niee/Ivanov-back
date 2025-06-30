@@ -1,4 +1,5 @@
 import json
+import os
 from typing import Any
 
 from django.http import JsonResponse
@@ -11,7 +12,8 @@ from apps.feedback.models import FeedBack
 from apps.content.models import PromoText
 from apps.catalog.models import *
 from django.shortcuts import render
-
+from django.http import JsonResponse
+from utils.send_telegram_message import send_telegram_message_to_allowed_users
 
 def custom_404(request, exception):
     return render(request, '404error.html', status=404)
@@ -30,14 +32,12 @@ class HomeView(TemplateView):
                 "city": price_obj.city_id.city_name,
                 "body_type": price_obj.car_type_id.car_types_name,
                 "price": price_obj.price,
-                "distance": price_obj.city_id.distance_from_vladivostok,
-                "duration": price_obj.city_id.delivery_time_days
             })
         context = super().get_context_data(**kwargs)
         context["promo_text"] = PromoText.objects.first()
         context["cars_japan"] = CarsJapan.objects.all()
-        context["cars_china"] = CarsJapan.objects.all()
-        context["cars_korea"] = CarsJapan.objects.all()
+        context["cars_china"] = CarsChina.objects.all()
+        context["cars_korea"] = CarsKorea.objects.all()
         context["title"] = ''
         context["description"] = 'Авто из Японии, Кореи и Китая под заказ с доставкой по всей России. Популярные модели, отзывы клиентов, схема покупки и расчет стоимости доставки — всё на Ivanov Drive.'
         context["cities"] = sorted(set(item["city"] for item in delivery_list))
@@ -63,6 +63,8 @@ class FeedbackView(View):
                 number=number,
                 message=message,
             )
+            telegram_text = f"📨 Новая заявка:\n\n👤 Имя: {name}\n📞 Телефон: {number}\n💬 Сообщение: {message}"
+            send_telegram_message_to_allowed_users(telegram_text)
 
             return JsonResponse({
                 "status": "success",

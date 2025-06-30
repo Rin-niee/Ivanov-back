@@ -205,40 +205,6 @@ p {
 }
 
 
-@media(max-width:768px) {
-    .custom-body-container {
-        padding: 45px 0
-    }
-
-    .font-mobile-16-12,
-    .general-btn {
-        font-size: 16px !important;
-    }
-
-
-    h1 {
-        font-size: 24px;
-    }
-
-    h3 {
-        font-size: 28px;
-    }
-
-    .font-mb-14 {
-        font-size: 15px !important;
-    }
-
-    h4 {
-        font-size: 20px;
-    }
-
-
-    .first-page-block2 {
-        margin-top: 70px;
-    }
-
-}
-
 @media(max-width:576px) {
     .custom-body-container {
         padding: 0px ;
