@@ -1,4 +1,5 @@
 import json
+import os
 from typing import Any
 
 from django.http import JsonResponse
@@ -11,9 +12,10 @@ from apps.feedback.models import FeedBack
 from apps.content.models import PromoText
 from apps.catalog.models import *
 from django.shortcuts import render
+from django.http import JsonResponse
+from utils.send_telegram_message import send_telegram_message_to_allowed_users
 
-
-def custom_404_view(request, exception):
+def custom_404(request, exception):
     return render(request, '404error.html', status=404)
 
 class HomeView(TemplateView):
@@ -61,6 +63,8 @@ class FeedbackView(View):
                 number=number,
                 message=message,
             )
+            telegram_text = f"📨 Новая заявка:\n\n👤 Имя: {name}\n📞 Телефон: {number}\n💬 Сообщение: {message}"
+            send_telegram_message_to_allowed_users(telegram_text)
 
             return JsonResponse({
                 "status": "success",
