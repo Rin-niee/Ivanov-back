@@ -8,8 +8,6 @@ TOKEN = "7720459194:AAGOywcphZAK8pTwIwdPp2uVYwMKw40ZugA"
 KEYWORD = "пчёлка"
 
 ALLOWED_USERS_PATH = os.path.join(settings.BASE_DIR, "pages", "home", "management", "allowed_users.txt")
-# print("🔍 Путь к allowed_users.txt:", ALLOWED_USERS_PATH)
-# print("📂 Существует ли файл?", os.path.exists(ALLOWED_USERS_PATH))
 
 def load_allowed_users():
     if not os.path.exists(ALLOWED_USERS_PATH):

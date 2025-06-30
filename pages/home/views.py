@@ -63,7 +63,6 @@ class FeedbackView(View):
                 number=number,
                 message=message,
             )
-# отправляем в Telegram
             telegram_text = f"📨 Новая заявка:\n\n👤 Имя: {name}\n📞 Телефон: {number}\n💬 Сообщение: {message}"
             send_telegram_message_to_allowed_users(telegram_text)
 
@@ -77,18 +76,6 @@ class FeedbackView(View):
                 "errors": form.errors
             }, status=400)
 
-# def feedback_view(request):
-#     if request.method == "POST":
-#         name = request.POST.get("name")
-#         phone = request.POST.get("number")
-#         message = request.POST.get("message")
-
-#         full_message = f"📨 Новая заявка:\n\n👤 Имя: {name}\n📞 Телефон: {phone}\n💬 Сообщение: {message}"
-#         send_telegram_message_to_allowed_users(full_message)
-
-#         return JsonResponse({"status": "ok"})
-
-#     return JsonResponse({"status": "error"}, status=400)
 
 
 
