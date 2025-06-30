@@ -1,20 +1,26 @@
-<<<<<<< Updated upstream
-version: '3.8'
-
-=======
->>>>>>> Stashed changes
 services:
   web:
-    build: .
+    build:
+      context: .
     command: python manage.py runserver 0.0.0.0:8000 
     volumes:
-      - .:/usr/src/app              
+      - .:/usr/src/app
       - ./media:/usr/src/app/media
-      - ./static:/usr/src/app/static  
+      - ./static:/usr/src/app/static
     ports:
       - "8000:8000"
     restart: always
-  
+    depends_on:
+      - bot
+
+  bot:
+    build:
+      context: .
+    command: python manage.py runbot
+    volumes:
+      - .:/usr/src/app
+    restart: always
+
   nginx:
     image: nginx:alpine
     restart: always
@@ -25,9 +31,3 @@ services:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
       - ./static/:/app/static/
       - ./media/:/app/media/ 
-    networks:
-      - default
-
-networks:
-  default:
-    name: net
