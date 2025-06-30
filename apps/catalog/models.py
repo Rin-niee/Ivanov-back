@@ -137,7 +137,6 @@ class cities(models.Model):
         return self.city_name
 
 class car_types(models.Model):
-<<<<<<< Updated upstream
     BODY_TYPE_CHOICES = [
         ('key-car', 'Кей-кар'),
         ('sedan', 'Седан'),
@@ -146,31 +145,13 @@ class car_types(models.Model):
         ('jeep', 'Джип'),
         ('minibus', 'Минивэн'),
     ]
-=======
-    # BODY_TYPE_CHOICES = [
-    #     ('key-car', 'Кей-кар'),
-    #     ('sedan', 'Седан'),
-    #     ('sedan', 'Седан'),
-    #     ('crossover', 'Кроссовер'),
-    #     ('jeep', 'Джип'),
-    #     ('minibus', 'Минивэн'),
-    # ]
->>>>>>> Stashed changes
 
-    car_types_name  =  models.CharField(verbose_name="Тип кузова", max_length=100)
-    # body_type = models.CharField(
-    #     max_length=20,
-    #     choices=BODY_TYPE_CHOICES,
-    #     default='sedan',
-    #     verbose_name="Тип кузова"
-    # )
-
-    class Meta:
-        verbose_name = "Тип машины"
-        verbose_name_plural = "Тип машин"
-
-    def __str__(self):
-        return self.car_types_name
+    car_types_name  =  models.CharField(max_length=100)
+    body_type = models.CharField(
+        max_length=20,
+        choices=BODY_TYPE_CHOICES,
+        default='sedan'
+    )
 
     class Meta:
         verbose_name = "Тип машины"
@@ -188,11 +169,4 @@ class car_delivery_prices (models.Model):
         verbose_name = "Цена доставки"
         verbose_name_plural = "Цены доставки"
 
-<<<<<<< Updated upstream
-=======
-    def __str__(self):
-        city_name = self.city_id.city_name if self.city_id else "Неизвестный город"
-        car_type_name = self.car_type_id.car_types_name if self.car_type_id else "Неизвестный тип кузова"
-        return f"{city_name} – {car_type_name} : {self.price}₽"
->>>>>>> Stashed changes
 
