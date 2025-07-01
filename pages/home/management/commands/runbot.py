@@ -9,34 +9,6 @@ import traceback
 TOKEN = "7720459194:AAEVPPTVO3tzfRsXzR6Wq0fkVLpj5b8vfvg"
 KEYWORD = "автомобиль"
 
-# async def handle_keyword(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     chat_id = str(update.effective_chat.id)
-#     username = update.effective_user.username
-#     message_text = update.message.text.strip().lower()
-
-#     if message_text == KEYWORD:
-#         if TelegramUser.objects.filter(user_id=chat_id).exists():
-#             await update.message.reply_text("✅ Ты уже подписан на уведомления.")
-#         else:
-#             TelegramUser.objects.create(user_id=chat_id, username=username)
-#             await update.message.reply_text("🎉 Поздравляю! Ты теперь подписан на уведомления.")
-#     else:
-#         await update.message.reply_text("❌ Неверное ключевое слово. Попробуй ещё раз.")
-
-# async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     await update.message.reply_text("Чтобы подписаться на уведомления, пришли мне ключевое слово 🗝️")
-
-# class Command(BaseCommand):
-#     help = "Запуск telegram-бота"
-
-#     def handle(self, *args, **kwargs):
-#         app = ApplicationBuilder().token(TOKEN).build()
-
-#         app.add_handler(CommandHandler("start", start))
-#         app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_keyword))
-
-#         app.run_polling()
-
 @sync_to_async
 def user_exists(user_id):
     return TelegramUser.objects.filter(user_id=user_id).exists()

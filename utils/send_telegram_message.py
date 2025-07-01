@@ -1,5 +1,5 @@
 import requests
-from apps.catalog.models import TelegramUser  # Импортируй модель
+from apps.catalog.models import TelegramUser
 
 TOKEN = "7720459194:AAEVPPTVO3tzfRsXzR6Wq0fkVLpj5b8vfvg"
 
