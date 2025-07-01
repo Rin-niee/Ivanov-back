@@ -143,3 +143,10 @@ class car_delivery_prices (models.Model):
     price = models.IntegerField(verbose_name="Цена")
 
 
+
+class TelegramUser(models.Model):
+    user_id = models.CharField(max_length=64, unique=True)
+    username = models.CharField(max_length=64, blank=True, null=True)
+
+    def __str__(self):
+        return self.username or self.user_id
